@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "name": "TechCorp",
+        "logo": "/images/partner-techcorp.png",
+        "tier": "Main Sponsor",
+        "url": "https://example.com"
+    },
+    {
+        "id": "2",
+        "name": "ArtFoundation",
+        "logo": "/images/partner-artfoundation.png",
+        "tier": "Cultural Partner",
+        "url": "https://example.com"
+    },
+    {
+        "id": "3",
+        "name": "MediaOutlet",
+        "logo": "/images/partner-media.png",
+        "tier": "Media Partner",
+        "url": "https://example.com"
+    }
+]

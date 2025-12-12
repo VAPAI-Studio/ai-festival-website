@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "title": "Opening Night: Dreams of Electric Sheep",
+        "type": "screening",
+        "date": "2025-10-15",
+        "time": "19:00",
+        "location": "Main Auditorium",
+        "shortDescription": "A selection of the best AI-generated short films from around the world.",
+        "tags": [
+            "Shorts",
+            "Selection"
+        ],
+        "image": "/images/placeholder-program-1.jpg"
+    },
+    {
+        "id": "2",
+        "title": "The Future of Storytelling",
+        "type": "talk",
+        "date": "2025-10-16",
+        "time": "11:00",
+        "location": "Workshop Room A",
+        "shortDescription": "Panel discussion with leading AI artists and directors.",
+        "tags": [
+            "Panel",
+            "Industry"
+        ],
+        "image": "/images/placeholder-program-2.jpg"
+    },
+    {
+        "id": "3",
+        "title": "Generative Video Workshop",
+        "type": "workshop",
+        "date": "2025-10-17",
+        "time": "14:00",
+        "location": "Lab Space",
+        "shortDescription": "Hands-on workshop learning the latest text-to-video tools.",
+        "tags": [
+            "Workshop",
+            "Technical"
+        ],
+        "image": "/images/placeholder-program-3.jpg"
+    }
+]

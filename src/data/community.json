@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "name": "Elena Rodriguez",
+        "country": "Mexico",
+        "role": "AI Filmmaker",
+        "link": "https://example.com",
+        "image": "/images/placeholder-creator-1.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Carlos Silva",
+        "country": "Brazil",
+        "role": "Creative Technologist",
+        "link": "https://example.com",
+        "image": "/images/placeholder-creator-2.jpg"
+    },
+    {
+        "id": "3",
+        "name": "Sofia Martí",
+        "country": "Argentina",
+        "role": "Digital Artist",
+        "link": "https://example.com",
+        "image": "/images/placeholder-creator-3.jpg"
+    }
+]

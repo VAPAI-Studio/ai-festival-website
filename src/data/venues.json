@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1",
+        "name": "Centro de Cultura Digital",
+        "address": "Paseo de la Reforma s/n, Juárez, Miguel Hidalgo, 06600 Ciudad de México, CDMX",
+        "mapLink": "https://goo.gl/maps/placeholder",
+        "description": "The main hub for the festival, hosting screenings and keynotes.",
+        "image": "/images/venue-ccd.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Cineteca Nacional",
+        "address": "Av. México Coyoacán 389, Xoco, Benito Juárez, 03330 Ciudad de México, CDMX",
+        "mapLink": "https://goo.gl/maps/placeholder",
+        "description": "Hosting special screenings and the closing ceremony.",
+        "image": "/images/venue-cineteca.jpg"
+    }
+]
