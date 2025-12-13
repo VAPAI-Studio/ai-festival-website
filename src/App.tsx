@@ -7,6 +7,8 @@ import { Submit } from "./pages/Submit";
 
 import { ScrollRGB } from "./components/effects/ScrollRGB";
 
+import { Rules } from "./pages/Rules";
+
 function App() {
   return (
     <HelmetProvider>
@@ -18,6 +20,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/submit" element={<Submit />} />
+              <Route path="/rules" element={<Rules />} />
             </Routes>
           </main>
           <Footer />
