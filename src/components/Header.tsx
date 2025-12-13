@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { siteConfig } from "../config/site";
 import { Button } from "./ui/Button";
+import { useTranslation } from "react-i18next";
 
 export function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
+    const { t, i18n } = useTranslation();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -34,13 +36,18 @@ export function Header() {
         }
     };
 
+    const toggleLanguage = () => {
+        const newLang = i18n.language === 'en' ? 'es' : 'en';
+        i18n.changeLanguage(newLang);
+    };
+
     const navigation = [
-        { name: "The Festival", href: "/#festival" },
-        { name: "Dates", href: "/#dates" },
-        { name: "Program", href: "/#program" },
-        { name: "Jury", href: "/#jury" },
-        { name: "Awards", href: "/#awards" },
-        { name: "Submit", href: "/submit" },
+        { name: t('nav.festival'), href: "/#festival" },
+        { name: t('nav.dates'), href: "/#dates" },
+        { name: t('nav.program'), href: "/#program" },
+        { name: t('nav.jury'), href: "/#jury" },
+        { name: t('nav.awards'), href: "/#awards" },
+        { name: t('nav.submit'), href: "/submit" },
     ];
 
     return (
@@ -65,9 +72,9 @@ export function Header() {
                                 {item.name}
                             </a>
                         ) : (
-                            item.name === "Submit" ? (
+                            item.href === "/submit" ? (
                                 <Button size="sm" asChild key={item.name}>
-                                    <Link to={item.href}>{item.name} Project</Link>
+                                    <Link to={item.href}>{t('nav.submitProject')}</Link>
                                 </Button>
                             ) : (
                                 <Link
@@ -80,16 +87,35 @@ export function Header() {
                             )
                         )
                     ))}
+
+                    <button
+                        onClick={toggleLanguage}
+                        className="p-2 text-foreground hover:text-primary transition-colors flex items-center gap-1 text-sm font-medium"
+                        aria-label="Toggle language"
+                    >
+                        <Globe className="w-4 h-4" />
+                        {i18n.language === 'en' ? 'ES' : 'EN'}
+                    </button>
                 </nav>
 
                 {/* Mobile Menu Toggle */}
-                <button
-                    className="md:hidden p-2 text-foreground"
-                    onClick={toggleMenu}
-                    aria-label="Toggle menu"
-                >
-                    {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                </button>
+                <div className="flex items-center gap-4 md:hidden">
+                    <button
+                        onClick={toggleLanguage}
+                        className="p-2 text-foreground hover:text-primary transition-colors flex items-center gap-1 text-sm font-medium"
+                        aria-label="Toggle language"
+                    >
+                        <Globe className="w-4 h-4" />
+                        {i18n.language === 'en' ? 'ES' : 'EN'}
+                    </button>
+                    <button
+                        className="p-2 text-foreground"
+                        onClick={toggleMenu}
+                        aria-label="Toggle menu"
+                    >
+                        {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Nav */}
@@ -106,9 +132,9 @@ export function Header() {
                                 {item.name}
                             </a>
                         ) : (
-                            item.name === "Submit" ? (
+                            item.href === "/submit" ? (
                                 <Button size="sm" asChild key={item.name} className="w-full">
-                                    <Link to={item.href} onClick={() => setIsMenuOpen(false)}>{item.name} Project</Link>
+                                    <Link to={item.href} onClick={() => setIsMenuOpen(false)}>{t('nav.submitProject')}</Link>
                                 </Button>
                             ) : (
                                 <Link

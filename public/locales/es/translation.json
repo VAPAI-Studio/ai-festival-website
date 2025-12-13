@@ -1,0 +1,137 @@
+{
+    "nav": {
+        "festival": "El Festival",
+        "dates": "Fechas",
+        "program": "Programa",
+        "jury": "Jurado",
+        "awards": "Premios",
+        "submit": "Enviar",
+        "submitProject": "Enviar Proyecto"
+    },
+    "hero": {
+        "subtitle": "1er Festival Latam de IA Creativa",
+        "cta": "Envía tu proyecto"
+    },
+    "festival": {
+        "title": "El Festival",
+        "description": "SALADA es el primer festival latinoamericano dedicado exclusivamente al cine y las artes creativas generadas con Inteligencia Artificial. Nacido en Montevideo, Uruguay, busca ser un puente entre el talento local y la vanguardia global.",
+        "description2": "Exploramos nuevas narrativas, estéticas y métodos de producción donde la creatividad humana se fusiona con el poder algorítmico. Somos un espacio de exhibición, debate y experimentación."
+    },
+    "dates": {
+        "title": "Fechas y Plazos",
+        "open": "Apertura de Convocatoria",
+        "deadline": "Cierre de Convocatoria",
+        "notification": "Fecha de Notificación",
+        "screening": "Proyección del Festival"
+    },
+    "venue": {
+        "title": "Sede",
+        "location": "Cultural Alfabeta",
+        "address": "Miguel Barreiro 3231, Montevideo"
+    },
+    "program": {
+        "title": "Programa",
+        "comingSoon": "Programa completo a anunciar."
+    },
+    "jury": {
+        "title": "Jurado",
+        "comingSoon": "Miembros del jurado a anunciar."
+    },
+    "awards": {
+        "title": "Premios",
+        "bestInternational": "Mejor Película IA Internacional",
+        "bestMusicVideo": "Mejor Video Musical IA",
+        "bestUruguayan": "Mejor Película IA Uruguaya"
+    },
+    "team": {
+        "title": "El Equipo",
+        "roles": {
+            "host": "Anfitrión del Festival",
+            "programming": "Jefe de Programación",
+            "technical": "Líder Técnico"
+        },
+        "bios": {
+            "host": "Estudio de cine nativo de IA.",
+            "programming": "Curador con 10 años de experiencia.",
+            "technical": "Investigador y desarrollador de IA."
+        }
+    },
+    "faq": {
+        "title": "Preguntas Frecuentes",
+        "q1": "¿Qué es el cine IA?",
+        "a1": "Películas donde las herramientas de IA (video generativo, voz, guion) juegan un papel significativo en el proceso creativo.",
+        "q2": "¿Puedo participar si no soy de Latam?",
+        "a2": "¡Sí! Tenemos categorías internacionales. Damos la bienvenida a creadores de todo el mundo."
+    },
+    "footer": {
+        "rights": "Todos los derechos reservados."
+    },
+    "submit": {
+        "title": "Competiciones y Envío",
+        "intro": "Buscamos obras visionarias que desafíen el status quo del cine. Abierto a creadores de todo el mundo, con un foco especial en el talento latinoamericano.",
+        "categories": {
+            "title": "Categorías",
+            "short": {
+                "name": "Cortometraje IA",
+                "desc": "Cortometrajes narrativos o documentales donde la IA jugó un papel significativo en la producción.",
+                "format": "Hasta 20 min"
+            },
+            "experimental": {
+                "name": "Experimental / Videoarte",
+                "desc": "Obras abstractas, no narrativas o conceptuales que exploran la estética de la IA.",
+                "format": "Hasta 15 min"
+            },
+            "immersive": {
+                "name": "Interactivo / Inmersivo",
+                "desc": "Experiencias de RV, RA o tiempo real impulsadas por IA.",
+                "format": "Ejecutable o video 360"
+            }
+        },
+        "eligibility": {
+            "title": "Elegibilidad",
+            "items": [
+                "Obras producidas después del 1 de enero de 2024.",
+                "Debe usar herramientas de IA de manera significativa (visuales, audio, guion).",
+                "Abierto a todas las nacionalidades (creadores de LATAM elegibles para premios especiales).",
+                "Se requieren subtítulos en inglés para obras que no sean en inglés."
+            ]
+        },
+        "criteria": {
+            "title": "Criterios de Selección",
+            "items": [
+                "Innovación en el uso de herramientas de IA.",
+                "Calidad narrativa y artística.",
+                "Competencia técnica.",
+                "Consideración ética."
+            ]
+        },
+        "form": {
+            "title": "Envía Tu Proyecto",
+            "subtitle": "Completa el formulario a continuación para inscribir tu obra. Fecha límite anticipada:",
+            "date": "1 de junio de 2026",
+            "success": {
+                "title": "¡Envío Recibido!",
+                "message": "Gracias por enviar tu trabajo a SALADA. Hemos enviado un correo de confirmación a tu bandeja de entrada. ¡Buena suerte!",
+                "button": "Enviar Otro Proyecto"
+            },
+            "labels": {
+                "name": "Nombre Completo",
+                "email": "Correo Electrónico",
+                "projectTitle": "Título del Proyecto",
+                "category": "Categoría",
+                "selectCategory": "Selecciona una categoría",
+                "link": "Enlace del Proyecto (URL)",
+                "description": "Descripción del Proyecto"
+            },
+            "placeholders": {
+                "name": "Juan Pérez",
+                "email": "juan@ejemplo.com",
+                "projectTitle": "El Sueño Eléctrico",
+                "link": "https://vimeo.com/...",
+                "description": "Breve sinopsis y detalles técnicos..."
+            },
+            "submitButton": "Enviar Proyecto",
+            "submitting": "Enviando..."
+        }
+    }
+}

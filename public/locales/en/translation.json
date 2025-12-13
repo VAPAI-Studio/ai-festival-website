@@ -1,0 +1,137 @@
+{
+    "nav": {
+        "festival": "The Festival",
+        "dates": "Dates",
+        "program": "Program",
+        "jury": "Jury",
+        "awards": "Awards",
+        "submit": "Submit",
+        "submitProject": "Submit Project"
+    },
+    "hero": {
+        "subtitle": "1st Latam Creative AI Festival",
+        "cta": "Submit your project"
+    },
+    "festival": {
+        "title": "The Festival",
+        "description": "SALADA is the first Latin American festival dedicated exclusively to cinema and creative arts generated with Artificial Intelligence. Born in Montevideo, Uruguay, it seeks to be a bridge between local talent and the global avant-garde.",
+        "description2": "We explore new narratives, aesthetics, and production methods where human creativity merges with algorithmic power. We are a space for exhibition, debate, and experimentation."
+    },
+    "dates": {
+        "title": "Dates & Deadlines",
+        "open": "Open for Submissions",
+        "deadline": "Submission Deadline",
+        "notification": "Notification Date",
+        "screening": "Festival Screening"
+    },
+    "venue": {
+        "title": "Venue",
+        "location": "Cultural Alfabeta",
+        "address": "Miguel Barreiro 3231, Montevideo"
+    },
+    "program": {
+        "title": "Program",
+        "comingSoon": "Full program to be announced."
+    },
+    "jury": {
+        "title": "Jury",
+        "comingSoon": "Jury members to be announced."
+    },
+    "awards": {
+        "title": "Awards",
+        "bestInternational": "Best International AI Film",
+        "bestMusicVideo": "Best AI Music Video",
+        "bestUruguayan": "Best Uruguayan AI Film"
+    },
+    "team": {
+        "title": "The Team",
+        "roles": {
+            "host": "Festival Host",
+            "programming": "Head of Programming",
+            "technical": "Technical Lead"
+        },
+        "bios": {
+            "host": "AI-Native film studio.",
+            "programming": "Curator with 10 years of experience.",
+            "technical": "AI researcher and developer."
+        }
+    },
+    "faq": {
+        "title": "FAQ",
+        "q1": "What is AI cinema?",
+        "a1": "Films where AI tools (generative video, voice, script) play a significant role in the creative process.",
+        "q2": "Can I submit if I'm not from Latam?",
+        "a2": "Yes! We have international categories. We welcome creators from all over the world."
+    },
+    "footer": {
+        "rights": "All rights reserved."
+    },
+    "submit": {
+        "title": "Competitions & Submission",
+        "intro": "We are looking for visionary works that challenge the status quo of filmmaking. Open to creators from all over the world, with a special spotlight on Latin American talent.",
+        "categories": {
+            "title": "Categories",
+            "short": {
+                "name": "AI Short Film",
+                "desc": "Narrative or documentary short films where AI played a significant role in production.",
+                "format": "Up to 20 min"
+            },
+            "experimental": {
+                "name": "Experimental / Video Art",
+                "desc": "Abstract, non-narrative, or conceptual works exploring the aesthetics of AI.",
+                "format": "Up to 15 min"
+            },
+            "immersive": {
+                "name": "Interactive / Immersive",
+                "desc": "VR, AR, or real-time experiences powered by AI.",
+                "format": "Executable or 360 video"
+            }
+        },
+        "eligibility": {
+            "title": "Eligibility",
+            "items": [
+                "Works produced after January 1, 2024.",
+                "Must use AI tools in a significant way (visuals, audio, script).",
+                "Open to all nationalities (LATAM creators eligible for special awards).",
+                "English subtitles required for non-English works."
+            ]
+        },
+        "criteria": {
+            "title": "Selection Criteria",
+            "items": [
+                "Innovation in the use of AI tools.",
+                "Narrative and artistic quality.",
+                "Technical proficiency.",
+                "Ethical consideration."
+            ]
+        },
+        "form": {
+            "title": "Submit Your Project",
+            "subtitle": "Fill out the form below to enter your work. Early bird deadline:",
+            "date": "June 1st, 2026",
+            "success": {
+                "title": "Submission Received!",
+                "message": "Thank you for submitting your work to SALADA. We have sent a confirmation email to your inbox. Good luck!",
+                "button": "Submit Another Project"
+            },
+            "labels": {
+                "name": "Full Name",
+                "email": "Email",
+                "projectTitle": "Project Title",
+                "category": "Category",
+                "selectCategory": "Select a category",
+                "link": "Project Link (URL)",
+                "description": "Project Description"
+            },
+            "placeholders": {
+                "name": "Jane Doe",
+                "email": "jane@example.com",
+                "projectTitle": "The Electric Dream",
+                "link": "https://vimeo.com/...",
+                "description": "Brief synopsis and technical details..."
+            },
+            "submitButton": "Submit Project",
+            "submitting": "Submitting..."
+        }
+    }
+}

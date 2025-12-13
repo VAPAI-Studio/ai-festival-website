@@ -12,7 +12,7 @@ function App() {
     <HelmetProvider>
       <HashRouter>
         <ScrollRGB />
-        <div className="flex min-h-screen flex-col">
+        <div className="flex min-h-screen flex-col overflow-x-hidden">
           <Header />
           <main className="flex-1">
             <Routes>

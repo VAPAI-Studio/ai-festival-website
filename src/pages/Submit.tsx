@@ -4,8 +4,10 @@ import { siteConfig } from "../config/site";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
 import { Trophy, Film, MonitorPlay, Send, CheckCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Submit() {
+    const { t } = useTranslation();
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -21,21 +23,21 @@ export function Submit() {
     };
     const categories = [
         {
-            name: "AI Short Film",
-            description: "Narrative or documentary short films where AI played a significant role in production.",
-            format: "Up to 20 min",
+            name: t('submit.categories.short.name'),
+            description: t('submit.categories.short.desc'),
+            format: t('submit.categories.short.format'),
             icon: Film
         },
         {
-            name: "Experimental / Video Art",
-            description: "Abstract, non-narrative, or conceptual works exploring the aesthetics of AI.",
-            format: "Up to 15 min",
+            name: t('submit.categories.experimental.name'),
+            description: t('submit.categories.experimental.desc'),
+            format: t('submit.categories.experimental.format'),
             icon: MonitorPlay
         },
         {
-            name: "Interactive / Immersive",
-            description: "VR, AR, or real-time experiences powered by AI.",
-            format: "Executable or 360 video",
+            name: t('submit.categories.immersive.name'),
+            description: t('submit.categories.immersive.desc'),
+            format: t('submit.categories.immersive.format'),
             icon: Trophy
         }
     ];
@@ -43,21 +45,21 @@ export function Submit() {
     return (
         <div className="container mx-auto px-4 py-12 space-y-20">
             <Helmet>
-                <title>Submit - {siteConfig.name}</title>
-                <meta name="description" content="Submit your AI film or artwork to the festival." />
+                <title>{t('submit.title')} - {siteConfig.name}</title>
+                <meta name="description" content={t('submit.intro')} />
             </Helmet>
 
             {/* Intro */}
             <section className="text-center max-w-3xl mx-auto space-y-6">
-                <h1 className="text-4xl font-bold tracking-tight">Competitions & Submission</h1>
+                <h1 className="text-4xl font-bold tracking-tight">{t('submit.title')}</h1>
                 <p className="text-xl text-muted-foreground">
-                    We are looking for visionary works that challenge the status quo of filmmaking. Open to creators from all over the world, with a special spotlight on Latin American talent.
+                    {t('submit.intro')}
                 </p>
             </section>
 
             {/* Categories */}
             <section>
-                <h2 className="text-2xl font-bold mb-8 text-center">Categories</h2>
+                <h2 className="text-2xl font-bold mb-8 text-center">{t('submit.categories.title')}</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {categories.map((cat, index) => (
                         <Card key={index} className="bg-transparent border-white/10 hover:border-primary/50 transition-colors">
@@ -79,37 +81,23 @@ export function Submit() {
             {/* Eligibility & Criteria */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white/5 rounded-2xl p-8 md:p-12 border border-white/10">
                 <div className="space-y-6">
-                    <h2 className="text-2xl font-bold">Eligibility</h2>
+                    <h2 className="text-2xl font-bold">{t('submit.eligibility.title')}</h2>
                     <ul className="space-y-3 text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                            <span className="text-primary">•</span> Works produced after January 1, 2024.
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="text-primary">•</span> Must use AI tools in a significant way (visuals, audio, script).
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="text-primary">•</span> Open to all nationalities (LATAM creators eligible for special awards).
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="text-primary">•</span> English subtitles required for non-English works.
-                        </li>
+                        {(t('submit.eligibility.items', { returnObjects: true }) as string[]).map((item, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                                <span className="text-primary">•</span> {item}
+                            </li>
+                        ))}
                     </ul>
                 </div>
                 <div className="space-y-6">
-                    <h2 className="text-2xl font-bold">Selection Criteria</h2>
+                    <h2 className="text-2xl font-bold">{t('submit.criteria.title')}</h2>
                     <ul className="space-y-3 text-muted-foreground">
-                        <li className="flex items-start gap-2">
-                            <span className="text-primary">•</span> Innovation in the use of AI tools.
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="text-primary">•</span> Narrative and artistic quality.
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="text-primary">•</span> Technical proficiency.
-                        </li>
-                        <li className="flex items-start gap-2">
-                            <span className="text-primary">•</span> Ethical consideration.
-                        </li>
+                        {(t('submit.criteria.items', { returnObjects: true }) as string[]).map((item, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                                <span className="text-primary">•</span> {item}
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </section>
@@ -117,9 +105,9 @@ export function Submit() {
             {/* Submission Form */}
             <section className="max-w-2xl mx-auto py-12" id="submit-form">
                 <div className="text-center mb-10 space-y-4">
-                    <h2 className="text-3xl font-bold">Submit Your Project</h2>
+                    <h2 className="text-3xl font-bold">{t('submit.form.title')}</h2>
                     <p className="text-muted-foreground">
-                        Fill out the form below to enter your work. Early bird deadline: <span className="text-primary font-semibold">June 1st, 2026</span>.
+                        {t('submit.form.subtitle')} <span className="text-primary font-semibold">{t('submit.form.date')}</span>.
                     </p>
                 </div>
 
@@ -129,12 +117,12 @@ export function Submit() {
                             <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-2">
                                 <CheckCircle className="w-8 h-8" />
                             </div>
-                            <h3 className="text-2xl font-bold">Submission Received!</h3>
+                            <h3 className="text-2xl font-bold">{t('submit.form.success.title')}</h3>
                             <p className="text-muted-foreground max-w-md">
-                                Thank you for submitting your work to SALADA. We have sent a confirmation email to your inbox. Good luck!
+                                {t('submit.form.success.message')}
                             </p>
                             <Button onClick={() => setIsSubmitted(false)} variant="outline" className="mt-4">
-                                Submit Another Project
+                                {t('submit.form.success.button')}
                             </Button>
                         </CardContent>
                     </Card>
@@ -143,52 +131,52 @@ export function Submit() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label htmlFor="name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                                    Full Name
+                                    {t('submit.form.labels.name')}
                                 </label>
                                 <input
                                     id="name"
                                     required
                                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                    placeholder="Jane Doe"
+                                    placeholder={t('submit.form.placeholders.name')}
                                 />
                             </div>
                             <div className="space-y-2">
                                 <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                                    Email
+                                    {t('submit.form.labels.email')}
                                 </label>
                                 <input
                                     id="email"
                                     type="email"
                                     required
                                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                    placeholder="jane@example.com"
+                                    placeholder={t('submit.form.placeholders.email')}
                                 />
                             </div>
                         </div>
 
                         <div className="space-y-2">
                             <label htmlFor="title" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                                Project Title
+                                {t('submit.form.labels.projectTitle')}
                             </label>
                             <input
                                 id="title"
                                 required
                                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                placeholder="The Electric Dream"
+                                placeholder={t('submit.form.placeholders.projectTitle')}
                             />
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <label htmlFor="category" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                                    Category
+                                    {t('submit.form.labels.category')}
                                 </label>
                                 <select
                                     id="category"
                                     required
                                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                 >
-                                    <option value="" disabled selected>Select a category</option>
+                                    <option value="" disabled selected>{t('submit.form.labels.selectCategory')}</option>
                                     {categories.map((cat) => (
                                         <option key={cat.name} value={cat.name}>{cat.name}</option>
                                     ))}
@@ -196,34 +184,34 @@ export function Submit() {
                             </div>
                             <div className="space-y-2">
                                 <label htmlFor="link" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                                    Project Link (URL)
+                                    {t('submit.form.labels.link')}
                                 </label>
                                 <input
                                     id="link"
                                     type="url"
                                     required
                                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                    placeholder="https://vimeo.com/..."
+                                    placeholder={t('submit.form.placeholders.link')}
                                 />
                             </div>
                         </div>
 
                         <div className="space-y-2">
                             <label htmlFor="description" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
-                                Project Description
+                                {t('submit.form.labels.description')}
                             </label>
                             <textarea
                                 id="description"
                                 required
                                 className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                placeholder="Brief synopsis and technical details..."
+                                placeholder={t('submit.form.placeholders.description')}
                             />
                         </div>
 
                         <Button type="submit" size="lg" className="w-full gap-2" disabled={isLoading}>
-                            {isLoading ? "Submitting..." : (
+                            {isLoading ? t('submit.form.submitting') : (
                                 <>
-                                    Submit Project <Send className="w-4 h-4" />
+                                    {t('submit.form.submitButton')} <Send className="w-4 h-4" />
                                 </>
                             )}
                         </Button>
