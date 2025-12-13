@@ -20,7 +20,7 @@ export function Home() {
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 <HeroBackground />
-                <div className="container px-4 md:px-6 relative z-10 text-center space-y-8 pointer-events-none">
+                <div className="container mx-auto px-4 md:px-6 relative z-10 text-center space-y-8 pointer-events-none">
                     <div className="space-y-4">
                         <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-forwards">
                             {siteConfig.name}
@@ -51,7 +51,7 @@ export function Home() {
 
             {/* The Festival */}
             <section id="festival" className="py-24 bg-black/50">
-                <div className="container px-4 md:px-6">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid gap-12 lg:grid-cols-2 items-center">
                         <div className="space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary scroll-rgb" data-text={t('festival.title')}>
@@ -79,7 +79,7 @@ export function Home() {
 
             {/* Dates */}
             <section id="dates" className="py-24 border-t border-white/10">
-                <div className="container px-4 md:px-6">
+                <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('dates.title')}>
                         {t('dates.title')}
                     </h2>
@@ -103,7 +103,7 @@ export function Home() {
 
             {/* Venue */}
             <section className="py-24 border-t border-white/10 bg-black/50">
-                <div className="container px-4 md:px-6">
+                <div className="container mx-auto px-4 md:px-6">
                     <div className="grid gap-12 lg:grid-cols-2 items-center">
                         <div className="order-2 lg:order-1 h-[400px] rounded-xl overflow-hidden border border-white/10 bg-white/5">
                             <iframe
@@ -134,7 +134,7 @@ export function Home() {
 
             {/* Program */}
             <section id="program" className="py-24 border-t border-white/10">
-                <div className="container px-4 md:px-6 text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-6 text-primary scroll-rgb" data-text={t('program.title')}>
                         {t('program.title')}
                     </h2>
@@ -144,7 +144,7 @@ export function Home() {
 
             {/* Jury */}
             <section id="jury" className="py-24 border-t border-white/10 bg-black/50">
-                <div className="container px-4 md:px-6 text-center">
+                <div className="container mx-auto px-4 md:px-6 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-6 text-primary scroll-rgb" data-text={t('jury.title')}>
                         {t('jury.title')}
                     </h2>
@@ -154,7 +154,7 @@ export function Home() {
 
             {/* Awards */}
             <section id="awards" className="py-24 border-t border-white/10">
-                <div className="container px-4 md:px-6">
+                <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('awards.title')}>
                         {t('awards.title')}
                     </h2>
@@ -179,7 +179,7 @@ export function Home() {
 
             {/* Team */}
             <section className="py-24 border-t border-white/10 bg-black/50">
-                <div className="container px-4 md:px-6">
+                <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('team.title')}>
                         {t('team.title')}
                     </h2>
@@ -207,7 +207,7 @@ export function Home() {
 
             {/* FAQ */}
             <section className="py-24 border-t border-white/10">
-                <div className="container px-4 md:px-6 max-w-3xl">
+                <div className="container mx-auto px-4 md:px-6 max-w-3xl">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('faq.title')}>
                         {t('faq.title')}
                     </h2>
@@ -230,7 +230,7 @@ export function Home() {
 
             {/* CTA */}
             <section className="py-24 border-t border-white/10 bg-gradient-to-b from-black to-primary/5">
-                <div className="container px-4 md:px-6 text-center space-y-8">
+                <div className="container mx-auto px-4 md:px-6 text-center space-y-8">
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">
                         {t('hero.cta')}
                     </h2>
