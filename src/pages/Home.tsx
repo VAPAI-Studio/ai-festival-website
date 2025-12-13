@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { siteConfig } from "../config/site";
 import programData from "../data/program.json";
+import partnersData from "../data/partners.json";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
 import { Calendar, MapPin, Trophy, Users, Film, Music, Globe, HelpCircle } from "lucide-react";
@@ -10,11 +11,7 @@ import { useTranslation } from "react-i18next";
 export function Home() {
     const { t } = useTranslation();
 
-    const team = [
-        { name: 'Side Out Sticks', role: t('team.roles.host'), bio: t('team.bios.host') },
-        { name: "Yves Fogel", role: t('team.roles.programming'), bio: t('team.bios.programming') },
-        { name: "Andrés Scheck", role: t('team.roles.technical'), bio: t('team.bios.technical') },
-    ];
+
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -97,6 +94,36 @@ export function Home() {
                                     <CardDescription>{item.label}</CardDescription>
                                 </CardHeader>
                             </Card>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Sponsors */}
+            <section id="sponsors" className="py-24 border-t border-white/10 bg-black/50">
+                <div className="container mx-auto px-4 md:px-6">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text="Sponsors">
+                        Sponsors
+                    </h2>
+                    <div className="grid gap-8 md:grid-cols-3 items-center justify-items-center">
+                        {partnersData.map((partner) => (
+                            <a
+                                key={partner.id}
+                                href={partner.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="group relative grayscale hover:grayscale-0 transition-all duration-300"
+                            >
+                                <div className="h-24 w-48 bg-white/5 rounded-lg flex items-center justify-center border border-white/10 group-hover:border-primary/50 group-hover:bg-white/10 transition-all">
+                                    {/* Placeholder for logo if image fails or is missing */}
+                                    <span className="text-lg font-bold text-muted-foreground group-hover:text-primary transition-colors">
+                                        {partner.name}
+                                    </span>
+                                </div>
+                                <span className="absolute -bottom-6 left-0 right-0 text-center text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                                    {partner.tier}
+                                </span>
+                            </a>
                         ))}
                     </div>
                 </div>
@@ -218,33 +245,7 @@ export function Home() {
                 </div>
             </section>
 
-            {/* Team */}
-            <section className="py-24 border-t border-white/10 bg-black/50">
-                <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('team.title')}>
-                        {t('team.title')}
-                    </h2>
-                    <div className="grid gap-8 md:grid-cols-3">
-                        {team.map((member, i) => (
-                            <Card key={i} className="bg-transparent border-none text-center">
-                                <CardHeader>
-                                    <div className="mx-auto w-24 h-24 rounded-full bg-white/10 mb-4 overflow-hidden">
-                                        {/* Placeholder avatar */}
-                                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                                            <Users className="w-8 h-8 opacity-50" />
-                                        </div>
-                                    </div>
-                                    <CardTitle>{member.name}</CardTitle>
-                                    <CardDescription className="text-primary font-medium">{member.role}</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground">{member.bio}</p>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* FAQ */}
             <section className="py-24 border-t border-white/10">
