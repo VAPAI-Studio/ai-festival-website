@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { siteConfig } from "../config/site";
+import programData from "../data/program.json";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
 import { Calendar, MapPin, Trophy, Users, Film, Music, Globe, HelpCircle } from "lucide-react";
@@ -134,21 +135,61 @@ export function Home() {
 
             {/* Program */}
             <section id="program" className="py-24 border-t border-white/10">
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-6 text-primary scroll-rgb" data-text={t('program.title')}>
+                <div className="container mx-auto px-4 md:px-6">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('program.title')}>
                         {t('program.title')}
                     </h2>
-                    <p className="text-xl text-muted-foreground">{t('program.comingSoon')}</p>
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        {programData.map((item) => (
+                            <Card key={item.id} className="bg-white/5 border-white/10 overflow-hidden hover:border-primary/50 transition-colors group">
+                                <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                                    <Film className="w-12 h-12 text-primary/50" />
+                                </div>
+                                <CardHeader>
+                                    <div className="flex justify-between items-start mb-2">
+                                        <span className="text-xs font-medium px-2 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                                            {item.type}
+                                        </span>
+                                        <span className="text-xs text-muted-foreground">{item.date}</span>
+                                    </div>
+                                    <CardTitle className="text-xl">{item.title}</CardTitle>
+                                    <CardDescription>{item.location}</CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-sm text-muted-foreground">{item.shortDescription}</p>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
                 </div>
             </section>
 
             {/* Jury */}
             <section id="jury" className="py-24 border-t border-white/10 bg-black/50">
-                <div className="container mx-auto px-4 md:px-6 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter mb-6 text-primary scroll-rgb" data-text={t('jury.title')}>
+                <div className="container mx-auto px-4 md:px-6">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('jury.title')}>
                         {t('jury.title')}
                     </h2>
-                    <p className="text-xl text-muted-foreground">{t('jury.comingSoon')}</p>
+                    <div className="grid gap-8 md:grid-cols-3">
+                        {[1, 2, 3].map((i) => (
+                            <Card key={i} className="bg-transparent border-none text-center group">
+                                <CardHeader>
+                                    <div className="mx-auto w-32 h-32 rounded-full bg-white/10 mb-6 overflow-hidden border-2 border-transparent group-hover:border-primary/50 transition-colors">
+                                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                                            <Users className="w-12 h-12 text-primary/50" />
+                                        </div>
+                                    </div>
+                                    <CardTitle>Jury Member {i}</CardTitle>
+                                    <CardDescription className="text-primary font-medium">Industry Expert</CardDescription>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-sm text-muted-foreground">
+                                        Renowned director and visual artist specializing in generative AI workflows.
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
                 </div>
             </section>
 
