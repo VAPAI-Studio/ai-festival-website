@@ -11,7 +11,7 @@
             "Workshop",
             "Education"
         ],
-        "image": "/images/placeholder-program-3.jpg"
+        "image": "/images/program_training.png"
     },
     {
         "id": "2",
@@ -25,7 +25,7 @@
             "Industry",
             "Pitch"
         ],
-        "image": "/images/placeholder-program-4.jpg"
+        "image": "/images/program_pitch.png"
     },
     {
         "id": "3",
@@ -39,6 +39,6 @@
             "Screening",
             "Panels"
         ],
-        "image": "/images/placeholder-program-1.jpg"
+        "image": "/images/program_festival.png"
     }
 ]
