@@ -64,11 +64,11 @@ export function Home() {
                             </div>
                         </div>
                         <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5">
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
-                            {/* Placeholder for festival reel/image */}
-                            <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                                <Film className="w-16 h-16 opacity-50" />
-                            </div>
+                            <img
+                                src="/images/festival_image.png"
+                                alt="SALADO Festival"
+                                className="w-full h-full object-cover"
+                            />
                         </div>
                     </div>
                 </div>
