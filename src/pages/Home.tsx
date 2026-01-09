@@ -5,7 +5,7 @@ import partnersData from "../data/partners.json";
 import juryData from "../data/jury.json";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
-import { Calendar, MapPin, Trophy, Users, Film, Mic, Globe, HelpCircle } from "lucide-react";
+import { Calendar, MapPin, Trophy, Users, Film, Mic, Globe, HelpCircle, Monitor } from "lucide-react";
 import { HeroBackground } from "../components/3d/HeroBackground";
 import { useTranslation } from "react-i18next";
 
@@ -171,7 +171,17 @@ export function Home() {
                         {programData.map((item) => (
                             <Card key={item.id} className="bg-white/5 border-white/10 overflow-hidden hover:border-primary/50 transition-colors group">
                                 <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                                    <Film className="w-12 h-12 text-primary/50" />
+                                    {item.type === 'Panel' ? (
+                                        <Mic className="w-12 h-12 text-primary/50" />
+                                    ) : item.type === 'Workshop' ? (
+                                        <Monitor className="w-12 h-12 text-primary/50" />
+                                    ) : item.type === 'Main Event' ? (
+                                        <Film className="w-12 h-12 text-primary/50" />
+                                    ) : item.title.includes('Pitch') ? (
+                                        <Users className="w-12 h-12 text-primary/50" />
+                                    ) : (
+                                        <Film className="w-12 h-12 text-primary/50" />
+                                    )}
                                 </div>
                                 <CardHeader>
                                     <div className="flex justify-between items-start mb-2">
