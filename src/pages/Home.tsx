@@ -170,17 +170,27 @@ export function Home() {
                     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {programData.map((item) => (
                             <Card key={item.id} className="bg-white/5 border-white/10 overflow-hidden hover:border-primary/50 transition-colors group">
-                                <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                                    {item.type === 'Panel' ? (
-                                        <Mic className="w-12 h-12 text-primary/50" />
-                                    ) : item.type === 'Workshop' ? (
-                                        <Monitor className="w-12 h-12 text-primary/50" />
-                                    ) : item.type === 'Main Event' ? (
-                                        <Film className="w-12 h-12 text-primary/50" />
-                                    ) : item.title.includes('Pitch') ? (
-                                        <Users className="w-12 h-12 text-primary/50" />
+                                <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-500 relative overflow-hidden">
+                                    {item.image && !item.image.includes('placeholder') ? (
+                                        <img
+                                            src={item.image}
+                                            alt={item.title}
+                                            className="w-full h-full object-cover"
+                                        />
                                     ) : (
-                                        <Film className="w-12 h-12 text-primary/50" />
+                                        <>
+                                            {item.type === 'Panel' ? (
+                                                <Mic className="w-12 h-12 text-primary/50" />
+                                            ) : item.type === 'Workshop' ? (
+                                                <Monitor className="w-12 h-12 text-primary/50" />
+                                            ) : item.type === 'Main Event' ? (
+                                                <Film className="w-12 h-12 text-primary/50" />
+                                            ) : item.title.includes('Pitch') ? (
+                                                <Users className="w-12 h-12 text-primary/50" />
+                                            ) : (
+                                                <Film className="w-12 h-12 text-primary/50" />
+                                            )}
+                                        </>
                                     )}
                                 </div>
                                 <CardHeader>
