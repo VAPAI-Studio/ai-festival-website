@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { siteConfig } from "../config/site";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
-import { Trophy, Film, MonitorPlay, Send, CheckCircle } from "lucide-react";
+import { Trophy, Film, MonitorPlay, Send, CheckCircle, Music } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export function Submit() {
@@ -40,6 +40,12 @@ export function Submit() {
             description: t('submit.categories.immersive.desc'),
             format: t('submit.categories.immersive.format'),
             icon: Trophy
+        },
+        {
+            name: t('submit.categories.musicVideo.name'),
+            description: t('submit.categories.musicVideo.desc'),
+            format: t('submit.categories.musicVideo.format'),
+            icon: Music
         }
     ];
 

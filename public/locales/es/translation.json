@@ -14,7 +14,7 @@
     },
     "festival": {
         "title": "El Festival",
-        "description": "SALADA es el primer festival latinoamericano dedicado exclusivamente al cine y las artes creativas generadas con Inteligencia Artificial. Nacido en Montevideo, Uruguay, busca ser un puente entre el talento local y la vanguardia global.",
+        "description": "SALADO es el primer festival latinoamericano dedicado exclusivamente al cine y las artes creativas generadas con Inteligencia Artificial. Nacido en Montevideo, Uruguay, busca ser un puente entre el talento local y la vanguardia global.",
         "description2": "Exploramos nuevas narrativas, estéticas y métodos de producción donde la creatividad humana se fusiona con el poder algorítmico. Somos un espacio de exhibición, debate y experimentación."
     },
     "dates": {
@@ -35,12 +35,17 @@
     },
     "jury": {
         "title": "Jurado",
-        "comingSoon": "Miembros del jurado a anunciar."
+        "comingSoon": "Miembros del jurado a anunciar.",
+        "bios": {
+            "alvaroBrechner": "Director y guionista galardonado ('La noche de 12 años', 'Mr. Kaplan'). Sus películas se han estrenado en Cannes y Venecia, representando a Uruguay en los Oscar en múltiples ocasiones.",
+            "fedeAlvarez": "Director de Hollywood conocido por 'Alien: Romulus', 'No respires' y 'Evil Dead'. Irrumpió en la escena con el corto viral 'Ataque de Pánico!' con robots gigantes invadiendo Montevideo.",
+            "luisaPereira": "Artista, ingeniera y música radicada en NYC. Profesora en NYU ITP/IMA. Sus instalaciones interactivas y máquinas generativas exploran la intersección entre música y código."
+        }
     },
     "awards": {
         "title": "Premios",
         "bestInternational": "Mejor Película IA Internacional",
-        "bestMusicVideo": "Mejor Video Musical IA",
+        "pitchCompetition": "Competencia de Pitch",
         "bestUruguayan": "Mejor Película IA Uruguaya"
     },
     "team": {
@@ -85,6 +90,11 @@
                 "name": "Interactivo / Inmersivo",
                 "desc": "Experiencias de RV, RA o tiempo real impulsadas por IA.",
                 "format": "Ejecutable o video 360"
+            },
+            "musicVideo": {
+                "name": "Videoclip Musical",
+                "desc": "Videos musicales originales con componentes visuales o de audio generados por IA significativos.",
+                "format": "Hasta 5 min"
             }
         },
         "eligibility": {
@@ -111,7 +121,7 @@
             "date": "1 de junio de 2026",
             "success": {
                 "title": "¡Envío Recibido!",
-                "message": "Gracias por enviar tu trabajo a SALADA. Hemos enviado un correo de confirmación a tu bandeja de entrada. ¡Buena suerte!",
+                "message": "Gracias por enviar tu trabajo a SALADO. Hemos enviado un correo de confirmación a tu bandeja de entrada. ¡Buena suerte!",
                 "button": "Enviar Otro Proyecto"
             },
             "labels": {

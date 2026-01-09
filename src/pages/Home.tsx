@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import { siteConfig } from "../config/site";
 import programData from "../data/program.json";
 import partnersData from "../data/partners.json";
+import juryData from "../data/jury.json";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
-import { Calendar, MapPin, Trophy, Users, Film, Music, Globe, HelpCircle } from "lucide-react";
+import { Calendar, MapPin, Trophy, Users, Film, Mic, Globe, HelpCircle } from "lucide-react";
 import { HeroBackground } from "../components/3d/HeroBackground";
 import { useTranslation } from "react-i18next";
 
@@ -81,9 +82,9 @@ export function Home() {
                     </h2>
                     <div className="grid gap-8 md:grid-cols-4">
                         {[
-                            { date: "Dec 15, 2025", label: t('dates.open') },
-                            { date: "Feb 28, 2026", label: t('dates.deadline') },
-                            { date: "Mar 15, 2026", label: t('dates.notification') },
+                            { date: "Jan 1, 2026", label: t('dates.open') },
+                            { date: "Apr 30, 2026", label: t('dates.deadline') },
+                            { date: "May 5, 2026", label: t('dates.notification') },
                             { date: "May 21-22, 2026", label: t('dates.screening') }
                         ].map((item, i) => (
                             <Card key={i} className="bg-white/5 border-white/10 text-center">
@@ -97,35 +98,37 @@ export function Home() {
                 </div>
             </section>
 
-            {/* Sponsors */}
-            <section id="sponsors" className="py-24 border-t border-white/10 bg-black/50">
-                <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text="Sponsors">
-                        Sponsors
-                    </h2>
-                    <div className="grid gap-8 md:grid-cols-3 items-center justify-items-center">
-                        {partnersData.map((partner) => (
-                            <a
-                                key={partner.id}
-                                href={partner.url}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="group relative grayscale hover:grayscale-0 transition-all duration-300"
-                            >
-                                <div className="h-24 w-48 bg-white/5 rounded-lg flex items-center justify-center border border-white/10 group-hover:border-primary/50 group-hover:bg-white/10 transition-all">
-                                    {/* Placeholder for logo if image fails or is missing */}
-                                    <span className="text-lg font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                                        {partner.name}
+            {/* Sponsors (Hidden) */}
+            {false && (
+                <section id="sponsors" className="py-24 border-t border-white/10 bg-black/50">
+                    <div className="container mx-auto px-4 md:px-6">
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text="Sponsors">
+                            Sponsors
+                        </h2>
+                        <div className="grid gap-8 md:grid-cols-3 items-center justify-items-center">
+                            {partnersData.map((partner) => (
+                                <a
+                                    key={partner.id}
+                                    href={partner.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="group relative grayscale hover:grayscale-0 transition-all duration-300"
+                                >
+                                    <div className="h-24 w-48 bg-white/5 rounded-lg flex items-center justify-center border border-white/10 group-hover:border-primary/50 group-hover:bg-white/10 transition-all">
+                                        {/* Placeholder for logo if image fails or is missing */}
+                                        <span className="text-lg font-bold text-muted-foreground group-hover:text-primary transition-colors">
+                                            {partner.name}
+                                        </span>
+                                    </div>
+                                    <span className="absolute -bottom-6 left-0 right-0 text-center text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
+                                        {partner.tier}
                                     </span>
-                                </div>
-                                <span className="absolute -bottom-6 left-0 right-0 text-center text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-                                    {partner.tier}
-                                </span>
-                            </a>
-                        ))}
+                                </a>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            )}
 
             {/* Venue */}
             <section className="py-24 border-t border-white/10 bg-black/50">
@@ -196,20 +199,32 @@ export function Home() {
                         {t('jury.title')}
                     </h2>
                     <div className="grid gap-8 md:grid-cols-3">
-                        {[1, 2, 3].map((i) => (
-                            <Card key={i} className="bg-transparent border-none text-center group">
+                        {juryData.map((member) => (
+                            <Card key={member.id} className="bg-transparent border-none text-center group">
                                 <CardHeader>
                                     <div className="mx-auto w-32 h-32 rounded-full bg-white/10 mb-6 overflow-hidden border-2 border-transparent group-hover:border-primary/50 transition-colors">
-                                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                                        {/* Using User icon as fallback if image load fails or path is placeholder */}
+                                        {member.image ? (
+                                            <img
+                                                src={member.image}
+                                                alt={member.name}
+                                                className="w-full h-full object-cover"
+                                                onError={(e) => {
+                                                    e.currentTarget.style.display = 'none';
+                                                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                                                }}
+                                            />
+                                        ) : null}
+                                        <div className={`w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center ${member.image ? 'hidden' : ''}`}>
                                             <Users className="w-12 h-12 text-primary/50" />
                                         </div>
                                     </div>
-                                    <CardTitle>Jury Member {i}</CardTitle>
-                                    <CardDescription className="text-primary font-medium">Industry Expert</CardDescription>
+                                    <CardTitle>{member.name}</CardTitle>
+                                    <CardDescription className="text-primary font-medium">{member.role}</CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-sm text-muted-foreground">
-                                        Renowned director and visual artist specializing in generative AI workflows.
+                                        {t(`jury.bios.${member.id}`)}
                                     </p>
                                 </CardContent>
                             </Card>
@@ -227,7 +242,7 @@ export function Home() {
                     <div className="grid gap-8 md:grid-cols-3">
                         {[
                             { title: t('awards.bestInternational'), icon: Globe },
-                            { title: t('awards.bestMusicVideo'), icon: Music },
+                            { title: t('awards.pitchCompetition'), icon: Mic },
                             { title: t('awards.bestUruguayan'), icon: Trophy }
                         ].map((award, i) => (
                             <Card key={i} className="bg-white/5 border-white/10 text-center hover:border-primary/50 transition-colors">

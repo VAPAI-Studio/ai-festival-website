@@ -1,7 +1,7 @@
 import { siteConfig } from "../config/site";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { Instagram, Twitter, MessageCircle } from "lucide-react";
+import { Instagram, Twitter, MessageCircle, Github } from "lucide-react";
 
 export function Footer() {
     const { t } = useTranslation();
@@ -44,6 +44,9 @@ export function Footer() {
                         <nav className="flex flex-col gap-2 text-sm text-muted-foreground">
                             <a href={siteConfig.links.instagram} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
                                 <Instagram className="w-4 h-4" /> Instagram
+                            </a>
+                            <a href={siteConfig.links.github} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
+                                <Github className="w-4 h-4" /> GitHub
                             </a>
                             <a href={siteConfig.links.twitter} target="_blank" rel="noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
                                 <Twitter className="w-4 h-4" /> Twitter

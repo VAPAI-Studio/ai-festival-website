@@ -14,7 +14,7 @@
     },
     "festival": {
         "title": "The Festival",
-        "description": "SALADA is the first Latin American festival dedicated exclusively to cinema and creative arts generated with Artificial Intelligence. Born in Montevideo, Uruguay, it seeks to be a bridge between local talent and the global avant-garde.",
+        "description": "SALADO is the first Latin American festival dedicated exclusively to cinema and creative arts generated with Artificial Intelligence. Born in Montevideo, Uruguay, it seeks to be a bridge between local talent and the global avant-garde.",
         "description2": "We explore new narratives, aesthetics, and production methods where human creativity merges with algorithmic power. We are a space for exhibition, debate, and experimentation."
     },
     "dates": {
@@ -35,12 +35,17 @@
     },
     "jury": {
         "title": "Jury",
-        "comingSoon": "Jury members to be announced."
+        "comingSoon": "Jury members to be announced.",
+        "bios": {
+            "alvaroBrechner": "Award-winning director and screenwriter ('A Twelve-Year Night', 'Mr. Kaplan'). His films have premiered at Cannes and Venice, representing Uruguay at the Oscars multiple times.",
+            "fedeAlvarez": "Hollywood director known for 'Alien: Romulus', 'Don't Breathe', and 'Evil Dead'. He burst onto the scene with the viral short 'Panic Attack!' featuring giant robots invading Montevideo.",
+            "luisaPereira": "Artist, engineer, and musician based in NYC. Professor at NYU ITP/IMA. Her interactive installations and generative machines explore the intersection of music and code."
+        }
     },
     "awards": {
         "title": "Awards",
         "bestInternational": "Best International AI Film",
-        "bestMusicVideo": "Best AI Music Video",
+        "pitchCompetition": "Pitch Competition",
         "bestUruguayan": "Best Uruguayan AI Film"
     },
     "team": {
@@ -85,6 +90,11 @@
                 "name": "Interactive / Immersive",
                 "desc": "VR, AR, or real-time experiences powered by AI.",
                 "format": "Executable or 360 video"
+            },
+            "musicVideo": {
+                "name": "Music Video",
+                "desc": "Original music videos with significant AI-generated visual or audio components.",
+                "format": "Up to 5 min"
             }
         },
         "eligibility": {
@@ -111,7 +121,7 @@
             "date": "June 1st, 2026",
             "success": {
                 "title": "Submission Received!",
-                "message": "Thank you for submitting your work to SALADA. We have sent a confirmation email to your inbox. Good luck!",
+                "message": "Thank you for submitting your work to SALADO. We have sent a confirmation email to your inbox. Good luck!",
                 "button": "Submit Another Project"
             },
             "labels": {
