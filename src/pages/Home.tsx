@@ -66,7 +66,7 @@ export function Home() {
                         <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5">
                             <img
                                 src="/images/festival_image.png"
-                                alt="SALADO Festival"
+                                alt="Sticks n' Festival"
                                 className="w-full h-full object-cover"
                             />
                         </div>
@@ -85,7 +85,7 @@ export function Home() {
                             { date: "Jan 1, 2026", label: t('dates.open') },
                             { date: "Apr 30, 2026", label: t('dates.deadline') },
                             { date: "May 5, 2026", label: t('dates.notification') },
-                            { date: "May 21-22, 2026", label: t('dates.screening') }
+                            { date: "May 28-29, 2026", label: t('dates.screening') }
                         ].map((item, i) => (
                             <Card key={i} className="bg-white/5 border-white/10 text-center">
                                 <CardHeader>

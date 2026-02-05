@@ -14,7 +14,7 @@
     },
     "festival": {
         "title": "El Festival",
-        "description": "SALADO es el primer festival latinoamericano dedicado exclusivamente al cine y las artes creativas generadas con Inteligencia Artificial. Nacido en Montevideo, Uruguay, busca ser un puente entre el talento local y la vanguardia global.",
+        "description": "Sticks n' Festival es el primer festival latinoamericano dedicado exclusivamente al cine y las artes creativas generadas con Inteligencia Artificial. Nacido en Montevideo, Uruguay, busca ser un puente entre el talento local y la vanguardia global.",
         "description2": "Exploramos nuevas narrativas, estéticas y métodos de producción donde la creatividad humana se fusiona con el poder algorítmico. Somos un espacio de exhibición, debate y experimentación."
     },
     "dates": {
@@ -121,7 +121,7 @@
             "date": "1 de junio de 2026",
             "success": {
                 "title": "¡Envío Recibido!",
-                "message": "Gracias por enviar tu trabajo a SALADO. Hemos enviado un correo de confirmación a tu bandeja de entrada. ¡Buena suerte!",
+                "message": "Gracias por enviar tu trabajo a Sticks n' Festival. Hemos enviado un correo de confirmación a tu bandeja de entrada. ¡Buena suerte!",
                 "button": "Enviar Otro Proyecto"
             },
             "labels": {
