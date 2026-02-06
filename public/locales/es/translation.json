@@ -66,7 +66,19 @@
         "q1": "¿Qué es el cine IA?",
         "a1": "Películas donde las herramientas de IA (video generativo, voz, guion) juegan un papel significativo en el proceso creativo.",
         "q2": "¿Puedo participar si no soy de Latam?",
-        "a2": "¡Sí! Tenemos categorías internacionales. Damos la bienvenida a creadores de todo el mundo."
+        "a2": "¡Sí! Tenemos categorías internacionales. Damos la bienvenida a creadores de todo el mundo.",
+        "q3": "¿Necesito asistir al festival en persona?",
+        "a3": "No. Aunque animamos a los creadores a unirse a nosotros en Montevideo, la asistencia física no es obligatoria. Las obras seleccionadas se proyectarán de todos modos, y coordinaremos participación en línea cuando sea posible.",
+        "q4": "¿Cuáles son los premios?",
+        "a4": "Anunciaremos los detalles de los premios más cerca del festival. Los premios incluyen Mejor Película IA Internacional, Mejor Película IA Uruguaya y ganadores de la Competencia de Pitch.",
+        "q5": "¿Qué porcentaje de mi película necesita ser generado por IA?",
+        "a5": "No hay un porcentaje estricto, pero la IA debe jugar un papel creativo significativo (no solo corrección de color o upscaling). Si la IA moldeó tus visuales, narrativa, audio o performance, eres elegible.",
+        "q6": "¿Qué herramientas de IA son aceptables?",
+        "a6": "Todas las herramientas de IA son bienvenidas: Runway, Midjourney, Sora, Kling, Pika, ElevenLabs, ChatGPT, modelos personalizados, etc. Valoramos la innovación y la visión artística por sobre plataformas específicas.",
+        "q7": "¿Mantengo los derechos de mi obra?",
+        "a7": "Sí, 100%. Conservas toda la propiedad intelectual y los derechos de distribución. Solo solicitamos derechos de proyección del festival con fines promocionales.",
+        "q8": "¿Puedo enviar múltiples proyectos?",
+        "a8": "¡Sí! Envía tantas obras como desees en diferentes categorías. Cada envío será revisado de forma independiente."
     },
     "footer": {
         "rights": "Todos los derechos reservados."

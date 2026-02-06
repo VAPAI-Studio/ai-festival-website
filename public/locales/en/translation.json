@@ -66,7 +66,19 @@
         "q1": "What is AI cinema?",
         "a1": "Films where AI tools (generative video, voice, script) play a significant role in the creative process.",
         "q2": "Can I submit if I'm not from Latam?",
-        "a2": "Yes! We have international categories. We welcome creators from all over the world."
+        "a2": "Yes! We have international categories. We welcome creators from all over the world.",
+        "q3": "Do I need to attend the festival in person?",
+        "a3": "No. While we encourage creators to join us in Montevideo, physical attendance is not required. Selected works will be screened regardless, and we'll coordinate online participation when possible.",
+        "q4": "What are the prizes?",
+        "a4": "We will announce prize details closer to the festival. Awards include Best International AI Film, Best Uruguayan AI Film, and Pitch Competition winners.",
+        "q5": "What percentage of my film needs to be AI-generated?",
+        "a5": "There's no strict percentage, but AI must play a significant creative role (not just color grading or upscaling). If AI shaped your visuals, narrative, audio, or performance, you're eligible.",
+        "q6": "What AI tools are acceptable?",
+        "a6": "All AI tools are welcome: Runway, Midjourney, Sora, Kling, Pika, ElevenLabs, ChatGPT, custom models, etc. We value innovation and artistic vision over specific platforms.",
+        "q7": "Do I keep the rights to my work?",
+        "a7": "Yes, 100%. You retain all intellectual property and distribution rights. We only request festival screening rights for promotional purposes.",
+        "q8": "Can I submit multiple projects?",
+        "a8": "Yes! Submit as many works as you like across different categories. Each submission will be reviewed independently."
     },
     "footer": {
         "rights": "All rights reserved."
