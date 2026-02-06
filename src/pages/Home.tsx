@@ -82,9 +82,9 @@ export function Home() {
                     </h2>
                     <div className="grid gap-8 md:grid-cols-4">
                         {[
-                            { date: "Jan 1, 2026", label: t('dates.open') },
-                            { date: "Apr 30, 2026", label: t('dates.deadline') },
-                            { date: "May 5, 2026", label: t('dates.notification') },
+                            { date: "Mar 1, 2026", label: t('dates.open') },
+                            { date: "Apr 10, 2026", label: t('dates.deadline') },
+                            { date: "May 15, 2026", label: t('dates.notification') },
                             { date: "May 28-29, 2026", label: t('dates.screening') }
                         ].map((item, i) => (
                             <Card key={i} className="bg-white/5 border-white/10 text-center">
