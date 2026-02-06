@@ -1,23 +1,44 @@
 [
     {
-        "id": "1",
-        "name": "TechCorp",
-        "logo": "/images/partner-techcorp.png",
-        "tier": "Main Sponsor",
-        "url": "https://example.com"
+        "id": "ecu",
+        "name": "ECU - Escuela de Cine del Uruguay",
+        "logo": "/images/partner-ecu.png",
+        "tier": "Institutional Partner",
+        "url": "https://ecu.edu.uy"
     },
     {
-        "id": "2",
-        "name": "ArtFoundation",
-        "logo": "/images/partner-artfoundation.png",
+        "id": "cinemateca",
+        "name": "Cinemateca Uruguaya",
+        "logo": "/images/partner-cinemateca.png",
         "tier": "Cultural Partner",
-        "url": "https://example.com"
+        "url": "https://cinemateca.org.uy"
     },
     {
-        "id": "3",
-        "name": "MediaOutlet",
-        "logo": "/images/partner-media.png",
-        "tier": "Media Partner",
-        "url": "https://example.com"
+        "id": "life-cinema",
+        "name": "Life Cinema",
+        "logo": "/images/partner-life.png",
+        "tier": "Venue Partner",
+        "url": "https://www.instagram.com/life.cinemas.uy/"
+    },
+    {
+        "id": "runway",
+        "name": "Runway",
+        "logo": "/images/partner-runway.png",
+        "tier": "Technology Partner",
+        "url": "https://runwayml.com"
+    },
+    {
+        "id": "midjourney",
+        "name": "Midjourney",
+        "logo": "/images/partner-midjourney.png",
+        "tier": "Technology Partner",
+        "url": "https://midjourney.com"
+    },
+    {
+        "id": "openai",
+        "name": "OpenAI",
+        "logo": "/images/partner-openai.png",
+        "tier": "Technology Partner",
+        "url": "https://openai.com"
     }
 ]

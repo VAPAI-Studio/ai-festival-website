@@ -14,7 +14,7 @@ export function Partners() {
             <section className="text-center max-w-3xl mx-auto space-y-6">
                 <h1 className="text-4xl font-bold tracking-tight">Partners & Sponsors</h1>
                 <p className="text-xl text-muted-foreground">
-                    We are proud to collaborate with leading organizations that share our vision for the future of creativity.
+                    Sticks n' Festival is made possible by the support of institutions, organizations, and companies that believe in the power of AI to transform creative storytelling in Latin America.
                 </p>
             </section>
 
@@ -40,16 +40,16 @@ export function Partners() {
             {/* Why Partner */}
             <section className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div className="space-y-2">
-                    <h3 className="font-bold text-lg">Visibility</h3>
-                    <p className="text-sm text-muted-foreground">Connect with a global audience of creators and tech enthusiasts.</p>
+                    <h3 className="font-bold text-lg">Regional Impact</h3>
+                    <p className="text-sm text-muted-foreground">Reach filmmakers, artists, and creative professionals across Uruguay and Latin America.</p>
                 </div>
                 <div className="space-y-2">
-                    <h3 className="font-bold text-lg">Innovation</h3>
-                    <p className="text-sm text-muted-foreground">Position your brand at the forefront of the AI revolution.</p>
+                    <h3 className="font-bold text-lg">AI Leadership</h3>
+                    <p className="text-sm text-muted-foreground">Position your organization at the forefront of AI-powered creative innovation in the region.</p>
                 </div>
                 <div className="space-y-2">
-                    <h3 className="font-bold text-lg">Community</h3>
-                    <p className="text-sm text-muted-foreground">Support the growth of the Latin American creative ecosystem.</p>
+                    <h3 className="font-bold text-lg">Ecosystem Growth</h3>
+                    <p className="text-sm text-muted-foreground">Support emerging filmmakers and strengthen Uruguay's creative AI community.</p>
                 </div>
             </section>
 
