@@ -1,0 +1,9 @@
+# robots.txt for Sticks n' Festival
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ai-festival-website.vercel.app/sitemap.xml
+
+# Crawl-delay (optional, helps with server load)
+Crawl-delay: 1

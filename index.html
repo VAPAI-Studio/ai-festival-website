@@ -28,6 +28,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Syne:wght@400..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data / JSON-LD for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "Sticks n' Festival",
+      "description": "The first Latin American festival dedicated exclusively to cinema and creative arts generated with Artificial Intelligence",
+      "image": "https://ai-festival-website.vercel.app/images/festival_image.png",
+      "startDate": "2026-05-28",
+      "endDate": "2026-05-29",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Life Cinema",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Miguel Barreiro 3231 esq. Berro, Pocitos",
+          "addressLocality": "Montevideo",
+          "addressCountry": "UY"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "SOUTS",
+        "url": "https://ai-festival-website.vercel.app"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://ai-festival-website.vercel.app/submit",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-03-01"
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
