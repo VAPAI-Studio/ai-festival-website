@@ -8,6 +8,7 @@ import { Submit } from "./pages/Submit";
 import { ScrollRGB } from "./components/effects/ScrollRGB";
 
 import { Rules } from "./pages/Rules";
+import { FAQ } from "./pages/FAQ";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/submit" element={<Submit />} />
               <Route path="/rules" element={<Rules />} />
+              <Route path="/faq" element={<FAQ />} />
             </Routes>
           </main>
           <Footer />

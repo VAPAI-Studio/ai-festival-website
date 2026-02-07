@@ -35,6 +35,7 @@ export function Footer() {
                             <Link to="/#jury" className="hover:text-primary transition-colors">{t('nav.jury')}</Link>
                             <Link to="/#awards" className="hover:text-primary transition-colors">{t('nav.awards')}</Link>
                             <Link to="/rules" className="hover:text-primary transition-colors">Rules & Terms</Link>
+                            <Link to="/faq" className="hover:text-primary transition-colors">FAQ</Link>
                         </nav>
                     </div>
 
