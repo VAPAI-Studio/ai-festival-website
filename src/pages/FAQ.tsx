@@ -197,6 +197,22 @@ function FAQAccordion({ item }: { item: FAQItem }) {
 }
 
 export function FAQ() {
+  // Generate JSON-LD structured data for SEO
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqSections.flatMap(section => 
+      section.items.map(item => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.answer.replace(/\*\*/g, '').replace(/\n/g, ' ')
+        }
+      }))
+    )
+  };
+
   return (
     <>
       <Helmet>
@@ -205,6 +221,9 @@ export function FAQ() {
           name="description"
           content="Frequently asked questions about Sticks n' Festival - Uruguay's first AI creativity festival. Submissions, tickets, speakers, and logistics."
         />
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
       </Helmet>
 
       <div className="relative overflow-hidden bg-black text-white">
