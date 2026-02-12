@@ -28,7 +28,7 @@ export function Submit() {
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         );
 
-        const sheetPromise = new Promise((resolve, reject) => {
+        const sheetPromise = new Promise((resolve) => {
             const scriptURL = import.meta.env.VITE_GOOGLE_SHEET_URL;
             if (scriptURL && form.current) {
                 const formData = new FormData(form.current);

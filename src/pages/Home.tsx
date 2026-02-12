@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { siteConfig } from "../config/site";
 import programData from "../data/program.json";
 import partnersData from "../data/partners.json";
-import juryData from "../data/jury.json";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
 import { Calendar, MapPin, Trophy, Users, Film, Mic, Globe, HelpCircle, Monitor } from "lucide-react";
