@@ -61,6 +61,9 @@ export function Home() {
                                 <p>
                                     {t('festival.description2')}
                                 </p>
+                                <p>
+                                    {t('festival.description3')}
+                                </p>
                             </div>
                         </div>
                         <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5">
@@ -82,8 +85,8 @@ export function Home() {
                     </h2>
                     <div className="grid gap-8 md:grid-cols-4">
                         {[
-                            { date: "Mar 1, 2026", label: t('dates.open') },
-                            { date: "Apr 10, 2026", label: t('dates.deadline') },
+                            { date: "Feb 16, 2026", label: t('dates.open') },
+                            { date: "May 1, 2026", label: t('dates.deadline') },
                             { date: "May 15, 2026", label: t('dates.notification') },
                             { date: "May 28-29, 2026", label: t('dates.screening') }
                         ].map((item, i) => (
@@ -91,6 +94,36 @@ export function Home() {
                                 <CardHeader>
                                     <CardTitle className="text-2xl text-primary">{item.date}</CardTitle>
                                     <CardDescription>{item.label}</CardDescription>
+                                </CardHeader>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Awards */}
+            <section id="awards" className="py-24 border-t border-white/10">
+                <div className="container mx-auto px-4 md:px-6">
+                    <div className="text-center mb-12 space-y-4">
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary scroll-rgb" data-text={t('awards.title')}>
+                            {t('awards.title')}
+                        </h2>
+                        <p className="text-xl text-muted-foreground max-w-2xl mx-auto whitespace-pre-line">
+                            {t('awards.description')}
+                        </p>
+                    </div>
+                    <div className="grid gap-8 md:grid-cols-3">
+                        {[
+                            { title: t('awards.bestInternational'), icon: Globe },
+                            { title: t('awards.pitchCompetition'), icon: Mic },
+                            { title: t('awards.bestUruguayan'), icon: Trophy }
+                        ].map((award, i) => (
+                            <Card key={i} className="bg-white/5 border-white/10 text-center hover:border-primary/50 transition-colors">
+                                <CardHeader>
+                                    <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                                        <award.icon className="w-6 h-6 text-primary" />
+                                    </div>
+                                    <CardTitle>{award.title}</CardTitle>
                                 </CardHeader>
                             </Card>
                         ))}
@@ -213,6 +246,7 @@ export function Home() {
             </section>
 
             {/* Jury */}
+            {/*
             <section id="jury" className="py-24 border-t border-white/10 bg-black/50">
                 <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('jury.title')}>
@@ -223,7 +257,7 @@ export function Home() {
                             <Card key={member.id} className="bg-transparent border-none text-center group">
                                 <CardHeader>
                                     <div className="mx-auto w-32 h-32 rounded-full bg-white/10 mb-6 overflow-hidden border-2 border-transparent group-hover:border-primary/50 transition-colors">
-                                        {/* Using User icon as fallback if image load fails or path is placeholder */}
+                                        Using User icon as fallback if image load fails or path is placeholder
                                         {member.image ? (
                                             <img
                                                 src={member.image}
@@ -252,31 +286,36 @@ export function Home() {
                     </div>
                 </div>
             </section>
-
-            {/* Awards */}
-            <section id="awards" className="py-24 border-t border-white/10">
+            */}
+            <section id="jury" className="py-24 border-t border-white/10 bg-black/50">
                 <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('awards.title')}>
-                        {t('awards.title')}
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('jury.title')}>
+                        {t('jury.title')}
                     </h2>
                     <div className="grid gap-8 md:grid-cols-3">
-                        {[
-                            { title: t('awards.bestInternational'), icon: Globe },
-                            { title: t('awards.pitchCompetition'), icon: Mic },
-                            { title: t('awards.bestUruguayan'), icon: Trophy }
-                        ].map((award, i) => (
-                            <Card key={i} className="bg-white/5 border-white/10 text-center hover:border-primary/50 transition-colors">
+                        {[1, 2, 3].map((i) => (
+                            <Card key={i} className="bg-transparent border-none text-center group">
                                 <CardHeader>
-                                    <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                                        <award.icon className="w-6 h-6 text-primary" />
+                                    <div className="mx-auto w-32 h-32 rounded-full bg-white/10 mb-6 overflow-hidden border-2 border-transparent group-hover:border-primary/50 transition-colors">
+                                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                                            <Users className="w-12 h-12 text-primary/50" />
+                                        </div>
                                     </div>
-                                    <CardTitle>{award.title}</CardTitle>
+                                    <CardTitle>TBD</CardTitle>
+                                    <CardDescription className="text-primary font-medium">TBD</CardDescription>
                                 </CardHeader>
+                                <CardContent>
+                                    <p className="text-sm text-muted-foreground">
+                                        {t('jury.comingSoon')}
+                                    </p>
+                                </CardContent>
                             </Card>
                         ))}
                     </div>
                 </div>
             </section>
+
+
 
 
 
@@ -295,7 +334,8 @@ export function Home() {
                             { q: t('faq.q5'), a: t('faq.a5') },
                             { q: t('faq.q6'), a: t('faq.a6') },
                             { q: t('faq.q7'), a: t('faq.a7') },
-                            { q: t('faq.q8'), a: t('faq.a8') }
+                            { q: t('faq.q8'), a: t('faq.a8') },
+                            { q: t('faq.q9'), a: t('faq.a9') }
                         ].map((item, i) => (
                             <div key={i} className="space-y-2">
                                 <h3 className="text-xl font-bold flex items-center gap-2">

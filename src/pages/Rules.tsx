@@ -19,7 +19,7 @@ export function Rules() {
             {/* Content Section */}
             <section className="py-24 bg-black/50">
                 <div className="container mx-auto px-4 md:px-6 max-w-4xl space-y-16">
-                    
+
                     {/* Eligibility */}
                     <div className="space-y-6">
                         <h2 className="text-3xl font-bold text-primary">Eligibility</h2>
@@ -36,11 +36,7 @@ export function Rules() {
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
-                                    <span>Submissions are open to creators of <strong>all nationalities</strong>. Works by Latin American creators are eligible for special regional awards.</span>
-                                </li>
-                                <li className="flex items-start gap-2">
-                                    <span className="text-primary mt-1">•</span>
-                                    <span>Non-English language works must include <strong>English subtitles</strong>.</span>
+                                    <span>Submissions are open to creators based in <strong>Latin America</strong>.</span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
@@ -56,16 +52,13 @@ export function Rules() {
                         <div className="space-y-6 text-muted-foreground">
                             <div className="border-l-2 border-primary/50 pl-6 space-y-2">
                                 <h3 className="text-xl font-semibold text-white">AI Short Film</h3>
-                                <p>Narrative or documentary short films (up to 20 minutes) where AI played a significant role in production.</p>
+                                <p>Narrative or documentary short films (up to 12 minutes) where AI played a significant role in production.</p>
                             </div>
                             <div className="border-l-2 border-primary/50 pl-6 space-y-2">
                                 <h3 className="text-xl font-semibold text-white">Experimental / Video Art</h3>
-                                <p>Abstract, non-narrative, or conceptual works (up to 15 minutes) exploring the aesthetics and possibilities of AI-generated media.</p>
+                                <p>Abstract, non-narrative, or conceptual works (up to 10 minutes) exploring the aesthetics and possibilities of AI-generated media.</p>
                             </div>
-                            <div className="border-l-2 border-primary/50 pl-6 space-y-2">
-                                <h3 className="text-xl font-semibold text-white">Interactive / Immersive</h3>
-                                <p>VR, AR, or real-time interactive experiences powered by AI. May be submitted as executable files or 360° video documentation.</p>
-                            </div>
+
                             <div className="border-l-2 border-primary/50 pl-6 space-y-2">
                                 <h3 className="text-xl font-semibold text-white">Music Video</h3>
                                 <p>Original music videos (up to 5 minutes) with significant AI-generated visual or audio components.</p>
@@ -81,19 +74,23 @@ export function Rules() {
                             <ul className="space-y-3 pl-6">
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
-                                    <span><strong>Innovation:</strong> Creative and novel use of AI tools in the filmmaking process.</span>
+                                    <span><strong>Innovation in the use of AI tools.</strong></span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
-                                    <span><strong>Artistic Quality:</strong> Narrative coherence, visual/audio aesthetics, and emotional impact.</span>
+                                    <span><strong>Narrative and artistic quality.</strong></span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
-                                    <span><strong>Technical Proficiency:</strong> Effective execution and mastery of the tools employed.</span>
+                                    <span><strong>Strong aesthetic vision.</strong></span>
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary mt-1">•</span>
-                                    <span><strong>Ethical Consideration:</strong> Thoughtful handling of AI ethics, representation, and transparency about the creative process.</span>
+                                    <span><strong>Technical proficiency.</strong></span>
+                                </li>
+                                <li className="flex items-start gap-2">
+                                    <span className="text-primary mt-1">•</span>
+                                    <span><strong>Thoughtful exploration of technology's role in creative expression.</strong></span>
                                 </li>
                             </ul>
                         </div>
@@ -105,9 +102,9 @@ export function Rules() {
                         <div className="space-y-4 text-muted-foreground">
                             <ol className="space-y-3 pl-6 list-decimal">
                                 <li>Complete the <a href="/#/submit" className="text-primary hover:underline">online submission form</a> with project details.</li>
-                                <li>Provide a publicly accessible link to your work (Vimeo, YouTube, Google Drive, etc.).</li>
+                                <li>Provide a publicly accessible link to your work (Vimeo, YouTube, Google Drive, etc.). Ensure we have permission to view it (e.g., Unlisted link).</li>
                                 <li>Include a brief description of how AI was used in your project.</li>
-                                <li>Submit before the <strong>Early Bird Deadline: April 10, 2026</strong>.</li>
+                                <li>Submit before the <strong>Submission Deadline: May 1, 2026</strong>.</li>
                                 <li>You will receive a confirmation email upon successful submission.</li>
                                 <li>Selected projects will be notified by <strong>May 15, 2026</strong>.</li>
                             </ol>

@@ -3,29 +3,15 @@
         "id": "1",
         "title": "Training Workshops",
         "type": "Workshop",
-        "date": "May 28-29, 2026",
+        "date": "April, 2026",
         "time": "TBA",
         "location": "Workshop Space",
-        "shortDescription": "Practical sessions for professionals and students on responsible AI use.",
+        "shortDescription": "Practical sessions for students of institutions on responsible and creative AI use.",
         "tags": [
             "Workshop",
             "Education"
         ],
         "image": "/images/program_training.png"
-    },
-    {
-        "id": "2",
-        "title": "Pitch Competition",
-        "type": "Competition",
-        "date": "May 29, 2026",
-        "time": "TBA",
-        "location": "Life Cinema",
-        "shortDescription": "Presentation of early-stage projects focused on narrative and feasibility.",
-        "tags": [
-            "Industry",
-            "Pitch"
-        ],
-        "image": "/images/program_pitch.png"
     },
     {
         "id": "3",
@@ -40,5 +26,19 @@
             "Panels"
         ],
         "image": "/images/program_festival.png"
+    },
+    {
+        "id": "4",
+        "title": "After Party",
+        "type": "Party",
+        "date": "May 29, 2026",
+        "time": "23:00",
+        "location": "Destilería Capicúa",
+        "shortDescription": "Celebrate the festival closing night with us. Good music, great drinks, and the best company to toast to the future of creative AI.",
+        "tags": [
+            "Networking",
+            "Celebration"
+        ],
+        "image": "/images/program_party.png"
     }
 ]

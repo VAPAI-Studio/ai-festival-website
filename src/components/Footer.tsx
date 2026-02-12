@@ -9,7 +9,7 @@ export function Footer() {
     return (
         <footer className="border-t border-white/10 bg-black/90 backdrop-blur-sm">
             <div className="container mx-auto px-4 py-12 md:py-16">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                     {/* Brand Column */}
                     <div className="space-y-4">
                         <Link to="/" className="flex items-center gap-2 font-bold text-2xl tracking-tighter">
@@ -58,23 +58,7 @@ export function Footer() {
                         </nav>
                     </div>
 
-                    {/* Newsletter */}
-                    <div className="space-y-4">
-                        <h3 className="font-bold text-lg">Newsletter</h3>
-                        <p className="text-sm text-muted-foreground">
-                            Subscribe to get the latest news and updates.
-                        </p>
-                        <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
-                            <input
-                                type="email"
-                                placeholder="Enter your email"
-                                className="flex-1 bg-white/5 border border-white/10 rounded-md px-3 py-2 text-sm focus:outline-none focus:border-primary/50 transition-colors"
-                            />
-                            <button type="submit" className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors">
-                                Join
-                            </button>
-                        </form>
-                    </div>
+
                 </div>
 
                 <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">

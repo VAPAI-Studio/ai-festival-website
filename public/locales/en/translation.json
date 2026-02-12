@@ -14,8 +14,9 @@
     },
     "festival": {
         "title": "The Festival",
-        "description": "Sticks n' Festival is the first Latin American festival dedicated exclusively to cinema and creative arts generated with Artificial Intelligence. Born in Montevideo, Uruguay, it seeks to be a bridge between local talent and the global avant-garde.",
-        "description2": "We explore new narratives, aesthetics, and production methods where human creativity merges with algorithmic power. We are a space for exhibition, debate, and experimentation."
+        "description": "Sticks n’ Festival is an AI creative festival organized by SOUTS (Side Out Sticks). We showcase emerging storytelling formats powered by artificial intelligence on the big screen and beyond.",
+        "description2": "We believe artificial intelligence does not replace human creativity, it expands it. Sticks n’ Festival exists to support the creators building the next generation of narrative experiences.",
+        "description3": "If you are exploring what storytelling means in this new era, this space is for you."
     },
     "dates": {
         "title": "Dates & Deadlines",
@@ -44,6 +45,7 @@
     },
     "awards": {
         "title": "Awards",
+        "description": "10 films will be officially selected.\nWinning prizes to be announced soon",
         "bestInternational": "Best International AI Film",
         "pitchCompetition": "Pitch Competition",
         "bestUruguayan": "Best Uruguayan AI Film"
@@ -63,45 +65,42 @@
     },
     "faq": {
         "title": "FAQ",
-        "q1": "What is AI cinema?",
-        "a1": "Films where AI tools (generative video, voice, script) play a significant role in the creative process.",
-        "q2": "Can I submit if I'm not from Latam?",
-        "a2": "Yes! We have international categories. We welcome creators from all over the world.",
-        "q3": "Do I need to attend the festival in person?",
-        "a3": "No. While we encourage creators to join us in Montevideo, physical attendance is not required. Selected works will be screened regardless, and we'll coordinate online participation when possible.",
-        "q4": "What are the prizes?",
-        "a4": "We will announce prize details closer to the festival. Awards include Best International AI Film, Best Uruguayan AI Film, and Pitch Competition winners.",
-        "q5": "What percentage of my film needs to be AI-generated?",
-        "a5": "There's no strict percentage, but AI must play a significant creative role (not just color grading or upscaling). If AI shaped your visuals, narrative, audio, or performance, you're eligible.",
-        "q6": "What AI tools are acceptable?",
-        "a6": "All AI tools are welcome: Runway, Midjourney, Sora, Kling, Pika, ElevenLabs, ChatGPT, custom models, etc. We value innovation and artistic vision over specific platforms.",
-        "q7": "Do I keep the rights to my work?",
-        "a7": "Yes, 100%. You retain all intellectual property and distribution rights. We only request festival screening rights for promotional purposes.",
-        "q8": "Can I submit multiple projects?",
-        "a8": "Yes! Submit as many works as you like across different categories. Each submission will be reviewed independently."
+        "q1": "Who can apply?",
+        "a1": "Creators, artists, filmmakers, technologists, storytellers, and creative teams based in Latin America developing projects that incorporate AI into their creative process.",
+        "q2": "What is AI cinema?",
+        "a2": "Films where AI tools (generative video, voice, script) play a significant role in the creative process.",
+        "q3": "Can I submit if I'm not from Latam?",
+        "a3": "For this first edition, we are focusing exclusively on projects from Latin American creators to highlight regional talent.",
+        "q4": "Do I need to attend the festival in person?",
+        "a4": "No. While we encourage creators to join us in Montevideo, physical attendance is not required. Selected works will be screened regardless, and we'll coordinate online participation when possible.",
+        "q5": "What are the prizes?",
+        "a5": "We will announce prize details closer to the festival. Awards include Best International AI Film, Best Uruguayan AI Film, and Pitch Competition winners.",
+        "q6": "What percentage of my film needs to be AI-generated?",
+        "a6": "There's no strict percentage, but AI must play a significant creative role (not just color grading or upscaling). If AI shaped your visuals, narrative, audio, or performance, you're eligible.",
+        "q7": "What AI tools are acceptable?",
+        "a7": "All AI tools are welcome: Runway, Midjourney, Sora, Kling, Veo, ElevenLabs, ChatGPT, open source models, custom models, etc. We value innovation and artistic vision over specific platforms.",
+        "q8": "Do I keep the rights to my work?",
+        "a8": "Yes, 100%. You retain all intellectual property and distribution rights. We only request festival screening rights for promotional purposes.",
+        "q9": "Can I submit multiple projects?",
+        "a9": "Yes! Submit as many works as you like across different categories. Each submission will be reviewed independently."
     },
     "footer": {
         "rights": "All rights reserved."
     },
     "submit": {
         "title": "Competitions & Submission",
-        "intro": "We are looking for visionary works that challenge the status quo of filmmaking. Open to creators from all over the world, with a special spotlight on Latin American talent.",
+        "intro": "We are looking for visionary works that challenge the status quo of filmmaking. Open to creators from all over Latin America.",
         "categories": {
             "title": "Categories",
             "short": {
                 "name": "AI Short Film",
                 "desc": "Narrative or documentary short films where AI played a significant role in production.",
-                "format": "Up to 20 min"
+                "format": "Up to 12 min"
             },
             "experimental": {
                 "name": "Experimental / Video Art",
                 "desc": "Abstract, non-narrative, or conceptual works exploring the aesthetics of AI.",
-                "format": "Up to 15 min"
-            },
-            "immersive": {
-                "name": "Interactive / Immersive",
-                "desc": "VR, AR, or real-time experiences powered by AI.",
-                "format": "Executable or 360 video"
+                "format": "Up to 10 min"
             },
             "musicVideo": {
                 "name": "Music Video",
@@ -114,8 +113,7 @@
             "items": [
                 "Works produced after January 1, 2024.",
                 "Must use AI tools in a significant way (visuals, audio, script).",
-                "Open to all nationalities (LATAM creators eligible for special awards).",
-                "English subtitles required for non-English works."
+                "Open to all LATAM nationalities"
             ]
         },
         "criteria": {
@@ -123,14 +121,15 @@
             "items": [
                 "Innovation in the use of AI tools.",
                 "Narrative and artistic quality.",
+                "Strong aesthetic vision.",
                 "Technical proficiency.",
-                "Ethical consideration."
+                "Thoughtful exploration of technology's role in creative expression."
             ]
         },
         "form": {
             "title": "Submit Your Project",
-            "subtitle": "Fill out the form below to enter your work. Early bird deadline:",
-            "date": "April 10th, 2026",
+            "subtitle": "Fill out the form below to enter your work. Submission deadline:",
+            "date": "May 1st, 2026",
             "success": {
                 "title": "Submission Received!",
                 "message": "Thank you for submitting your work to Sticks n' Festival. We have sent a confirmation email to your inbox. Good luck!",

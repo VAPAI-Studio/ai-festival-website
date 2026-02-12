@@ -57,6 +57,10 @@ const faqSections: FAQSection[] = [
     title: "Submissions & Applications",
     items: [
       {
+        question: "Who can apply?",
+        answer: "Creators, artists, filmmakers, technologists, storytellers, and creative teams based in Latin America developing projects that incorporate AI into their creative process.",
+      },
+      {
         question: "Who can submit work to the festival?",
         answer:
           "Anyone worldwide! We welcome:\n\n• **Filmmakers:** Shorts, music videos, experimental films made with AI tools\n• **Artists:** AI-generated art, installations, interactive pieces\n• **Students:** University/film school projects using AI\n• **Professionals:** Commercial work showcasing creative AI use\n\nNo age restrictions. We especially encourage Latin American creators.",
@@ -176,9 +180,8 @@ function FAQAccordion({ item }: { item: FAQItem }) {
       >
         <span className="text-lg font-medium">{item.question}</span>
         <ChevronDown
-          className={`h-5 w-5 flex-shrink-0 transition-transform ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`h-5 w-5 flex-shrink-0 transition-transform ${isOpen ? "rotate-180" : ""
+            }`}
         />
       </button>
       {isOpen && (
@@ -201,7 +204,7 @@ export function FAQ() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": faqSections.flatMap(section => 
+    "mainEntity": faqSections.flatMap(section =>
       section.items.map(item => ({
         "@type": "Question",
         "name": item.question,

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { siteConfig } from "../config/site";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
-import { Trophy, Film, MonitorPlay, Send, CheckCircle, Music } from "lucide-react";
+import { Film, MonitorPlay, Send, CheckCircle, Music } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export function Submit() {
@@ -12,15 +13,46 @@ export function Submit() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const form = useRef<HTMLFormElement>(null);
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
-        // Mock submission
-        setTimeout(() => {
+
+        if (!form.current) return;
+
+        const emailPromise = emailjs.sendForm(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            form.current,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        );
+
+        const sheetPromise = new Promise((resolve, reject) => {
+            const scriptURL = import.meta.env.VITE_GOOGLE_SHEET_URL;
+            if (scriptURL && form.current) {
+                const formData = new FormData(form.current);
+                fetch(scriptURL, { method: 'POST', body: formData })
+                    .then(response => resolve(response))
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        // resolve anyway so we don't block the user success flow if just the sheet fails
+                        resolve(null);
+                    });
+            } else {
+                resolve(null);
+            }
+        });
+
+        try {
+            await Promise.all([emailPromise, sheetPromise]);
             setIsLoading(false);
             setIsSubmitted(true);
-            console.log("Form submitted");
-        }, 1500);
+        } catch (error: any) {
+            console.log(error.text || error);
+            setIsLoading(false);
+            alert("Failed to send submission. Please try again.");
+        }
     };
     const categories = [
         {
@@ -35,12 +67,7 @@ export function Submit() {
             format: t('submit.categories.experimental.format'),
             icon: MonitorPlay
         },
-        {
-            name: t('submit.categories.immersive.name'),
-            description: t('submit.categories.immersive.desc'),
-            format: t('submit.categories.immersive.format'),
-            icon: Trophy
-        },
+
         {
             name: t('submit.categories.musicVideo.name'),
             description: t('submit.categories.musicVideo.desc'),
@@ -64,6 +91,24 @@ export function Submit() {
                 </p>
             </section>
 
+            {/* Key Dates */}
+            <section className="bg-white/5 rounded-2xl p-8 border border-white/10">
+                <h2 className="text-2xl font-bold mb-8 text-center">{t('dates.title')}</h2>
+                <div className="grid gap-6 md:grid-cols-4">
+                    {[
+                        { date: "Feb 16, 2026", label: t('dates.open') },
+                        { date: "May 1, 2026", label: t('dates.deadline') },
+                        { date: "May 15, 2026", label: t('dates.notification') },
+                        { date: "May 28-29, 2026", label: t('dates.screening') }
+                    ].map((item, i) => (
+                        <div key={i} className="text-center space-y-2">
+                            <div className="text-xl font-bold text-primary">{item.date}</div>
+                            <div className="text-sm text-muted-foreground">{item.label}</div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
             {/* Categories */}
             <section>
                 <h2 className="text-2xl font-bold mb-8 text-center">{t('submit.categories.title')}</h2>
@@ -84,6 +129,8 @@ export function Submit() {
                     ))}
                 </div>
             </section>
+
+
 
             {/* Eligibility & Criteria */}
             <section className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white/5 rounded-2xl p-8 md:p-12 border border-white/10">
@@ -108,6 +155,8 @@ export function Submit() {
                     </ul>
                 </div>
             </section>
+
+
 
             {/* Submission Form */}
             <section className="max-w-2xl mx-auto py-12" id="submit-form">
@@ -135,7 +184,7 @@ export function Submit() {
                     </Card>
                 ) : (
                     <>
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label htmlFor="name" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
@@ -143,6 +192,7 @@ export function Submit() {
                                     </label>
                                     <input
                                         id="name"
+                                        name="user_name"
                                         required
                                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                         placeholder={t('submit.form.placeholders.name')}
@@ -154,6 +204,7 @@ export function Submit() {
                                     </label>
                                     <input
                                         id="email"
+                                        name="user_email"
                                         type="email"
                                         required
                                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
@@ -168,6 +219,7 @@ export function Submit() {
                                 </label>
                                 <input
                                     id="title"
+                                    name="project_title"
                                     required
                                     className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                     placeholder={t('submit.form.placeholders.projectTitle')}
@@ -181,6 +233,7 @@ export function Submit() {
                                     </label>
                                     <select
                                         id="category"
+                                        name="category"
                                         required
                                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                     >
@@ -196,6 +249,7 @@ export function Submit() {
                                     </label>
                                     <input
                                         id="link"
+                                        name="project_link"
                                         type="url"
                                         required
                                         className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
@@ -210,6 +264,7 @@ export function Submit() {
                                 </label>
                                 <textarea
                                     id="description"
+                                    name="description"
                                     required
                                     className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                     placeholder={t('submit.form.placeholders.description')}

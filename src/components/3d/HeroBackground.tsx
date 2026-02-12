@@ -52,11 +52,18 @@ function Stars(props: any) {
             ref.current.rotation.z -= delta / 60;
             ref.current.rotation.y -= delta / 80;
 
-            // Mouse interaction (tilting the whole cloud)
-            ref.current.rotation.x = THREE.MathUtils.lerp(ref.current.rotation.x, state.pointer.y * 0.05, 0.05);
-            ref.current.rotation.y = THREE.MathUtils.lerp(ref.current.rotation.y, state.pointer.x * 0.05, 0.05);
+            // Mobile check (simple width check)
+            const isDesktop = state.viewport.width > 768; // Adjust breakpoint as needed
+
+            if (isDesktop) {
+                // Mouse interaction (tilting the whole cloud)
+                ref.current.rotation.x = THREE.MathUtils.lerp(ref.current.rotation.x, state.pointer.y * 0.05, 0.05);
+                ref.current.rotation.y = THREE.MathUtils.lerp(ref.current.rotation.y, state.pointer.x * 0.05, 0.05);
+            }
 
             const positions = ref.current.geometry.attributes.position.array;
+
+            // Revert to simple multiplier, but increased slightly to feel 'faster'
             const mouseX = state.pointer.x * 7;
             const mouseY = state.pointer.y * 7;
 
