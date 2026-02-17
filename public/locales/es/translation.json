@@ -142,7 +142,10 @@
                 "category": "Categoría",
                 "selectCategory": "Selecciona una categoría",
                 "link": "Enlace del Proyecto (URL)",
-                "description": "Descripción del Proyecto"
+                "description": "Descripción del Proyecto - ¿Cómo usaste la IA en tu proyecto?",
+                "errors": {
+                    "minWords": "La descripción debe tener al menos 50 palabras."
+                }
             },
             "placeholders": {
                 "name": "Juan Pérez",

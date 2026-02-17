@@ -142,7 +142,10 @@
                 "category": "Category",
                 "selectCategory": "Select a category",
                 "link": "Project Link (URL)",
-                "description": "Project Description"
+                "description": "Project Description - How did you use AI in your project?",
+                "errors": {
+                    "minWords": "Description must be at least 50 words."
+                }
             },
             "placeholders": {
                 "name": "Jane Doe",

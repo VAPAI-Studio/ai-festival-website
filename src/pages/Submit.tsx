@@ -17,9 +17,20 @@ export function Submit() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setIsLoading(true);
 
         if (!form.current) return;
+
+        const formData = new FormData(form.current);
+        const description = formData.get("description") as string;
+
+        // Count words in description
+        const wordCount = description.trim().split(/\s+/).length;
+        if (wordCount < 50) {
+            alert(t('submit.form.errors.minWords'));
+            return;
+        }
+
+        setIsLoading(true);
 
         const emailPromise = emailjs.sendForm(
             import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -30,8 +41,7 @@ export function Submit() {
 
         const sheetPromise = new Promise((resolve) => {
             const scriptURL = import.meta.env.VITE_GOOGLE_SHEET_URL;
-            if (scriptURL && form.current) {
-                const formData = new FormData(form.current);
+            if (scriptURL) {
                 fetch(scriptURL, { method: 'POST', body: formData })
                     .then(response => resolve(response))
                     .catch(error => {
