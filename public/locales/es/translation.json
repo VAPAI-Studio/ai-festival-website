@@ -10,7 +10,8 @@
     },
     "hero": {
         "subtitle": "1er Festival Latam de IA Creativa",
-        "cta": "Envía tu proyecto"
+        "cta": "Envía tu proyecto",
+        "dates": "28 y 29 de Mayo, 2026"
     },
     "festival": {
         "title": "El Festival",
@@ -32,7 +33,85 @@
     },
     "program": {
         "title": "Programa",
-        "comingSoon": "Programa completo a anunciar."
+        "comingSoon": "Programa completo a anunciar.",
+        "items": {
+            "1": {
+                "title": "Talleres de Formación",
+                "description": "Sesiones prácticas para estudiantes de instituciones sobre el uso responsable y creativo de la IA."
+            },
+            "3": {
+                "title": "El Festival",
+                "description": "Proyecciones de la Competencia Oficial, Charlas, Paneles y la ceremonia de Premiación de cierre."
+            },
+            "4": {
+                "title": "After Party",
+                "description": "Celebra la noche de clausura con nosotros. Buena música, grandes tragos y la mejor compañía para brindar por el futuro de la IA creativa."
+            }
+        }
+    },
+    "rules": {
+        "title": "Reglas y Términos",
+        "eligibility": {
+            "title": "Elegibilidad",
+            "intro": "Para ser elegible para el envío a Sticks n' Festival, las obras deben cumplir con los siguientes criterios:",
+            "items": [
+                "Las obras deben haber sido producidas después del <strong>1 de enero de 2024</strong>.",
+                "Las herramientas de Inteligencia Artificial deben haber jugado un <strong>papel significativo</strong> en el proceso creativo (generación visual, diseño de audio, guion, edición u otros aspectos de producción).",
+                "Los envíos están abiertos a creadores radicados en <strong>América Latina</strong>.",
+                "Los creadores deben poseer los derechos necesarios para enviar y proyectar públicamente su obra."
+            ]
+        },
+        "categories": {
+            "title": "Categorías",
+            "aiShort": {
+                "title": "Cortometraje IA",
+                "description": "Cortometrajes narrativos o documentales (hasta 12 minutos) donde la IA jugó un papel significativo en la producción."
+            },
+            "experimental": {
+                "title": "Experimental / Videoarte",
+                "description": "Obras abstractas, no narrativas o conceptuales (hasta 10 minutos) explorando la estética y posibilidades de los medios generados por IA."
+            },
+            "musicVideo": {
+                "title": "Videoclip Musical",
+                "description": "Videos musicales originales (hasta 5 minutos) con componentes visuales o de audio generados por IA significativos."
+            }
+        },
+        "criteria": {
+            "title": "Criterios de Selección",
+            "intro": "Nuestro jurado evalúa los envíos basándose en los siguientes criterios:",
+            "items": [
+                "<strong>Innovación en el uso de herramientas de IA.</strong>",
+                "<strong>Calidad narrativa y artística.</strong>",
+                "<strong>Fuerte visión estética.</strong>",
+                "<strong>Competencia técnica.</strong>",
+                "<strong>Exploración reflexiva del papel de la tecnología en la expresión creativa.</strong>"
+            ]
+        },
+        "process": {
+            "title": "Proceso de Envío",
+            "items": [
+                "Completa el <a href=\"/#/submit\" class=\"text-primary hover:underline\">formulario de envío en línea</a> con los detalles del proyecto.",
+                "Proporciona un enlace accesible públicamente a tu obra (Vimeo, YouTube, Google Drive, etc.). Asegúrate de que tengamos permiso para verlo (ej. enlace No Listado).",
+                "Incluye una breve descripción de cómo se usó la IA en tu proyecto.",
+                "Envía antes de la <strong>Fecha Límite de Envío: 1 de mayo de 2026</strong>.",
+                "Recibirás un correo de confirmación tras el envío exitoso.",
+                "Los proyectos seleccionados serán notificados para el <strong>15 de mayo de 2026</strong>."
+            ]
+        },
+        "terms": {
+            "title": "Términos y Condiciones",
+            "items": [
+                "Al enviar, otorgas a Sticks n' Festival el derecho de proyectar públicamente tu obra durante el festival y usar extractos con fines promocionales (con los créditos correspondientes).",
+                "Retienes todos los derechos de propiedad intelectual de tu obra.",
+                "Las decisiones del jurado son definitivas e inapelables.",
+                "Los organizadores del festival se reservan el derecho de descalificar envíos que no cumplan con los criterios de elegibilidad o contengan contenido ofensivo/ilegal.",
+                "No hay tarifa de inscripción para Sticks n' Festival 2026."
+            ]
+        },
+        "contact": {
+            "title": "¿Preguntas?",
+            "text": "Si tienes preguntas sobre elegibilidad, requisitos de envío o cualquier otro aspecto del festival, contáctanos en <a href=\"mailto:yves@vapai.studio\" class=\"text-primary hover:underline\">yves@vapai.studio</a>."
+        }
     },
     "jury": {
         "title": "Jurado",
@@ -45,9 +124,9 @@
     },
     "awards": {
         "title": "Premios",
-        "description": "10 películas serán seleccionadas oficialmente.\nLos premios ganadores se anunciarán pronto",
+        "description": "10 películas formarán parte de la Selección Oficial.\nLos premios ganadores se anunciarán pronto.",
         "bestInternational": "Mejor Película IA Internacional",
-        "pitchCompetition": "Competencia de Pitch",
+        "pitchCompetition": "Uso más creativo de la IA",
         "bestUruguayan": "Mejor Película IA Uruguaya"
     },
     "team": {
@@ -85,7 +164,8 @@
         "a9": "¡Sí! Envía tantas obras como desees en diferentes categorías. Cada envío será revisado de forma independiente."
     },
     "footer": {
-        "rights": "Todos los derechos reservados."
+        "rights": "Todos los derechos reservados.",
+        "builtBy": "Creado por"
     },
     "submit": {
         "title": "Competiciones y Envío",

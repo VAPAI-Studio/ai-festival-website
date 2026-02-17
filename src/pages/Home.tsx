@@ -29,7 +29,7 @@ export function Home() {
                         <div className="flex flex-col sm:flex-row gap-4 text-sm text-muted-foreground">
                             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
                                 <Calendar className="w-4 h-4 text-primary" />
-                                <span>{siteConfig.dates}</span>
+                                <span>{t('hero.dates')}</span>
                             </div>
                             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
                                 <MapPin className="w-4 h-4 text-primary" />
@@ -232,11 +232,11 @@ export function Home() {
                                         </span>
                                         <span className="text-xs text-muted-foreground">{item.date}</span>
                                     </div>
-                                    <CardTitle className="text-xl">{item.title}</CardTitle>
+                                    <CardTitle className="text-xl">{t(`program.items.${item.id}.title`)}</CardTitle>
                                     <CardDescription>{item.location}</CardDescription>
                                 </CardHeader>
                                 <CardContent>
-                                    <p className="text-sm text-muted-foreground">{item.shortDescription}</p>
+                                    <p className="text-sm text-muted-foreground">{t(`program.items.${item.id}.description`)}</p>
                                 </CardContent>
                             </Card>
                         ))}

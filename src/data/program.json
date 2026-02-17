@@ -11,7 +11,7 @@
             "Workshop",
             "Education"
         ],
-        "image": "/images/program_training.png"
+        "image": "/images/program_training.jpeg"
     },
     {
         "id": "3",
@@ -39,6 +39,6 @@
             "Networking",
             "Celebration"
         ],
-        "image": "/images/program_party.png"
+        "image": "/images/program_after.jpeg"
     }
 ]

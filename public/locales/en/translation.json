@@ -10,7 +10,8 @@
     },
     "hero": {
         "subtitle": "1st Latam Creative AI Festival",
-        "cta": "Submit your project"
+        "cta": "Submit your project",
+        "dates": "May 28-29, 2026"
     },
     "festival": {
         "title": "The Festival",
@@ -32,7 +33,85 @@
     },
     "program": {
         "title": "Program",
-        "comingSoon": "Full program to be announced."
+        "comingSoon": "Full program to be announced.",
+        "items": {
+            "1": {
+                "title": "Training Workshops",
+                "description": "Practical sessions for students of institutions on responsible and creative AI use."
+            },
+            "3": {
+                "title": "The Festival",
+                "description": "Official Competition screenings, Talks, Panels, and the closing Awards ceremony."
+            },
+            "4": {
+                "title": "After Party",
+                "description": "Celebrate the festival closing night with us. Good music, great drinks, and the best company to toast to the future of creative AI."
+            }
+        }
+    },
+    "rules": {
+        "title": "Rules & Terms",
+        "eligibility": {
+            "title": "Eligibility",
+            "intro": "To be eligible for submission to Sticks n' Festival, works must meet the following criteria:",
+            "items": [
+                "Works must have been produced after <strong>January 1, 2024</strong>.",
+                "Artificial Intelligence tools must have played a <strong>significant role</strong> in the creative process (visual generation, audio design, scriptwriting, editing, or other production aspects).",
+                "Submissions are open to creators based in <strong>Latin America</strong>.",
+                "Creators must hold the necessary rights to submit and publicly screen their work."
+            ]
+        },
+        "categories": {
+            "title": "Categories",
+            "aiShort": {
+                "title": "AI Short Film",
+                "description": "Narrative or documentary short films (up to 12 minutes) where AI played a significant role in production."
+            },
+            "experimental": {
+                "title": "Experimental / Video Art",
+                "description": "Abstract, non-narrative, or conceptual works (up to 10 minutes) exploring the aesthetics and possibilities of AI-generated media."
+            },
+            "musicVideo": {
+                "title": "Music Video",
+                "description": "Original music videos (up to 5 minutes) with significant AI-generated visual or audio components."
+            }
+        },
+        "criteria": {
+            "title": "Selection Criteria",
+            "intro": "Our jury evaluates submissions based on the following criteria:",
+            "items": [
+                "<strong>Innovation in the use of AI tools.</strong>",
+                "<strong>Narrative and artistic quality.</strong>",
+                "<strong>Strong aesthetic vision.</strong>",
+                "<strong>Technical proficiency.</strong>",
+                "<strong>Thoughtful exploration of technology's role in creative expression.</strong>"
+            ]
+        },
+        "process": {
+            "title": "Submission Process",
+            "items": [
+                "Complete the <a href=\"/#/submit\" class=\"text-primary hover:underline\">online submission form</a> with project details.",
+                "Provide a publicly accessible link to your work (Vimeo, YouTube, Google Drive, etc.). Ensure we have permission to view it (e.g., Unlisted link).",
+                "Include a brief description of how AI was used in your project.",
+                "Submit before the <strong>Submission Deadline: May 1, 2026</strong>.",
+                "You will receive a confirmation email upon successful submission.",
+                "Selected projects will be notified by <strong>May 15, 2026</strong>."
+            ]
+        },
+        "terms": {
+            "title": "Terms & Conditions",
+            "items": [
+                "By submitting, you grant Sticks n' Festival the right to publicly screen your work during the festival and use excerpts for promotional purposes (with proper credit).",
+                "You retain all intellectual property rights to your work.",
+                "Jury decisions are final and not subject to appeal.",
+                "Festival organizers reserve the right to disqualify submissions that do not meet eligibility criteria or contain offensive/illegal content.",
+                "There is no submission fee for Sticks n' Festival 2026."
+            ]
+        },
+        "contact": {
+            "title": "Questions?",
+            "text": "If you have questions about eligibility, submission requirements, or any other aspect of the festival, please contact us at <a href=\"mailto:yves@vapai.studio\" class=\"text-primary hover:underline\">yves@vapai.studio</a>."
+        }
     },
     "jury": {
         "title": "Jury",
@@ -47,7 +126,7 @@
         "title": "Awards",
         "description": "10 films will be officially selected.\nWinning prizes to be announced soon",
         "bestInternational": "Best International AI Film",
-        "pitchCompetition": "Pitch Competition",
+        "pitchCompetition": "Most Creative use of AI",
         "bestUruguayan": "Best Uruguayan AI Film"
     },
     "team": {
@@ -85,7 +164,8 @@
         "a9": "Yes! Submit as many works as you like across different categories. Each submission will be reviewed independently."
     },
     "footer": {
-        "rights": "All rights reserved."
+        "rights": "All rights reserved.",
+        "builtBy": "Built by"
     },
     "submit": {
         "title": "Competitions & Submission",

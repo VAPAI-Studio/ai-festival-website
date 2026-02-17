@@ -73,7 +73,7 @@ export function Footer() {
                             rel="noreferrer"
                             className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
                         >
-                            VAPAI Studio
+                            sideOUTsticks
                         </a>
                     </p>
                 </div>
