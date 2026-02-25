@@ -16,10 +16,10 @@ export function Home() {
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 <HeroBackground />
-                <div className="absolute top-24 md:top-32 left-0 right-0 flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-3 text-sm md:text-base text-muted-foreground font-medium animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-forwards z-20 px-4 text-center pointer-events-none">
-                    <img src="/images/sponsors/sideoutsticks.png" alt="Side Out Sticks" className="h-12 md:h-16 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity pointer-events-auto" />
+                <div className="absolute top-20 md:top-32 left-0 right-0 flex flex-row flex-wrap items-center justify-center gap-x-2 gap-y-1 md:gap-3 text-xs sm:text-sm md:text-base text-muted-foreground font-medium animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-forwards z-20 px-2 sm:px-4 text-center pointer-events-none">
+                    <img src="/images/sponsors/sideoutsticks.png" alt="Side Out Sticks" className="h-8 sm:h-10 md:h-16 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity pointer-events-auto" />
                     <span>{t('hero.togetherWith')}</span>
-                    <img src="/images/sponsors/life.png" alt="Life Cinemas" className="h-10 md:h-11 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity pointer-events-auto" />
+                    <img src="/images/sponsors/life.png" alt="Life Cinemas" className="h-6 sm:h-8 md:h-11 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity pointer-events-auto" />
                     <span>{t('hero.present')}</span>
                 </div>
                 <div className="container mx-auto px-4 md:px-6 relative z-10 text-center space-y-8 pointer-events-none">
