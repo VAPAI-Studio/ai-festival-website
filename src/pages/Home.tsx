@@ -16,9 +16,15 @@ export function Home() {
             {/* Hero Section */}
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 <HeroBackground />
+                <div className="absolute top-24 md:top-32 left-0 right-0 flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-3 text-sm md:text-base text-muted-foreground font-medium animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-forwards z-20 px-4 text-center pointer-events-none">
+                    <img src="/images/sponsors/sideoutsticks.png" alt="Side Out Sticks" className="h-12 md:h-16 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity pointer-events-auto" />
+                    <span>{t('hero.togetherWith')}</span>
+                    <img src="/images/sponsors/life.png" alt="Life Cinemas" className="h-10 md:h-11 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity pointer-events-auto" />
+                    <span>{t('hero.present')}</span>
+                </div>
                 <div className="container mx-auto px-4 md:px-6 relative z-10 text-center space-y-8 pointer-events-none">
                     <div className="space-y-4">
-                        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-forwards">
+                        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100 fill-mode-forwards">
                             {siteConfig.name}
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground max-w-[600px] mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-forwards">
@@ -113,17 +119,20 @@ export function Home() {
                     </div>
                     <div className="grid gap-8 md:grid-cols-3">
                         {[
-                            { title: t('awards.bestInternational'), icon: Globe },
-                            { title: t('awards.pitchCompetition'), icon: Mic },
-                            { title: t('awards.bestUruguayan'), icon: Trophy }
+                            { title: t('awards.bestInternational'), icon: Globe, prize: t('awards.prizes.bestInternational') },
+                            { title: t('awards.pitchCompetition'), icon: Mic, prize: t('awards.prizes.other') },
+                            { title: t('awards.bestUruguayan'), icon: Trophy, prize: t('awards.prizes.other') }
                         ].map((award, i) => (
-                            <Card key={i} className="bg-white/5 border-white/10 text-center hover:border-primary/50 transition-colors">
+                            <Card key={i} className="bg-white/5 border-white/10 text-center hover:border-primary/50 transition-colors flex flex-col justify-between">
                                 <CardHeader>
                                     <div className="mx-auto w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                                         <award.icon className="w-6 h-6 text-primary" />
                                     </div>
-                                    <CardTitle>{award.title}</CardTitle>
+                                    <CardTitle className="mb-2">{award.title}</CardTitle>
                                 </CardHeader>
+                                <CardContent>
+                                    <p className="text-xl font-bold text-primary">{award.prize}</p>
+                                </CardContent>
                             </Card>
                         ))}
                     </div>

@@ -11,7 +11,9 @@
     "hero": {
         "subtitle": "1st Latam Creative AI Festival",
         "cta": "Submit your project",
-        "dates": "May 28-29, 2026"
+        "dates": "May 28-29, 2026",
+        "togetherWith": "together with",
+        "present": "present"
     },
     "festival": {
         "title": "The Festival",
@@ -28,7 +30,7 @@
     },
     "venue": {
         "title": "Venue",
-        "location": "Life Cinema",
+        "location": "Life Cinemas",
         "address": "Miguel Barreiro 3231 esq. Berro, Pocitos, Montevideo"
     },
     "program": {
@@ -124,10 +126,14 @@
     },
     "awards": {
         "title": "Awards",
-        "description": "10 films will be officially selected.\nWinning prizes to be announced soon",
+        "description": "10 films will be officially selected.",
         "bestInternational": "Best International AI Film",
         "pitchCompetition": "Most Creative use of AI",
-        "bestUruguayan": "Best Uruguayan AI Film"
+        "bestUruguayan": "Best Uruguayan AI Film",
+        "prizes": {
+            "bestInternational": "USD 2.500",
+            "other": "To Be Announced"
+        }
     },
     "team": {
         "title": "The Team",

@@ -24,7 +24,7 @@ const faqSections: FAQSection[] = [
       {
         question: "Where and when is the festival?",
         answer:
-          "**Dates:** May 28-29, 2026 (Thursday-Friday)\n\n**Venue:** Life Cinema, Miguel Barreiro 3231 esq. Berro, Pocitos, Montevideo, Uruguay\n\n**Hours:** TBD (typically 6pm-11pm both nights)",
+          "**Dates:** May 28-29, 2026 (Thursday-Friday)\n\n**Venue:** Life Cinemas, Miguel Barreiro 3231 esq. Berro, Pocitos, Montevideo, Uruguay\n\n**Hours:** TBD (typically 6pm-11pm both nights)",
       },
       {
         question: "Who organizes Sticks n' Festival?",
@@ -133,7 +133,7 @@ const faqSections: FAQSection[] = [
       {
         question: "Is the venue accessible?",
         answer:
-          "Life Cinema has:\n\n✅ Wheelchair access (ramps, elevator)\n✅ Accessible bathrooms\n⚠️ Limited accessible seating (contact us in advance to reserve)\n\nFor specific accessibility needs, email **[accessibility contact TBD]** at least 1 week before the festival.",
+          "Life Cinemas has:\n\n✅ Wheelchair access (ramps, elevator)\n✅ Accessible bathrooms\n⚠️ Limited accessible seating (contact us in advance to reserve)\n\nFor specific accessibility needs, email **[accessibility contact TBD]** at least 1 week before the festival.",
       },
       {
         question: "Can I attend just one night instead of both?",

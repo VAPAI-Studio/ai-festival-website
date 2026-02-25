@@ -11,7 +11,9 @@
     "hero": {
         "subtitle": "1er Festival Latam de IA Creativa",
         "cta": "Envía tu proyecto",
-        "dates": "28 y 29 de Mayo, 2026"
+        "dates": "28 y 29 de Mayo, 2026",
+        "togetherWith": "junto con",
+        "present": "presentan"
     },
     "festival": {
         "title": "El Festival",
@@ -28,7 +30,7 @@
     },
     "venue": {
         "title": "Sede",
-        "location": "Life Cinema",
+        "location": "Life Cinemas",
         "address": "Miguel Barreiro 3231 esq. Berro, Pocitos, Montevideo"
     },
     "program": {
@@ -124,10 +126,14 @@
     },
     "awards": {
         "title": "Premios",
-        "description": "10 películas formarán parte de la Selección Oficial.\nLos premios ganadores se anunciarán pronto.",
+        "description": "10 películas formarán parte de la Selección Oficial.",
         "bestInternational": "Mejor Película IA Internacional",
         "pitchCompetition": "Uso más creativo de la IA",
-        "bestUruguayan": "Mejor Película IA Uruguaya"
+        "bestUruguayan": "Mejor Película IA Uruguaya",
+        "prizes": {
+            "bestInternational": "USD 2.500",
+            "other": "A anunciar"
+        }
     },
     "team": {
         "title": "El Equipo",

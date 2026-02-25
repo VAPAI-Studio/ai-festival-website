@@ -4,7 +4,7 @@ Official website for **Sticks n' Festival** — the first Latin American festiva
 
 🌐 **Live Site:** [https://ai-festival-website.vercel.app](https://ai-festival-website.vercel.app)  
 📅 **Festival Dates:** May 28-29, 2026  
-📍 **Location:** Life Cinema, Montevideo, Uruguay
+📍 **Location:** Life Cinemas, Montevideo, Uruguay
 
 ---
 
@@ -158,7 +158,7 @@ This is an internal project for **VAPAI Studio** and **SOUTS**. For questions or
 
 ## 🙏 Acknowledgments
 
-- **Venue Partner:** Life Cinema
+- **Venue Partner:** Life Cinemas
 - **Institutional Partners:** ECU (Escuela de Cine del Uruguay), Cinemateca Uruguaya
 - **Technology Partners:** Runway, Midjourney, OpenAI (pending confirmation)
 

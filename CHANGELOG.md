@@ -22,7 +22,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Added
 - **Partners Page Improvements**
-  - Added real institutional partners: ECU, Cinemateca Uruguaya, Life Cinema
+  - Added real institutional partners: ECU, Cinemateca Uruguaya, Life Cinemas
   - Added technology partners: Runway, Midjourney, OpenAI
   - Improved copy for regional context (Uruguay/Latin America focus)
   - Updated "Why Partner" section with regional impact messaging
