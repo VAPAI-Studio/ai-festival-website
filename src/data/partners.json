@@ -1,44 +1,53 @@
 [
     {
-        "id": "ecu",
-        "name": "ECU - Escuela de Cine del Uruguay",
-        "logo": "/images/partner-ecu.png",
-        "tier": "Institutional Partner",
-        "url": "https://ecu.edu.uy"
+        "id": "ucu",
+        "name": "UCU",
+        "logo": "/images/sponsors/UCU Logo.png",
+        "tier": "Gold",
+        "url": "#"
     },
     {
-        "id": "cinemateca",
-        "name": "Cinemateca Uruguaya",
-        "logo": "/images/partner-cinemateca.png",
-        "tier": "Cultural Partner",
-        "url": "https://cinemateca.org.uy"
+        "id": "acau",
+        "name": "ACAU",
+        "logo": "/images/sponsors/ACAU-Logotipo-RGB.png",
+        "tier": "Apoya",
+        "url": "#"
     },
     {
-        "id": "life-cinema",
+        "id": "elpais",
+        "name": "El País",
+        "logo": "/images/sponsors/elpais_2.png",
+        "tier": "Media Partners",
+        "url": "#"
+    },
+    {
+        "id": "sideoutsticks",
+        "name": "sideOUTsticks",
+        "logo": "/images/sponsors/sideoutsticks.png",
+        "tier": "Organiza",
+        "url": "#"
+    },
+    {
+        "id": "cacique",
+        "name": "Cacique Group",
+        "logo": "/images/sponsors/Cacique Blanco Logo.avif",
+        "tier": "Organiza",
+        "keepColor": true,
+        "url": "#"
+    },
+    {
+        "id": "capicua",
+        "name": "Capicúa",
+        "logo": "/images/sponsors/capicua_2.png",
+        "tier": "Socios",
+        "keepColor": true,
+        "url": "#"
+    },
+    {
+        "id": "life-cinemas",
         "name": "Life Cinemas",
-        "logo": "/images/partner-life.png",
-        "tier": "Venue Partner",
-        "url": "https://www.instagram.com/life.cinemas.uy/"
-    },
-    {
-        "id": "runway",
-        "name": "Runway",
-        "logo": "/images/partner-runway.png",
-        "tier": "Technology Partner",
-        "url": "https://runwayml.com"
-    },
-    {
-        "id": "midjourney",
-        "name": "Midjourney",
-        "logo": "/images/partner-midjourney.png",
-        "tier": "Technology Partner",
-        "url": "https://midjourney.com"
-    },
-    {
-        "id": "openai",
-        "name": "OpenAI",
-        "logo": "/images/partner-openai.png",
-        "tier": "Technology Partner",
-        "url": "https://openai.com"
+        "logo": "/images/sponsors/life.png",
+        "tier": "Socios",
+        "url": "#"
     }
 ]

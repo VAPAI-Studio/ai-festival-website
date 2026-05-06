@@ -42,11 +42,14 @@ export function Home() {
                                 <span>{siteConfig.city}</span>
                             </div>
                         </div>
-                        <Button size="lg" className="mt-4 pointer-events-auto" asChild>
-                            <Link to="/submit">
+                        <div className="relative group mt-4 pointer-events-auto">
+                            <Button size="lg" className="cursor-default">
                                 {t('hero.cta')}
-                            </Link>
-                        </Button>
+                            </Button>
+                            <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs bg-white/10 backdrop-blur-md text-muted-foreground px-3 py-1.5 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                                {t('hero.ticketsSoon')}
+                            </span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -106,6 +109,71 @@ export function Home() {
                 </div>
             </section>
 
+            {/* Sponsors */}
+            <section id="sponsors" className="py-24 border-t border-white/10 bg-black/50">
+                <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-16 text-primary scroll-rgb" data-text={t('sponsors.title')}>
+                        {t('sponsors.title')}
+                    </h2>
+
+                    {/* Gold */}
+                    <div className="text-center mb-12">
+                        <h3 className="text-base font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-6">{t('sponsors.gold')}</h3>
+                        <div className="flex justify-center">
+                            {partnersData.filter((p) => p.tier === "Gold").map((partner) => (
+                                <div key={partner.id} className="h-32 w-64 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all p-6">
+                                    {partner.logo ? (
+                                        <img src={partner.logo} alt={partner.name} className={`max-h-full max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'}`} />
+                                    ) : (
+                                        <span className="text-lg font-bold text-muted-foreground">{partner.name}</span>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Apoya | Media Partners */}
+                    <div className="grid grid-cols-2 gap-6 mb-6">
+                        {([["Apoya", t('sponsors.supports')], ["Media Partners", t('sponsors.mediaPartners')]] as const).map(([tierKey, tierLabel]) => (
+                            <div key={tierKey} className="text-center">
+                                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">{tierLabel}</h3>
+                                <div className="flex flex-wrap gap-3 items-center justify-center">
+                                    {partnersData.filter((p) => p.tier === tierKey).map((partner) => (
+                                        <div key={partner.id} className="h-20 w-48 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all px-5">
+                                            {partner.logo ? (
+                                                <img src={partner.logo} alt={partner.name} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'}`} />
+                                            ) : (
+                                                <span className="text-sm font-bold text-muted-foreground">{partner.name}</span>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Organiza | Socios */}
+                    <div className="grid grid-cols-2 gap-6">
+                        {([["Organiza", t('sponsors.organizes')], ["Socios", t('sponsors.partners')]] as const).map(([tierKey, tierLabel]) => (
+                            <div key={tierKey} className="text-center">
+                                <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">{tierLabel}</h3>
+                                <div className="flex flex-wrap gap-3 items-center justify-center">
+                                    {partnersData.filter((p) => p.tier === tierKey).map((partner) => (
+                                        <div key={partner.id} className="h-20 w-48 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all px-5">
+                                            {partner.logo ? (
+                                                <img src={partner.logo} alt={partner.name} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'}`} />
+                                            ) : (
+                                                <span className="text-sm font-bold text-muted-foreground">{partner.name}</span>
+                                            )}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Awards */}
             <section id="awards" className="py-24 border-t border-white/10">
                 <div className="container mx-auto px-4 md:px-6">
@@ -120,8 +188,8 @@ export function Home() {
                     <div className="grid gap-8 md:grid-cols-3">
                         {[
                             { title: t('awards.bestInternational'), icon: Globe, prize: t('awards.prizes.bestInternational') },
-                            { title: t('awards.pitchCompetition'), icon: Mic, prize: t('awards.prizes.other') },
-                            { title: t('awards.bestUruguayan'), icon: Trophy, prize: t('awards.prizes.other') }
+                            { title: t('awards.pitchCompetition'), icon: Mic, prize: t('awards.prizes.pitchCompetition') },
+                            { title: t('awards.bestUruguayan'), icon: Trophy, prize: t('awards.prizes.bestUruguayan') }
                         ].map((award, i) => (
                             <Card key={i} className="bg-white/5 border-white/10 text-center hover:border-primary/50 transition-colors flex flex-col justify-between">
                                 <CardHeader>
@@ -139,37 +207,7 @@ export function Home() {
                 </div>
             </section>
 
-            {/* Sponsors (Hidden) */}
-            {false && (
-                <section id="sponsors" className="py-24 border-t border-white/10 bg-black/50">
-                    <div className="container mx-auto px-4 md:px-6">
-                        <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text="Sponsors">
-                            Sponsors
-                        </h2>
-                        <div className="grid gap-8 md:grid-cols-3 items-center justify-items-center">
-                            {partnersData.map((partner) => (
-                                <a
-                                    key={partner.id}
-                                    href={partner.url}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="group relative grayscale hover:grayscale-0 transition-all duration-300"
-                                >
-                                    <div className="h-24 w-48 bg-white/5 rounded-lg flex items-center justify-center border border-white/10 group-hover:border-primary/50 group-hover:bg-white/10 transition-all">
-                                        {/* Placeholder for logo if image fails or is missing */}
-                                        <span className="text-lg font-bold text-muted-foreground group-hover:text-primary transition-colors">
-                                            {partner.name}
-                                        </span>
-                                    </div>
-                                    <span className="absolute -bottom-6 left-0 right-0 text-center text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity">
-                                        {partner.tier}
-                                    </span>
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            )}
+
 
             {/* Venue */}
             <section className="py-24 border-t border-white/10 bg-black/50">
@@ -363,9 +401,14 @@ export function Home() {
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">
                         {t('hero.cta')}
                     </h2>
-                    <Button size="lg" className="text-lg px-8" asChild>
-                        <Link to="/submit">{t('nav.submitProject')}</Link>
-                    </Button>
+                    <div className="relative group inline-block">
+                        <Button size="lg" className="text-lg px-8 cursor-default">
+                            {t('nav.submitProject')}
+                        </Button>
+                        <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs bg-white/10 backdrop-blur-md text-muted-foreground px-3 py-1.5 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                            {t('hero.ticketsSoon')}
+                        </span>
+                    </div>
                 </div>
             </section>
         </div>

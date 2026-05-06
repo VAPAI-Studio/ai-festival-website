@@ -1,4 +1,13 @@
 {
+    "banner": "1279 cortometrajes enviados para consideración 🚀",
+    "sponsors": {
+        "title": "Sponsors",
+        "gold": "Gold",
+        "supports": "Apoya",
+        "mediaPartners": "Media Partners",
+        "organizes": "Organiza",
+        "partners": "Socios"
+    },
     "nav": {
         "festival": "El Festival",
         "dates": "Fechas",
@@ -6,11 +15,12 @@
         "jury": "Jurado",
         "awards": "Premios",
         "submit": "Enviar",
-        "submitProject": "Enviar Proyecto"
+        "submitProject": "Conseguí tus entradas"
     },
     "hero": {
         "subtitle": "1er Festival Latam de IA Creativa",
-        "cta": "Envía tu proyecto",
+        "cta": "Conseguí tus entradas",
+        "ticketsSoon": "Las entradas se ponen a la venta en breve",
         "dates": "28 y 29 de Mayo, 2026",
         "togetherWith": "junto con",
         "present": "presentan"
@@ -30,7 +40,7 @@
     },
     "venue": {
         "title": "Sede",
-        "location": "Life Cinemas",
+        "location": "Life Cinemas Cultural Alfabeta",
         "address": "Miguel Barreiro 3231 esq. Berro, Pocitos, Montevideo"
     },
     "program": {
@@ -126,13 +136,14 @@
     },
     "awards": {
         "title": "Premios",
-        "description": "10 películas formarán parte de la Selección Oficial.",
+        "description": "15 películas formarán parte de la Selección Oficial.",
         "bestInternational": "Mejor Película IA Internacional",
         "pitchCompetition": "Uso más creativo de la IA",
         "bestUruguayan": "Mejor Película IA Uruguaya",
         "prizes": {
             "bestInternational": "USD 2.500",
-            "other": "A anunciar"
+            "pitchCompetition": "A anunciar",
+            "bestUruguayan": "USD 4.000 en Créditos Musitelli"
         }
     },
     "team": {
@@ -155,11 +166,11 @@
         "q2": "¿Qué es el cine IA?",
         "a2": "Películas donde las herramientas de IA (video generativo, voz, guion) juegan un papel significativo en el proceso creativo.",
         "q3": "¿Puedo participar si no soy de Latam?",
-        "a3": "Para esta primera edición, nos estamos enfocando exclusivamente en proyectos de creadores latinoamericanos para destacar el talento regional.",
+        "a3": "Sí, puedes participar. Sin embargo, para esta primera edición estamos priorizando proyectos de creadores latinoamericanos para destacar el talento regional.",
         "q4": "¿Necesito asistir al festival en persona?",
         "a4": "No. Aunque animamos a los creadores a unirse a nosotros en Montevideo, la asistencia física no es obligatoria. Las obras seleccionadas se proyectarán de todos modos, y coordinaremos participación en línea cuando sea posible.",
         "q5": "¿Cuáles son los premios?",
-        "a5": "Anunciaremos los detalles de los premios más cerca del festival. Los premios incluyen Mejor Película IA Internacional, Mejor Película IA Uruguaya y ganadores de la Competencia de Pitch.",
+        "a5": "Anunciaremos los detalles de los premios más cerca del festival. Los premios incluyen Mejor Película IA Internacional y Mejor Película IA Uruguaya.",
         "q6": "¿Qué porcentaje de mi película necesita ser generado por IA?",
         "a6": "No hay un porcentaje estricto, pero la IA debe jugar un papel creativo significativo (no solo corrección de color o upscaling). Si la IA moldeó tus visuales, narrativa, audio o performance, eres elegible.",
         "q7": "¿Qué herramientas de IA son aceptables?",

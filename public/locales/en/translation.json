@@ -1,4 +1,13 @@
 {
+    "banner": "1279 short films submitted for consideration 🚀",
+    "sponsors": {
+        "title": "Sponsors",
+        "gold": "Gold",
+        "supports": "Supports",
+        "mediaPartners": "Media Partners",
+        "organizes": "Organizes",
+        "partners": "Partners"
+    },
     "nav": {
         "festival": "The Festival",
         "dates": "Dates",
@@ -6,11 +15,12 @@
         "jury": "Jury",
         "awards": "Awards",
         "submit": "Submit",
-        "submitProject": "Submit Project"
+        "submitProject": "Get Tickets"
     },
     "hero": {
         "subtitle": "1st Latam Creative AI Festival",
-        "cta": "Submit your project",
+        "cta": "Get Tickets",
+        "ticketsSoon": "Tickets go on sale soon",
         "dates": "May 28-29, 2026",
         "togetherWith": "together with",
         "present": "present"
@@ -30,7 +40,7 @@
     },
     "venue": {
         "title": "Venue",
-        "location": "Life Cinemas",
+        "location": "Life Cinemas Cultural Alfabeta",
         "address": "Miguel Barreiro 3231 esq. Berro, Pocitos, Montevideo"
     },
     "program": {
@@ -126,13 +136,14 @@
     },
     "awards": {
         "title": "Awards",
-        "description": "10 films will be officially selected.",
+        "description": "15 films will be officially selected.",
         "bestInternational": "Best International AI Film",
         "pitchCompetition": "Most Creative use of AI",
         "bestUruguayan": "Best Uruguayan AI Film",
         "prizes": {
             "bestInternational": "USD 2.500",
-            "other": "To Be Announced"
+            "pitchCompetition": "To Be Announced",
+            "bestUruguayan": "USD 4.000 in Musitelli Credits"
         }
     },
     "team": {
@@ -155,11 +166,11 @@
         "q2": "What is AI cinema?",
         "a2": "Films where AI tools (generative video, voice, script) play a significant role in the creative process.",
         "q3": "Can I submit if I'm not from Latam?",
-        "a3": "For this first edition, we are focusing exclusively on projects from Latin American creators to highlight regional talent.",
+        "a3": "Yes, you can participate. However, for this first edition, we are prioritizing projects from Latin American creators to highlight regional talent.",
         "q4": "Do I need to attend the festival in person?",
         "a4": "No. While we encourage creators to join us in Montevideo, physical attendance is not required. Selected works will be screened regardless, and we'll coordinate online participation when possible.",
         "q5": "What are the prizes?",
-        "a5": "We will announce prize details closer to the festival. Awards include Best International AI Film, Best Uruguayan AI Film, and Pitch Competition winners.",
+        "a5": "We will announce prize details closer to the festival. Awards include Best International AI Film and Best Uruguayan AI Film.",
         "q6": "What percentage of my film needs to be AI-generated?",
         "a6": "There's no strict percentage, but AI must play a significant creative role (not just color grading or upscaling). If AI shaped your visuals, narrative, audio, or performance, you're eligible.",
         "q7": "What AI tools are acceptable?",
