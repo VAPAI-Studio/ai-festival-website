@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { siteConfig } from "../config/site";
 import programData from "../data/program.json";
 import partnersData from "../data/partners.json";
