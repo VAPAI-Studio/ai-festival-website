@@ -74,14 +74,11 @@ export function Header() {
                             </a>
                         ) : (
                             item.href === "/submit" ? (
-                                <div key={item.name} className="relative group">
-                                    <Button size="sm" className="cursor-default">
+                                <Button size="sm" asChild key={item.name}>
+                                    <a href="https://www.lifecinemas.com.uy/pelicula/primer-festival-de-ia-en-el-cine" target="_blank" rel="noopener noreferrer">
                                         {t('nav.submitProject')}
-                                    </Button>
-                                    <span className="absolute top-full mt-2 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs bg-white/10 backdrop-blur-md text-muted-foreground px-3 py-1.5 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                        {t('hero.ticketsSoon')}
-                                    </span>
-                                </div>
+                                    </a>
+                                </Button>
                             ) : (
                                 <Link
                                     key={item.name}
@@ -139,14 +136,11 @@ export function Header() {
                             </a>
                         ) : (
                             item.href === "/submit" ? (
-                                <div key={item.name} className="relative group">
-                                    <Button size="sm" className="w-full cursor-default" onClick={() => setIsMenuOpen(false)}>
+                                <Button size="sm" asChild key={item.name} className="w-full">
+                                    <a href="https://www.lifecinemas.com.uy/pelicula/primer-festival-de-ia-en-el-cine" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
                                         {t('nav.submitProject')}
-                                    </Button>
-                                    <span className="absolute top-full mt-2 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs bg-white/10 backdrop-blur-md text-muted-foreground px-3 py-1.5 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                        {t('hero.ticketsSoon')}
-                                    </span>
-                                </div>
+                                    </a>
+                                </Button>
                             ) : (
                                 <Link
                                     key={item.name}

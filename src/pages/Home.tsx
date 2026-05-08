@@ -41,14 +41,11 @@ export function Home() {
                                 <span>{siteConfig.city}</span>
                             </div>
                         </div>
-                        <div className="relative group mt-4 pointer-events-auto">
-                            <Button size="lg" className="cursor-default">
+                        <Button size="lg" className="mt-4 pointer-events-auto" asChild>
+                            <a href="https://www.lifecinemas.com.uy/pelicula/primer-festival-de-ia-en-el-cine" target="_blank" rel="noopener noreferrer">
                                 {t('hero.cta')}
-                            </Button>
-                            <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs bg-white/10 backdrop-blur-md text-muted-foreground px-3 py-1.5 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                                {t('hero.ticketsSoon')}
-                            </span>
-                        </div>
+                            </a>
+                        </Button>
                     </div>
                 </div>
             </section>
@@ -400,14 +397,11 @@ export function Home() {
                     <h2 className="text-4xl md:text-6xl font-bold tracking-tighter">
                         {t('hero.cta')}
                     </h2>
-                    <div className="relative group inline-block">
-                        <Button size="lg" className="text-lg px-8 cursor-default">
+                    <Button size="lg" className="text-lg px-8" asChild>
+                        <a href="https://www.lifecinemas.com.uy/pelicula/primer-festival-de-ia-en-el-cine" target="_blank" rel="noopener noreferrer">
                             {t('nav.submitProject')}
-                        </Button>
-                        <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs bg-white/10 backdrop-blur-md text-muted-foreground px-3 py-1.5 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                            {t('hero.ticketsSoon')}
-                        </span>
-                    </div>
+                        </a>
+                    </Button>
                 </div>
             </section>
         </div>
