@@ -128,10 +128,10 @@
     "jury": {
         "title": "Jury",
         "comingSoon": "Jury members to be announced.",
-        "bios": {
-            "alvaroBrechner": "Award-winning director and screenwriter ('A Twelve-Year Night', 'Mr. Kaplan'). His films have premiered at Cannes and Venice, representing Uruguay at the Oscars multiple times.",
-            "fedeAlvarez": "Hollywood director known for 'Alien: Romulus', 'Don't Breathe', and 'Evil Dead'. He burst onto the scene with the viral short 'Panic Attack!' featuring giant robots invading Montevideo.",
-            "luisaPereira": "Artist, engineer, and musician based in NYC. Professor at NYU ITP/IMA. Her interactive installations and generative machines explore the intersection of music and code."
+        "roles": {
+            "pabloCasacuberta": "Writer & Artist",
+            "florenciaFascioli": "Researcher & Lecturer",
+            "fernandoEpstein": "Filmmaker & Editor"
         }
     },
     "awards": {
@@ -142,7 +142,7 @@
         "bestUruguayan": "Best Uruguayan AI Film",
         "prizes": {
             "bestInternational": "USD 2.500",
-            "pitchCompetition": "To Be Announced",
+            "pitchCompetition": "",
             "bestUruguayan": "USD 4.000 in Musitelli Credits"
         }
     },

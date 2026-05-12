@@ -128,10 +128,10 @@
     "jury": {
         "title": "Jurado",
         "comingSoon": "Miembros del jurado a anunciar.",
-        "bios": {
-            "alvaroBrechner": "Director y guionista galardonado ('La noche de 12 años', 'Mr. Kaplan'). Sus películas se han estrenado en Cannes y Venecia, representando a Uruguay en los Oscar en múltiples ocasiones.",
-            "fedeAlvarez": "Director de Hollywood conocido por 'Alien: Romulus', 'No respires' y 'Evil Dead'. Irrumpió en la escena con el corto viral 'Ataque de Pánico!' con robots gigantes invadiendo Montevideo.",
-            "luisaPereira": "Artista, ingeniera y música radicada en NYC. Profesora en NYU ITP/IMA. Sus instalaciones interactivas y máquinas generativas exploran la intersección entre música y código."
+        "roles": {
+            "pabloCasacuberta": "Escritor & Artista",
+            "florenciaFascioli": "Investigadora & Docente",
+            "fernandoEpstein": "Cineasta & Editor"
         }
     },
     "awards": {
@@ -142,7 +142,7 @@
         "bestUruguayan": "Mejor Película IA Uruguaya",
         "prizes": {
             "bestInternational": "USD 2.500",
-            "pitchCompetition": "A anunciar",
+            "pitchCompetition": "",
             "bestUruguayan": "USD 4.000 en Créditos Musitelli"
         }
     },

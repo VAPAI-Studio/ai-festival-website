@@ -1,6 +1,7 @@
 import { siteConfig } from "../config/site";
 import programData from "../data/program.json";
 import partnersData from "../data/partners.json";
+import juryData from "../data/jury.json";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
 import { Calendar, MapPin, Trophy, Users, Film, Mic, Globe, HelpCircle, Monitor } from "lucide-react";
@@ -23,8 +24,21 @@ export function Home() {
                 </div>
                 <div className="container mx-auto px-4 md:px-6 relative z-10 text-center space-y-8 pointer-events-none">
                     <div className="space-y-4">
-                        <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-b from-white to-white/50 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100 fill-mode-forwards">
-                            {siteConfig.name}
+                        <h1 className="animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-100 fill-mode-forwards" aria-label={siteConfig.name}>
+                            <span
+                                className="block mx-auto h-16 md:h-24 lg:h-32 w-full max-w-[280px] md:max-w-[640px] lg:max-w-[900px]"
+                                style={{
+                                    backgroundColor: "rgb(205, 105, 94)",
+                                    WebkitMaskImage: "url(/SnFLogo.png)",
+                                    maskImage: "url(/SnFLogo.png)",
+                                    WebkitMaskRepeat: "no-repeat",
+                                    maskRepeat: "no-repeat",
+                                    WebkitMaskPosition: "center",
+                                    maskPosition: "center",
+                                    WebkitMaskSize: "contain",
+                                    maskSize: "contain",
+                                }}
+                            />
                         </h1>
                         <p className="text-xl md:text-2xl text-muted-foreground max-w-[600px] mx-auto animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200 fill-mode-forwards">
                             {t('hero.subtitle')}
@@ -119,7 +133,7 @@ export function Home() {
                             {partnersData.filter((p) => p.tier === "Gold").map((partner) => (
                                 <div key={partner.id} className="h-32 w-64 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all p-6">
                                     {partner.logo ? (
-                                        <img src={partner.logo} alt={partner.name} className={`max-h-full max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'}`} />
+                                        <img src={partner.logo} alt={partner.name} className={`max-h-full max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
                                     ) : (
                                         <span className="text-lg font-bold text-muted-foreground">{partner.name}</span>
                                     )}
@@ -137,7 +151,7 @@ export function Home() {
                                     {partnersData.filter((p) => p.tier === tierKey).map((partner) => (
                                         <div key={partner.id} className="h-20 w-48 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all px-5">
                                             {partner.logo ? (
-                                                <img src={partner.logo} alt={partner.name} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'}`} />
+                                                <img src={partner.logo} alt={partner.name} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
                                             ) : (
                                                 <span className="text-sm font-bold text-muted-foreground">{partner.name}</span>
                                             )}
@@ -157,7 +171,7 @@ export function Home() {
                                     {partnersData.filter((p) => p.tier === tierKey).map((partner) => (
                                         <div key={partner.id} className="h-20 w-48 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all px-5">
                                             {partner.logo ? (
-                                                <img src={partner.logo} alt={partner.name} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'}`} />
+                                                <img src={partner.logo} alt={partner.name} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
                                             ) : (
                                                 <span className="text-sm font-bold text-muted-foreground">{partner.name}</span>
                                             )}
@@ -184,8 +198,8 @@ export function Home() {
                     <div className="grid gap-8 md:grid-cols-3">
                         {[
                             { title: t('awards.bestInternational'), icon: Globe, prize: t('awards.prizes.bestInternational') },
-                            { title: t('awards.pitchCompetition'), icon: Mic, prize: t('awards.prizes.pitchCompetition') },
-                            { title: t('awards.bestUruguayan'), icon: Trophy, prize: t('awards.prizes.bestUruguayan') }
+                            { title: t('awards.bestUruguayan'), icon: Trophy, prize: t('awards.prizes.bestUruguayan') },
+                            { title: t('awards.pitchCompetition'), icon: Mic, prize: t('awards.prizes.pitchCompetition') }
                         ].map((award, i) => (
                             <Card key={i} className="bg-white/5 border-white/10 text-center hover:border-primary/50 transition-colors flex flex-col justify-between">
                                 <CardHeader>
@@ -194,9 +208,11 @@ export function Home() {
                                     </div>
                                     <CardTitle className="mb-2">{award.title}</CardTitle>
                                 </CardHeader>
-                                <CardContent>
-                                    <p className="text-xl font-bold text-primary">{award.prize}</p>
-                                </CardContent>
+                                {award.prize && (
+                                    <CardContent>
+                                        <p className="text-xl font-bold text-primary">{award.prize}</p>
+                                    </CardContent>
+                                )}
                             </Card>
                         ))}
                     </div>
@@ -288,7 +304,6 @@ export function Home() {
             </section>
 
             {/* Jury */}
-            {/*
             <section id="jury" className="py-24 border-t border-white/10 bg-black/50">
                 <div className="container mx-auto px-4 md:px-6">
                     <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('jury.title')}>
@@ -298,13 +313,13 @@ export function Home() {
                         {juryData.map((member) => (
                             <Card key={member.id} className="bg-transparent border-none text-center group">
                                 <CardHeader>
-                                    <div className="mx-auto w-32 h-32 rounded-full bg-white/10 mb-6 overflow-hidden border-2 border-transparent group-hover:border-primary/50 transition-colors">
-                                        Using User icon as fallback if image load fails or path is placeholder
+                                    <div className="mx-auto w-40 h-40 rounded-full bg-white/10 mb-6 overflow-hidden border-2 border-white/20 group-hover:border-primary/50 transition-colors">
                                         {member.image ? (
                                             <img
                                                 src={member.image}
                                                 alt={member.name}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-cover grayscale"
+                                                style={{ objectPosition: member.imagePosition ?? 'center' }}
                                                 onError={(e) => {
                                                     e.currentTarget.style.display = 'none';
                                                     e.currentTarget.nextElementSibling?.classList.remove('hidden');
@@ -316,41 +331,8 @@ export function Home() {
                                         </div>
                                     </div>
                                     <CardTitle>{member.name}</CardTitle>
-                                    <CardDescription className="text-primary font-medium">{member.role}</CardDescription>
+                                    <CardDescription className="text-primary font-medium">{t(`jury.roles.${member.id}`)}</CardDescription>
                                 </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground">
-                                        {t(`jury.bios.${member.id}`)}
-                                    </p>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
-                </div>
-            </section>
-            */}
-            <section id="jury" className="py-24 border-t border-white/10 bg-black/50">
-                <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('jury.title')}>
-                        {t('jury.title')}
-                    </h2>
-                    <div className="grid gap-8 md:grid-cols-3">
-                        {[1, 2, 3].map((i) => (
-                            <Card key={i} className="bg-transparent border-none text-center group">
-                                <CardHeader>
-                                    <div className="mx-auto w-32 h-32 rounded-full bg-white/10 mb-6 overflow-hidden border-2 border-transparent group-hover:border-primary/50 transition-colors">
-                                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                                            <Users className="w-12 h-12 text-primary/50" />
-                                        </div>
-                                    </div>
-                                    <CardTitle>TBD</CardTitle>
-                                    <CardDescription className="text-primary font-medium">TBD</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground">
-                                        {t('jury.comingSoon')}
-                                    </p>
-                                </CardContent>
                             </Card>
                         ))}
                     </div>

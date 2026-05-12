@@ -1,20 +1,20 @@
 [
     {
-        "id": "alvaroBrechner",
-        "name": "Alvaro Brechner",
-        "role": "Filmmaker",
-        "image": "/images/jury/alvaro-brechner.png"
+        "id": "pabloCasacuberta",
+        "name": "Pablo Casacuberta",
+        "image": "/images/jury/pablo_casacuberta.webp",
+        "imagePosition": "center 22%"
     },
     {
-        "id": "fedeAlvarez",
-        "name": "Fede Alvarez",
-        "role": "Filmmaker",
-        "image": "/images/jury/fede-alvarez.jpg"
+        "id": "florenciaFascioli",
+        "name": "Florencia Fascioli",
+        "image": "/images/jury/florencia_fascioli.jpg",
+        "imagePosition": "center 18%"
     },
     {
-        "id": "luisaPereira",
-        "name": "Luisa Pereira",
-        "role": "Artist & Engineer",
-        "image": "/images/jury/luisa-pereira.webp"
+        "id": "fernandoEpstein",
+        "name": "Fernando Epstein",
+        "image": "/images/jury/fernando_epstein.png",
+        "imagePosition": "center 35%"
     }
 ]

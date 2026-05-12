@@ -53,11 +53,20 @@ export function Header() {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-md supports-[backdrop-filter]:bg-black/60">
             <div className="container mx-auto flex h-16 items-center justify-between px-4">
-                <Link to="/" className="flex items-center gap-2 font-bold text-xl tracking-tighter">
-
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-orange-300">
-                        {siteConfig.name}
-                    </span>
+                <Link to="/" className="flex items-center gap-2" aria-label={siteConfig.name}>
+                    <span
+                        className="block h-7 w-52 bg-gradient-to-r from-orange-500 to-orange-300"
+                        style={{
+                            WebkitMaskImage: "url(/SnFLogo.png)",
+                            maskImage: "url(/SnFLogo.png)",
+                            WebkitMaskRepeat: "no-repeat",
+                            maskRepeat: "no-repeat",
+                            WebkitMaskPosition: "center",
+                            maskPosition: "center",
+                            WebkitMaskSize: "contain",
+                            maskSize: "contain",
+                        }}
+                    />
                 </Link>
 
                 {/* Desktop Nav */}

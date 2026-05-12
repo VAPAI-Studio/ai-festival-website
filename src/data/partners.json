@@ -41,6 +41,7 @@
         "logo": "/images/sponsors/capicua_2.png",
         "tier": "Socios",
         "keepColor": true,
+        "grayscale": true,
         "url": "#"
     },
     {
