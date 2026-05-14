@@ -195,11 +195,10 @@ export function Home() {
                             {t('awards.description')}
                         </p>
                     </div>
-                    <div className="grid gap-8 md:grid-cols-3">
+                    <div className="grid gap-8 md:grid-cols-2 items-stretch max-w-4xl mx-auto">
                         {[
-                            { title: t('awards.bestInternational'), icon: Globe, prize: t('awards.prizes.bestInternational') },
-                            { title: t('awards.bestUruguayan'), icon: Trophy, prize: t('awards.prizes.bestUruguayan') },
-                            { title: t('awards.pitchCompetition'), icon: Mic, prize: t('awards.prizes.pitchCompetition') }
+                            { title: t('awards.bestInternational'), icon: Globe, prize: t('awards.prizes.bestInternational'), prizeLogo: "/images/sponsors/sideoutsticks.png", prizeLogoAlt: "Side Out Sticks", invertLogo: true },
+                            { title: t('awards.bestUruguayan'), icon: Trophy, prize: t('awards.prizes.bestUruguayan'), prizeLogo: "/images/sponsors/musitelli.png", prizeLogoAlt: "Musitelli", invertLogo: false }
                         ].map((award, i) => (
                             <Card key={i} className="bg-white/5 border-white/10 text-center hover:border-primary/50 transition-colors flex flex-col justify-between">
                                 <CardHeader>
@@ -209,8 +208,13 @@ export function Home() {
                                     <CardTitle className="mb-2">{award.title}</CardTitle>
                                 </CardHeader>
                                 {award.prize && (
-                                    <CardContent>
+                                    <CardContent className="space-y-3">
                                         <p className="text-xl font-bold text-primary">{award.prize}</p>
+                                        {award.prizeLogo && (
+                                            <div className="h-12 flex items-center justify-center">
+                                                <img src={award.prizeLogo} alt={award.prizeLogoAlt} className={`max-h-full w-auto object-contain opacity-90 ${award.invertLogo ? 'brightness-0 invert' : ''}`} />
+                                            </div>
+                                        )}
                                     </CardContent>
                                 )}
                             </Card>

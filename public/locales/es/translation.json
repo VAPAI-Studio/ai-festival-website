@@ -136,12 +136,12 @@
     },
     "awards": {
         "title": "Premios",
-        "description": "15 películas formarán parte de la Selección Oficial.",
+        "description": "18 películas formarán parte de la Selección Oficial.",
         "bestInternational": "Mejor Película IA Internacional",
         "pitchCompetition": "Uso más creativo de la IA",
         "bestUruguayan": "Mejor Película IA Uruguaya",
         "prizes": {
-            "bestInternational": "USD 2.500",
+            "bestInternational": "USD 2.500 Cash",
             "pitchCompetition": "",
             "bestUruguayan": "USD 4.000 en Créditos Musitelli"
         }

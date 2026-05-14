@@ -136,12 +136,12 @@
     },
     "awards": {
         "title": "Awards",
-        "description": "15 films will be officially selected.",
+        "description": "18 films will be officially selected.",
         "bestInternational": "Best International AI Film",
         "pitchCompetition": "Most Creative use of AI",
         "bestUruguayan": "Best Uruguayan AI Film",
         "prizes": {
-            "bestInternational": "USD 2.500",
+            "bestInternational": "USD 2.500 Cash",
             "pitchCompetition": "",
             "bestUruguayan": "USD 4.000 in Musitelli Credits"
         }
