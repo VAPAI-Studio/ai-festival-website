@@ -14,6 +14,14 @@
         "url": "#"
     },
     {
+        "id": "reducto-by-line",
+        "name": "Reducto by Line",
+        "logo": "/images/sponsors/reducto-by-line.png",
+        "tier": "Apoya",
+        "scale": 0.7,
+        "url": "#"
+    },
+    {
         "id": "elpais",
         "name": "El País",
         "logo": "/images/sponsors/elpais_2.png",

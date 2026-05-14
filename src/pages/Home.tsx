@@ -151,7 +151,7 @@ export function Home() {
                                     {partnersData.filter((p) => p.tier === tierKey).map((partner) => (
                                         <div key={partner.id} className="h-20 w-48 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all px-5">
                                             {partner.logo ? (
-                                                <img src={partner.logo} alt={partner.name} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
+                                                <img src={partner.logo} alt={partner.name} style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
                                             ) : (
                                                 <span className="text-sm font-bold text-muted-foreground">{partner.name}</span>
                                             )}
@@ -171,7 +171,7 @@ export function Home() {
                                     {partnersData.filter((p) => p.tier === tierKey).map((partner) => (
                                         <div key={partner.id} className="h-20 w-48 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all px-5">
                                             {partner.logo ? (
-                                                <img src={partner.logo} alt={partner.name} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
+                                                <img src={partner.logo} alt={partner.name} style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
                                             ) : (
                                                 <span className="text-sm font-bold text-muted-foreground">{partner.name}</span>
                                             )}
