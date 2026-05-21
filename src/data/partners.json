@@ -43,6 +43,13 @@
         "url": "#"
     },
     {
+        "id": "latamcinema",
+        "name": "Latam Cinema",
+        "logo": "/images/sponsors/latamcinema.png",
+        "tier": "Media Partners",
+        "url": "#"
+    },
+    {
         "id": "sideoutsticks",
         "name": "sideOUTsticks",
         "logo": "/images/sponsors/sideoutsticks.png",
