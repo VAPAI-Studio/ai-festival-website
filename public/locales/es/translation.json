@@ -3,6 +3,7 @@
     "sponsors": {
         "title": "Sponsors",
         "gold": "Gold",
+        "silver": "Silver",
         "supports": "Apoya",
         "mediaPartners": "Media Partners",
         "organizes": "Organiza",
@@ -13,6 +14,7 @@
         "dates": "Fechas",
         "program": "Programa",
         "jury": "Jurado",
+        "speakers": "Speakers",
         "awards": "Premios",
         "submit": "Enviar",
         "submitProject": "Conseguí tus entradas"
@@ -132,6 +134,22 @@
             "pabloCasacuberta": "Escritor & Artista",
             "florenciaFascioli": "Investigadora & Docente",
             "fernandoEpstein": "Cineasta & Editor"
+        }
+    },
+    "speakers": {
+        "title": "Speakers",
+        "subtitle": "Charlas y conversaciones con referentes de la IA creativa y la industria.",
+        "roles": {
+            "felipeMachado": "Head of AI Studio · Silverside AI",
+            "gabrielOrtiz": "Fundador & CEO · Pixart"
+        },
+        "bios": {
+            "felipeMachado": "Director creativo brasileño que comenzó en motion design en MTV y hoy lidera la innovación con IA en Silverside AI para marcas como Coca-Cola, Google y Amazon. Defiende la 'creación híbrida': fusionar la velocidad de la IA con la profundidad emocional humana.",
+            "gabrielOrtiz": "Ingeniero y empresario argentino, fundador de Pixart en 1999. Construyó la primera fábrica inteligente automatizada de Latinoamérica y fue el primer argentino autorizado por Qualcomm para diseñar y producir motherboards en el país."
+        },
+        "tags": {
+            "felipeMachado": ["IA Creativa", "Dirección", "Storytelling"],
+            "gabrielOrtiz": ["Hardware", "Industria 4.0", "Latam Tech"]
         }
     },
     "awards": {

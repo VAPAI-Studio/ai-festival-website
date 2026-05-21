@@ -2,6 +2,7 @@ import { siteConfig } from "../config/site";
 import programData from "../data/program.json";
 import partnersData from "../data/partners.json";
 import juryData from "../data/jury.json";
+import speakersData from "../data/speakers.json";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
 import { Calendar, MapPin, Trophy, Users, Film, Mic, Globe, HelpCircle, Monitor } from "lucide-react";
@@ -142,6 +143,22 @@ export function Home() {
                         </div>
                     </div>
 
+                    {/* Silver */}
+                    <div className="text-center mb-12">
+                        <h3 className="text-base font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-6">{t('sponsors.silver')}</h3>
+                        <div className="flex flex-wrap gap-6 items-center justify-center">
+                            {partnersData.filter((p) => p.tier === "Silver").map((partner) => (
+                                <div key={partner.id} className="h-24 w-52 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all p-5">
+                                    {partner.logo ? (
+                                        <img src={partner.logo} alt={partner.name} className={`max-h-full max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
+                                    ) : (
+                                        <span className="text-base font-bold text-muted-foreground">{partner.name}</span>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
                     {/* Apoya | Media Partners */}
                     <div className="grid grid-cols-2 gap-6 mb-6">
                         {([["Apoya", t('sponsors.supports')], ["Media Partners", t('sponsors.mediaPartners')]] as const).map(([tierKey, tierLabel]) => (
@@ -223,7 +240,41 @@ export function Home() {
                 </div>
             </section>
 
-
+            {/* Jury */}
+            <section id="jury" className="py-24 border-t border-white/10 bg-black/50">
+                <div className="container mx-auto px-4 md:px-6">
+                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('jury.title')}>
+                        {t('jury.title')}
+                    </h2>
+                    <div className="grid gap-8 md:grid-cols-3">
+                        {juryData.map((member) => (
+                            <Card key={member.id} className="bg-transparent border-none text-center group">
+                                <CardHeader>
+                                    <div className="relative mx-auto w-52 h-52 md:w-60 md:h-60 rounded-full bg-white/10 mb-6 overflow-hidden border-2 border-white/20 group-hover:border-primary/50 transition-colors">
+                                        {member.image ? (
+                                            <img
+                                                src={member.image}
+                                                alt={member.name}
+                                                className="w-full h-full object-cover grayscale"
+                                                style={{ objectPosition: member.imagePosition ?? 'center' }}
+                                                onError={(e) => {
+                                                    e.currentTarget.style.display = 'none';
+                                                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                                                }}
+                                            />
+                                        ) : null}
+                                        <div className={`w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center ${member.image ? 'hidden' : ''}`}>
+                                            <Users className="w-12 h-12 text-primary/50" />
+                                        </div>
+                                    </div>
+                                    <CardTitle>{member.name}</CardTitle>
+                                    <CardDescription className="text-primary font-medium">{t(`jury.roles.${member.id}`)}</CardDescription>
+                                </CardHeader>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             {/* Venue */}
             <section className="py-24 border-t border-white/10 bg-black/50">
@@ -307,44 +358,89 @@ export function Home() {
                 </div>
             </section>
 
-            {/* Jury */}
-            <section id="jury" className="py-24 border-t border-white/10 bg-black/50">
-                <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('jury.title')}>
-                        {t('jury.title')}
-                    </h2>
-                    <div className="grid gap-8 md:grid-cols-3">
-                        {juryData.map((member) => (
-                            <Card key={member.id} className="bg-transparent border-none text-center group">
-                                <CardHeader>
-                                    <div className="mx-auto w-40 h-40 rounded-full bg-white/10 mb-6 overflow-hidden border-2 border-white/20 group-hover:border-primary/50 transition-colors">
-                                        {member.image ? (
-                                            <img
-                                                src={member.image}
-                                                alt={member.name}
-                                                className="w-full h-full object-cover grayscale"
-                                                style={{ objectPosition: member.imagePosition ?? 'center' }}
-                                                onError={(e) => {
-                                                    e.currentTarget.style.display = 'none';
-                                                    e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                                                }}
-                                            />
-                                        ) : null}
-                                        <div className={`w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center ${member.image ? 'hidden' : ''}`}>
-                                            <Users className="w-12 h-12 text-primary/50" />
+            {/* Speakers */}
+            <section id="speakers" className="relative py-24 border-t border-white/10 overflow-hidden">
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute top-1/4 -left-32 w-[28rem] h-[28rem] rounded-full bg-primary/10 blur-[120px]" />
+                    <div className="absolute bottom-0 -right-32 w-[28rem] h-[28rem] rounded-full bg-accent/10 blur-[120px]" />
+                </div>
+                <div className="container mx-auto px-4 md:px-6 max-w-6xl relative">
+                    <div className="text-center mb-20 space-y-4">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-xs font-medium uppercase tracking-[0.2em] text-primary">
+                            <Mic className="w-3 h-3" />
+                            {t('speakers.title')}
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-primary scroll-rgb" data-text={t('speakers.title')}>
+                            {t('speakers.title')}
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            {t('speakers.subtitle')}
+                        </p>
+                    </div>
+                    <div className="space-y-24 md:space-y-32">
+                        {speakersData.map((speaker, idx) => {
+                            const tags = t(`speakers.tags.${speaker.id}`, { returnObjects: true }) as string[];
+                            const isReverse = idx % 2 === 1;
+                            return (
+                                <div key={speaker.id} className={`grid gap-8 md:gap-12 md:grid-cols-12 items-center ${isReverse ? 'md:[direction:rtl]' : ''}`}>
+                                    <div className={`md:col-span-5 md:[direction:ltr] relative group`}>
+                                        <div className="absolute -inset-2 bg-gradient-to-br from-primary/40 via-accent/20 to-transparent rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
+                                        <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-primary/20 via-white/5 to-accent/20">
+                                            {speaker.image ? (
+                                                <img
+                                                    src={speaker.image}
+                                                    alt={speaker.name}
+                                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                                    style={{ objectPosition: speaker.imagePosition ?? 'center' }}
+                                                    onError={(e) => {
+                                                        e.currentTarget.style.display = 'none';
+                                                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                                                    }}
+                                                />
+                                            ) : null}
+                                            <div className={`w-full h-full flex items-center justify-center ${speaker.image ? 'hidden' : ''}`}>
+                                                <span className="text-7xl md:text-8xl font-bold tracking-tighter text-primary/40">
+                                                    {speaker.name.split(' ').map(n => n[0]).join('')}
+                                                </span>
+                                            </div>
+                                            {speaker.tint && (
+                                                <div
+                                                    className="absolute inset-0 pointer-events-none mix-blend-color group-hover:opacity-0 transition-opacity duration-700"
+                                                    style={{ backgroundColor: speaker.tint }}
+                                                />
+                                            )}
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                                            <div className="absolute top-4 left-4 text-xs font-mono uppercase tracking-[0.2em] text-white/80 px-3 py-1 rounded-full bg-black/40 backdrop-blur-sm border border-white/20">
+                                                {String(idx + 1).padStart(2, '0')} / {String(speakersData.length).padStart(2, '0')}
+                                            </div>
                                         </div>
                                     </div>
-                                    <CardTitle>{member.name}</CardTitle>
-                                    <CardDescription className="text-primary font-medium">{t(`jury.roles.${member.id}`)}</CardDescription>
-                                </CardHeader>
-                            </Card>
-                        ))}
+                                    <div className="md:col-span-7 md:[direction:ltr] space-y-5">
+                                        <div className="space-y-2">
+                                            <p className="text-sm font-mono uppercase tracking-[0.2em] text-primary">
+                                                {t(`speakers.roles.${speaker.id}`)}
+                                            </p>
+                                            <h3 className="text-4xl md:text-5xl font-bold tracking-tighter">
+                                                {speaker.name}
+                                            </h3>
+                                        </div>
+                                        <p className="text-lg text-muted-foreground leading-relaxed">
+                                            {t(`speakers.bios.${speaker.id}`)}
+                                        </p>
+                                        <div className="flex flex-wrap gap-2 pt-2">
+                                            {tags.map((tag) => (
+                                                <span key={tag} className="text-xs font-medium uppercase tracking-wider px-3 py-1.5 rounded-full border border-white/15 bg-white/5 text-muted-foreground hover:border-primary/40 hover:text-primary transition-colors">
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
-
-
-
 
 
             {/* FAQ */}

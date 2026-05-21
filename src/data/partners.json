@@ -7,6 +7,20 @@
         "url": "#"
     },
     {
+        "id": "pixart",
+        "name": "Pixart",
+        "logo": "/images/sponsors/Pixart.png",
+        "tier": "Silver",
+        "url": "#"
+    },
+    {
+        "id": "qualcomm",
+        "name": "Qualcomm",
+        "logo": "/images/sponsors/Qualcomm.png",
+        "tier": "Silver",
+        "url": "#"
+    },
+    {
         "id": "acau",
         "name": "ACAU",
         "logo": "/images/sponsors/ACAU-Logotipo-RGB.png",

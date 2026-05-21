@@ -46,6 +46,7 @@ export function Header() {
         { name: t('nav.dates'), href: "/#dates" },
         { name: t('nav.program'), href: "/#program" },
         { name: t('nav.jury'), href: "/#jury" },
+        { name: t('nav.speakers'), href: "/#speakers" },
         { name: t('nav.awards'), href: "/#awards" },
         { name: t('nav.submit'), href: "/submit" },
     ];
