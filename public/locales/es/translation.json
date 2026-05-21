@@ -12,12 +12,19 @@
     "nav": {
         "festival": "El Festival",
         "dates": "Fechas",
+        "films": "Películas",
         "program": "Programa",
         "jury": "Jurado",
         "speakers": "Speakers",
         "awards": "Premios",
         "submit": "Enviar",
         "submitProject": "Conseguí tus entradas"
+    },
+    "films": {
+        "badge": "Selección Oficial",
+        "title": "Películas Seleccionadas",
+        "subtitle": "Las 18 películas que se proyectarán en el primer Festival de Cine con IA.",
+        "outOfCompetition": "Fuera de Competencia"
     },
     "hero": {
         "subtitle": "1er Festival Latam de IA Creativa",

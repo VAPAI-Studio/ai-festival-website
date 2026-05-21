@@ -53,3 +53,19 @@ h6 {
     text-wrap: balance;
   }
 }
+
+.marquee-viewport {
+  cursor: grab;
+  overflow: hidden;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.marquee-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.marquee-track {
+  width: max-content;
+  will-change: transform;
+}

@@ -1,8 +1,10 @@
+import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "../config/site";
 import programData from "../data/program.json";
 import partnersData from "../data/partners.json";
 import juryData from "../data/jury.json";
 import speakersData from "../data/speakers.json";
+import filmsData from "../data/films.json";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
 import { Calendar, MapPin, Trophy, Users, Film, Mic, Globe, HelpCircle, Monitor } from "lucide-react";
@@ -11,6 +13,73 @@ import { useTranslation } from "react-i18next";
 
 export function Home() {
     const { t } = useTranslation();
+
+    const filmsTrackRef = useRef<HTMLDivElement | null>(null);
+    const filmsViewportRef = useRef<HTMLDivElement | null>(null);
+    const filmsOffsetRef = useRef(0);
+    const filmsDragRef = useRef({ active: false, startX: 0, baseOffset: 0, pointerId: 0 });
+    const filmsHoverRef = useRef(false);
+    const [isDraggingFilms, setIsDraggingFilms] = useState(false);
+
+    useEffect(() => {
+        const track = filmsTrackRef.current;
+        if (!track) return;
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const SPEED = 90; // px per second
+        let raf = 0;
+        let lastTime = performance.now();
+
+        const tick = (now: number) => {
+            const dt = (now - lastTime) / 1000;
+            lastTime = now;
+            const halfWidth = track.scrollWidth / 2;
+            if (!filmsDragRef.current.active && !filmsHoverRef.current && !reduceMotion && halfWidth > 0) {
+                filmsOffsetRef.current -= SPEED * dt;
+                if (filmsOffsetRef.current <= -halfWidth) {
+                    filmsOffsetRef.current += halfWidth;
+                }
+            }
+            track.style.transform = `translateX(${filmsOffsetRef.current}px)`;
+            raf = requestAnimationFrame(tick);
+        };
+        raf = requestAnimationFrame(tick);
+        return () => cancelAnimationFrame(raf);
+    }, []);
+
+    const onFilmsPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+        filmsDragRef.current = {
+            active: true,
+            startX: e.clientX,
+            baseOffset: filmsOffsetRef.current,
+            pointerId: e.pointerId,
+        };
+        setIsDraggingFilms(true);
+        e.currentTarget.setPointerCapture(e.pointerId);
+    };
+
+    const onFilmsPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+        if (!filmsDragRef.current.active) return;
+        const track = filmsTrackRef.current;
+        if (!track) return;
+        const dx = e.clientX - filmsDragRef.current.startX;
+        const halfWidth = track.scrollWidth / 2;
+        let next = filmsDragRef.current.baseOffset + dx;
+        if (halfWidth > 0) {
+            next = ((next % halfWidth) + halfWidth) % halfWidth - halfWidth;
+        }
+        filmsOffsetRef.current = next;
+    };
+
+    const endFilmsDrag = (e: React.PointerEvent<HTMLDivElement>) => {
+        if (!filmsDragRef.current.active) return;
+        filmsDragRef.current.active = false;
+        setIsDraggingFilms(false);
+        try { e.currentTarget.releasePointerCapture(filmsDragRef.current.pointerId); } catch {}
+    };
+
+    const onFilmsPointerEnter = () => { filmsHoverRef.current = true; };
+    const onFilmsPointerLeave = () => { filmsHoverRef.current = false; };
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -65,56 +134,62 @@ export function Home() {
                 </div>
             </section>
 
-            {/* The Festival */}
-            <section id="festival" className="py-24 bg-black/50">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="grid gap-12 lg:grid-cols-2 items-center">
-                        <div className="space-y-6">
-                            <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-primary scroll-rgb" data-text={t('festival.title')}>
-                                {t('festival.title')}
-                            </h2>
-                            <div className="space-y-4 text-lg text-muted-foreground">
-                                <p>
-                                    {t('festival.description')}
-                                </p>
-                                <p>
-                                    {t('festival.description2')}
-                                </p>
-                                <p>
-                                    {t('festival.description3')}
-                                </p>
-                            </div>
+            {/* Films Carousel */}
+            <section id="films" className="relative py-24 border-t border-white/10 bg-black/50 overflow-hidden">
+                <div className="container mx-auto px-4 md:px-6 mb-12">
+                    <div className="text-center space-y-3">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-xs font-medium uppercase tracking-[0.2em] text-primary">
+                            <Film className="w-3 h-3" />
+                            {t('films.badge')}
                         </div>
-                        <div className="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5">
-                            <img
-                                src="/images/festival_image.png"
-                                alt="Sticks n' Festival"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-primary scroll-rgb" data-text={t('films.title')}>
+                            {t('films.title')}
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            {t('films.subtitle')}
+                        </p>
                     </div>
                 </div>
-            </section>
-
-            {/* Dates */}
-            <section id="dates" className="py-24 border-t border-white/10">
-                <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('dates.title')}>
-                        {t('dates.title')}
-                    </h2>
-                    <div className="grid gap-8 md:grid-cols-4">
-                        {[
-                            { date: "Feb 16, 2026", label: t('dates.open') },
-                            { date: "May 1, 2026", label: t('dates.deadline') },
-                            { date: "May 15, 2026", label: t('dates.notification') },
-                            { date: "May 28-29, 2026", label: t('dates.screening') }
-                        ].map((item, i) => (
-                            <Card key={i} className="bg-white/5 border-white/10 text-center">
-                                <CardHeader>
-                                    <CardTitle className="text-2xl text-primary">{item.date}</CardTitle>
-                                    <CardDescription>{item.label}</CardDescription>
-                                </CardHeader>
-                            </Card>
+                <div
+                    ref={filmsViewportRef}
+                    className={`relative marquee-viewport ${isDraggingFilms ? 'is-dragging' : ''}`}
+                    onPointerDown={onFilmsPointerDown}
+                    onPointerMove={onFilmsPointerMove}
+                    onPointerUp={endFilmsDrag}
+                    onPointerCancel={endFilmsDrag}
+                    onPointerEnter={onFilmsPointerEnter}
+                    onPointerLeave={onFilmsPointerLeave}
+                >
+                    <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-black/50 to-transparent z-10 pointer-events-none" />
+                    <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-black/50 to-transparent z-10 pointer-events-none" />
+                    <div
+                        ref={filmsTrackRef}
+                        className="flex gap-6 marquee-track py-2"
+                    >
+                        {[...filmsData, ...filmsData].map((film, i) => (
+                            <div
+                                key={`${film.id}-${i}`}
+                                className="relative flex-shrink-0 w-56 md:w-64 aspect-[3/4] rounded-xl overflow-hidden border border-white/10 bg-white/5 group hover:border-primary/50 transition-all"
+                            >
+                                <img
+                                    src={film.poster}
+                                    alt={film.title}
+                                    draggable={false}
+                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 select-none pointer-events-none"
+                                    loading="lazy"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
+                                {film.outOfCompetition && (
+                                    <div className="absolute top-3 left-3 text-[10px] font-mono uppercase tracking-[0.18em] text-white/90 px-2 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/20 pointer-events-none">
+                                        {t('films.outOfCompetition')}
+                                    </div>
+                                )}
+                                <div className="absolute bottom-0 left-0 right-0 p-4 pointer-events-none">
+                                    <h3 className="text-base md:text-lg font-bold tracking-tight text-white drop-shadow-lg">
+                                        {film.title}
+                                    </h3>
+                                </div>
+                            </div>
                         ))}
                     </div>
                 </div>

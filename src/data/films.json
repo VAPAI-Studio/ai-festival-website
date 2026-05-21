@@ -1,0 +1,20 @@
+[
+    { "id": "auroville", "title": "Auroville", "poster": "/images/posters/auroville.jpg" },
+    { "id": "better-luck-next-time", "title": "Better Luck Next Time", "poster": "/images/posters/better_luck_next_time.png" },
+    { "id": "black-swan", "title": "Black Swan", "poster": "/images/posters/black_swan.jpg" },
+    { "id": "cheese", "title": "Cheese", "poster": "/images/posters/cheese.jpg" },
+    { "id": "cortex-blue", "title": "Cortex Blue", "poster": "/images/posters/cortex_blue.jpg" },
+    { "id": "cradle", "title": "Cradle", "poster": "/images/posters/cradle.jpg" },
+    { "id": "dispatched", "title": "Dispatched", "poster": "/images/posters/dispatched.jpg" },
+    { "id": "human-race", "title": "Human Race", "poster": "/images/posters/human_race.jpg" },
+    { "id": "iceman", "title": "Iceman", "poster": "/images/posters/iceman.jpg" },
+    { "id": "moksha", "title": "Moksha", "poster": "/images/posters/moksha_-_3x4.jpg" },
+    { "id": "niebla", "title": "Niebla", "poster": "/images/posters/niebla.png" },
+    { "id": "qwerty", "title": "Qwerty", "poster": "/images/posters/qwerty.jpg" },
+    { "id": "sinuca-de-bico", "title": "Sinuca de Bico", "poster": "/images/posters/sinuca_de_bico_-_cover.jpg" },
+    { "id": "something-is-shifting", "title": "Something is Shifting (And We All Know It)", "poster": "/images/posters/something_is_shifting_-_out_of_competition.jpg", "outOfCompetition": true },
+    { "id": "something-worse", "title": "Something Worse", "poster": "/images/posters/something_worse.png" },
+    { "id": "the-hunt", "title": "The Hunt", "poster": "/images/posters/the_hunt.png" },
+    { "id": "the-light-that-remains", "title": "The Light That Remains", "poster": "/images/posters/the_light_that_remains.jpg" },
+    { "id": "vii-violenza", "title": "VII Violenza", "poster": "/images/posters/vii_violenza.jpg" }
+]

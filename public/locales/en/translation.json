@@ -12,12 +12,19 @@
     "nav": {
         "festival": "The Festival",
         "dates": "Dates",
+        "films": "Films",
         "program": "Program",
         "jury": "Jury",
         "speakers": "Speakers",
         "awards": "Awards",
         "submit": "Submit",
         "submitProject": "Get Tickets"
+    },
+    "films": {
+        "badge": "Official Selection",
+        "title": "Selected Films",
+        "subtitle": "The 18 films that will screen at the first AI Film Festival.",
+        "outOfCompetition": "Out of Competition"
     },
     "hero": {
         "subtitle": "1st Latam Creative AI Festival",

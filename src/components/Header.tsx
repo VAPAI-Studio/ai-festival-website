@@ -42,8 +42,7 @@ export function Header() {
     };
 
     const navigation = [
-        { name: t('nav.festival'), href: "/#festival" },
-        { name: t('nav.dates'), href: "/#dates" },
+        { name: t('nav.films'), href: "/#films" },
         { name: t('nav.program'), href: "/#program" },
         { name: t('nav.jury'), href: "/#jury" },
         { name: t('nav.speakers'), href: "/#speakers" },
