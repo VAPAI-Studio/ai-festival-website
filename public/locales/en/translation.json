@@ -53,21 +53,23 @@
         "address": "Miguel Barreiro 3231 esq. Berro, Pocitos, Montevideo"
     },
     "program": {
-        "title": "Program",
-        "comingSoon": "Full program to be announced.",
-        "items": {
-            "1": {
-                "title": "Training Workshops",
-                "description": "Practical sessions for students of institutions on responsible and creative AI use."
-            },
-            "3": {
-                "title": "The Festival",
-                "description": "Official Competition screenings, Talks, Panels, and the closing Awards ceremony."
-            },
-            "4": {
-                "title": "After Party",
-                "description": "Celebrate the festival closing night with us. Good music, great drinks, and the best company to toast to the future of creative AI."
-            }
+        "title": "Agenda",
+        "subtitle": "Two nights of AI cinema at Life Cinemas.",
+        "venue": "Life Cinemas · Punta Carretas",
+        "days": {
+            "day1": { "label": "Day 1", "weekday": "Thursday", "date": "May 28, 2026" },
+            "day2": { "label": "Day 2", "weekday": "Friday", "date": "May 29, 2026" }
+        },
+        "types": {
+            "doors": { "title": "Doors open", "description": "Red carpet, free popcorn and soda, and merch in the lobby." },
+            "talk": { "title": "Opening", "description": "Yves opens the night." },
+            "speaker": { "title": "Speaker 1 · Felipe Machado", "description": "Head of AI Studio at Silverside AI." },
+            "speaker2": { "title": "Speaker 2 · Gabriel Ortiz", "description": "Founder & CEO of Pixart." },
+            "screening": { "title": "Short Films", "description": "9 selected shorts back-to-back." },
+            "awards": { "title": "Awards Ceremony", "description": "Best International & Uruguayan shorts." },
+            "close": { "title": "Closing", "description": "Yves closes the night." },
+            "end": { "title": "Doors close", "description": "" },
+            "afterparty": { "title": "Afterparty at Capicúa", "description": "We move to Destilería Capicúa to keep the night going." }
         }
     },
     "rules": {

@@ -42,8 +42,8 @@ export function Header() {
     };
 
     const navigation = [
-        { name: t('nav.films'), href: "/#films" },
         { name: t('nav.program'), href: "/#program" },
+        { name: t('nav.films'), href: "/#films" },
         { name: t('nav.jury'), href: "/#jury" },
         { name: t('nav.speakers'), href: "/#speakers" },
         { name: t('nav.awards'), href: "/#awards" },

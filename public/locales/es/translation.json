@@ -53,21 +53,23 @@
         "address": "Miguel Barreiro 3231 esq. Berro, Pocitos, Montevideo"
     },
     "program": {
-        "title": "Programa",
-        "comingSoon": "Programa completo a anunciar.",
-        "items": {
-            "1": {
-                "title": "Talleres de Formación",
-                "description": "Sesiones prácticas para estudiantes de instituciones sobre el uso responsable y creativo de la IA."
-            },
-            "3": {
-                "title": "El Festival",
-                "description": "Proyecciones de la Competencia Oficial, Charlas, Paneles y la ceremonia de Premiación de cierre."
-            },
-            "4": {
-                "title": "After Party",
-                "description": "Celebra la noche de clausura con nosotros. Buena música, grandes tragos y la mejor compañía para brindar por el futuro de la IA creativa."
-            }
+        "title": "Agenda",
+        "subtitle": "Dos noches de cine con IA en Life Cinemas.",
+        "venue": "Life Cinemas · Punta Carretas",
+        "days": {
+            "day1": { "label": "Día 1", "weekday": "Jueves", "date": "28 de mayo, 2026" },
+            "day2": { "label": "Día 2", "weekday": "Viernes", "date": "29 de mayo, 2026" }
+        },
+        "types": {
+            "doors": { "title": "Apertura de puertas", "description": "Alfombra roja, pop y soda gratis, y merch en el lobby." },
+            "talk": { "title": "Bienvenida", "description": "Yves abre la noche." },
+            "speaker": { "title": "Speaker 1 · Felipe Machado", "description": "Head of AI Studio en Silverside AI." },
+            "speaker2": { "title": "Speaker 2 · Gabriel Ortiz", "description": "Fundador y CEO de Pixart." },
+            "screening": { "title": "Cortometrajes", "description": "9 de los cortos seleccionados." },
+            "awards": { "title": "Premiación", "description": "Mejor corto Internacional y Uruguayo." },
+            "close": { "title": "Cierre", "description": "Yves cierra la noche." },
+            "end": { "title": "Fin de la jornada", "description": "" },
+            "afterparty": { "title": "Afterparty en Capicúa", "description": "Nos vamos a Destilería Capicúa para seguir la noche." }
         }
     },
     "rules": {

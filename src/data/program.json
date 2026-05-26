@@ -1,44 +1,28 @@
 [
     {
-        "id": "1",
-        "title": "Training Workshops",
-        "type": "Workshop",
-        "date": "April, 2026",
-        "time": "TBA",
-        "location": "Workshop Space",
-        "shortDescription": "Practical sessions for students of institutions on responsible and creative AI use.",
-        "tags": [
-            "Workshop",
-            "Education"
-        ],
-        "image": "/images/program_training.jpeg"
+        "id": "day1",
+        "date": "2026-05-28",
+        "items": [
+            { "id": "d1-doors", "time": "19:00", "type": "doors" },
+            { "id": "d1-welcome", "time": "20:00", "type": "talk" },
+            { "id": "d1-speaker", "time": "20:10", "type": "speaker", "speakerId": "felipeMachado" },
+            { "id": "d1-shorts", "time": "20:35", "type": "screening" },
+            { "id": "d1-close", "time": "21:35", "type": "close" },
+            { "id": "d1-end", "time": "22:00", "type": "end" }
+        ]
     },
     {
-        "id": "3",
-        "title": "The Festival",
-        "type": "Main Event",
-        "date": "May 28-29, 2026",
-        "time": "TBA",
-        "location": "Life Cinemas",
-        "shortDescription": "Official Competition screenings, Talks, Panels, and the closing Awards ceremony.",
-        "tags": [
-            "Screening",
-            "Panels"
-        ],
-        "image": "/images/program_festival.png"
-    },
-    {
-        "id": "4",
-        "title": "After Party",
-        "type": "Party",
-        "date": "May 29, 2026",
-        "time": "23:00",
-        "location": "Destilería Capicúa",
-        "shortDescription": "Celebrate the festival closing night with us. Good music, great drinks, and the best company to toast to the future of creative AI.",
-        "tags": [
-            "Networking",
-            "Celebration"
-        ],
-        "image": "/images/program_after.jpeg"
+        "id": "day2",
+        "date": "2026-05-29",
+        "items": [
+            { "id": "d2-doors", "time": "19:00", "type": "doors" },
+            { "id": "d2-welcome", "time": "20:00", "type": "talk" },
+            { "id": "d2-speaker", "time": "20:10", "type": "speaker", "speakerId": "gabrielOrtiz" },
+            { "id": "d2-shorts", "time": "20:35", "type": "screening" },
+            { "id": "d2-awards", "time": "21:35", "type": "awards" },
+            { "id": "d2-close", "time": "21:50", "type": "close" },
+            { "id": "d2-end", "time": "22:00", "type": "end" },
+            { "id": "d2-afterparty", "time": "22:30", "type": "afterparty" }
+        ]
     }
 ]

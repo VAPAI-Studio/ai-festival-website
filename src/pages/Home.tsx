@@ -134,6 +134,68 @@ export function Home() {
                 </div>
             </section>
 
+            {/* Program / Agenda */}
+            <section id="program" className="py-24 border-t border-white/10">
+                <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+                    <div className="text-center mb-16 space-y-3">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-xs font-medium uppercase tracking-[0.2em] text-primary">
+                            <Calendar className="w-3 h-3" />
+                            {t('program.venue')}
+                        </div>
+                        <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-primary scroll-rgb" data-text={t('program.title')}>
+                            {t('program.title')}
+                        </h2>
+                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                            {t('program.subtitle')}
+                        </p>
+                    </div>
+                    <div className="grid gap-10 md:grid-cols-2 md:gap-12">
+                        {programData.map((day) => (
+                            <div key={day.id} className="relative">
+                                <div className="mb-8 pb-4 border-b border-white/10">
+                                    <p className="text-xs font-mono uppercase tracking-[0.25em] text-primary mb-1">
+                                        {t(`program.days.${day.id}.label`)}
+                                    </p>
+                                    <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
+                                        {t(`program.days.${day.id}.weekday`)}
+                                    </h3>
+                                    <p className="text-sm text-muted-foreground mt-1">
+                                        {t(`program.days.${day.id}.date`)}
+                                    </p>
+                                </div>
+                                <ol className="relative space-y-6">
+                                    <div className="absolute left-[3.25rem] top-2 bottom-2 w-px bg-white/10" aria-hidden />
+                                    {day.items.map((item) => {
+                                        const typeKey = item.type === 'speaker' && item.speakerId === 'gabrielOrtiz' ? 'speaker2' : item.type;
+                                        const isHighlight = item.type === 'speaker' || item.type === 'screening' || item.type === 'awards' || item.type === 'afterparty';
+                                        return (
+                                            <li key={item.id} className="relative flex gap-5 items-start group">
+                                                <div className="w-12 flex-shrink-0 text-right pt-0.5">
+                                                    <span className="text-sm font-mono tabular-nums text-muted-foreground group-hover:text-primary transition-colors">
+                                                        {item.time}
+                                                    </span>
+                                                </div>
+                                                <div className={`relative z-10 mt-1.5 w-3 h-3 rounded-full flex-shrink-0 border-2 ${isHighlight ? 'bg-primary border-primary' : 'bg-background border-white/30'}`} />
+                                                <div className="flex-1 pb-1 -mt-0.5">
+                                                    <h4 className={`text-base md:text-lg font-semibold leading-tight ${isHighlight ? 'text-foreground' : 'text-muted-foreground'}`}>
+                                                        {t(`program.types.${typeKey}.title`)}
+                                                    </h4>
+                                                    {t(`program.types.${typeKey}.description`) && (
+                                                        <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
+                                                            {t(`program.types.${typeKey}.description`)}
+                                                        </p>
+                                                    )}
+                                                </div>
+                                            </li>
+                                        );
+                                    })}
+                                </ol>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Films Carousel */}
             <section id="films" className="relative py-24 border-t border-white/10 bg-black/50 overflow-hidden">
                 <div className="container mx-auto px-4 md:px-6 mb-12">
@@ -378,57 +440,6 @@ export function Home() {
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Program */}
-            <section id="program" className="py-24 border-t border-white/10">
-                <div className="container mx-auto px-4 md:px-6">
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tighter text-center mb-12 text-primary scroll-rgb" data-text={t('program.title')}>
-                        {t('program.title')}
-                    </h2>
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        {programData.map((item) => (
-                            <Card key={item.id} className="bg-white/5 border-white/10 overflow-hidden hover:border-primary/50 transition-colors group">
-                                <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:scale-105 transition-transform duration-500 relative overflow-hidden">
-                                    {item.image && !item.image.includes('placeholder') ? (
-                                        <img
-                                            src={item.image}
-                                            alt={item.title}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    ) : (
-                                        <>
-                                            {item.type === 'Panel' ? (
-                                                <Mic className="w-12 h-12 text-primary/50" />
-                                            ) : item.type === 'Workshop' ? (
-                                                <Monitor className="w-12 h-12 text-primary/50" />
-                                            ) : item.type === 'Main Event' ? (
-                                                <Film className="w-12 h-12 text-primary/50" />
-                                            ) : item.title.includes('Pitch') ? (
-                                                <Users className="w-12 h-12 text-primary/50" />
-                                            ) : (
-                                                <Film className="w-12 h-12 text-primary/50" />
-                                            )}
-                                        </>
-                                    )}
-                                </div>
-                                <CardHeader>
-                                    <div className="flex justify-between items-start mb-2">
-                                        <span className="text-xs font-medium px-2 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-                                            {item.type}
-                                        </span>
-                                        <span className="text-xs text-muted-foreground">{item.date}</span>
-                                    </div>
-                                    <CardTitle className="text-xl">{t(`program.items.${item.id}.title`)}</CardTitle>
-                                    <CardDescription>{item.location}</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <p className="text-sm text-muted-foreground">{t(`program.items.${item.id}.description`)}</p>
-                                </CardContent>
-                            </Card>
-                        ))}
                     </div>
                 </div>
             </section>
