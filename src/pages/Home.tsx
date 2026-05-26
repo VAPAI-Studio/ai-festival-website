@@ -7,7 +7,7 @@ import speakersData from "../data/speakers.json";
 import filmsData from "../data/films.json";
 import { Button } from "../components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/Card";
-import { Calendar, MapPin, Trophy, Users, Film, Mic, Globe, HelpCircle, Monitor } from "lucide-react";
+import { Calendar, MapPin, Trophy, Users, Film, Mic, Globe, HelpCircle } from "lucide-react";
 import { HeroBackground } from "../components/3d/HeroBackground";
 import { useTranslation } from "react-i18next";
 
