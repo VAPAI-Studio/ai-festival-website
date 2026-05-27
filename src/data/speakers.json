@@ -5,12 +5,5 @@
         "image": "/images/speakers/felipe_machado.jpg",
         "imagePosition": "center",
         "tint": "rgba(56, 189, 248, 0.18)"
-    },
-    {
-        "id": "gabrielOrtiz",
-        "name": "Gabriel Ortiz",
-        "image": "/images/speakers/gabriel_ortiz.webp",
-        "imagePosition": "left center",
-        "tint": "rgba(251, 146, 60, 0.18)"
     }
 ]

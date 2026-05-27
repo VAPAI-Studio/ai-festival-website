@@ -55,7 +55,7 @@
     "program": {
         "title": "Agenda",
         "subtitle": "Dos noches de cine con IA en Life Cinemas.",
-        "venue": "Life Cinemas · Punta Carretas",
+        "venue": "Life Cinemas · Alfabeta",
         "days": {
             "day1": { "label": "Día 1", "weekday": "Jueves", "date": "28 de mayo, 2026" },
             "day2": { "label": "Día 2", "weekday": "Viernes", "date": "29 de mayo, 2026" }
@@ -64,7 +64,7 @@
             "doors": { "title": "Apertura de puertas", "description": "Alfombra roja, pop y soda gratis, y merch en el lobby." },
             "talk": { "title": "Bienvenida", "description": "Yves abre la noche." },
             "speaker": { "title": "Speaker 1 · Felipe Machado", "description": "Head of AI Studio en Silverside AI." },
-            "speaker2": { "title": "Speaker 2 · Gabriel Ortiz", "description": "Fundador y CEO de Pixart." },
+            "speaker2": { "title": "Speaker 2 · Pablo Casacuberta", "description": "Escritor y artista." },
             "screening": { "title": "Cortometrajes", "description": "9 de los cortos seleccionados." },
             "awards": { "title": "Premiación", "description": "Mejor corto Internacional y Uruguayo." },
             "close": { "title": "Cierre", "description": "Yves cierra la noche." },
