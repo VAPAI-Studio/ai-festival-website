@@ -1,0 +1,16 @@
+[
+    {
+        "award": "bestInternational",
+        "film": "Moksha",
+        "director": "Mao Jerry",
+        "country": "China",
+        "poster": "/images/posters/moksha_-_3x4.jpg"
+    },
+    {
+        "award": "bestUruguayan",
+        "film": "The Hunt",
+        "director": "Juan Manuel Tapia",
+        "country": "Uruguay",
+        "poster": "/images/posters/the_hunt.png"
+    }
+]
