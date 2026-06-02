@@ -1,5 +1,21 @@
 {
-    "banner": "1279 short films submitted for consideration 🚀",
+    "banner": "Thank you to everyone who joined the 1st Latam Creative AI Festival 🎬",
+    "gallery": {
+        "badge": "Recap",
+        "title": "Festival Gallery",
+        "subtitle": "Moments from two nights of AI cinema at Life Cinemas."
+    },
+    "intro": {
+        "lead": "What started as an idea became a global gathering of creators.",
+        "paragraphs": [
+            "Thank you to everyone who participated in the first edition of Sticks N' Festival and helped make it a success.",
+            "From filmmakers and artists to speakers, partners, and attendees, this festival was shaped by a community pushing the boundaries of creativity and storytelling.",
+            "This was only the beginning.",
+            "We're already working on something much bigger for the next edition.",
+            "Stay tuned for what's next."
+        ],
+        "closing": "Until then, enjoy this recap of our first edition."
+    },
     "sponsors": {
         "title": "Sponsors",
         "gold": "Gold",
@@ -12,18 +28,19 @@
     "nav": {
         "festival": "The Festival",
         "dates": "Dates",
-        "films": "Films",
+        "films": "Selected Films",
+        "gallery": "Gallery",
         "program": "Program",
         "jury": "Jury",
         "speakers": "Speakers",
-        "awards": "Awards",
+        "awards": "Winners",
         "submit": "Submit",
         "submitProject": "Get Tickets"
     },
     "films": {
         "badge": "Official Selection",
         "title": "Selected Films",
-        "subtitle": "The 18 films that will screen at the first AI Film Festival.",
+        "subtitle": "The 18 films screened at Sticks N' Festival",
         "outOfCompetition": "Out of Competition"
     },
     "hero": {
@@ -162,8 +179,8 @@
         }
     },
     "awards": {
-        "title": "Awards",
-        "description": "18 films will be officially selected.",
+        "title": "Award Winners",
+        "description": "The winners of the 1st Sticks n' Festival.",
         "bestInternational": "Best International AI Film",
         "pitchCompetition": "Most Creative use of AI",
         "bestUruguayan": "Best Uruguayan AI Film",
@@ -171,7 +188,11 @@
             "bestInternational": "USD 2.500 Cash",
             "pitchCompetition": "",
             "bestUruguayan": "USD 4.000 in Musitelli Credits"
-        }
+        },
+        "winner": "Winner",
+        "director": "Dir.",
+        "country": "Country",
+        "tba": "To be announced"
     },
     "team": {
         "title": "The Team",

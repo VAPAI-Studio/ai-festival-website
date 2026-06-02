@@ -1,5 +1,21 @@
 {
-    "banner": "1279 cortometrajes enviados para consideración 🚀",
+    "banner": "Gracias a todos los que fueron parte del 1er Festival de IA Creativa de Latam 🎬",
+    "gallery": {
+        "badge": "Recap",
+        "title": "Galería del Festival",
+        "subtitle": "Momentos de dos noches de cine con IA en Life Cinemas."
+    },
+    "intro": {
+        "lead": "Lo que empezó como una idea se convirtió en un encuentro global de creadores.",
+        "paragraphs": [
+            "Gracias a todos los que participaron en la primera edición de Sticks N' Festival y ayudaron a hacerla un éxito.",
+            "Desde cineastas y artistas hasta speakers, partners y participantes, este festival fue moldeado por una comunidad que empuja los límites de la creatividad y la narrativa.",
+            "Esto fue solo el comienzo.",
+            "Ya estamos trabajando en algo mucho más grande para la próxima edición.",
+            "Atentos a lo que viene."
+        ],
+        "closing": "Hasta entonces, disfrutá este recap de nuestra primera edición."
+    },
     "sponsors": {
         "title": "Sponsors",
         "gold": "Gold",
@@ -12,11 +28,12 @@
     "nav": {
         "festival": "El Festival",
         "dates": "Fechas",
-        "films": "Películas",
+        "films": "Películas Seleccionadas",
+        "gallery": "Galería",
         "program": "Programa",
         "jury": "Jurado",
         "speakers": "Speakers",
-        "awards": "Premios",
+        "awards": "Ganadores",
         "submit": "Enviar",
         "submitProject": "Conseguí tus entradas"
     },
@@ -162,8 +179,8 @@
         }
     },
     "awards": {
-        "title": "Premios",
-        "description": "18 películas formarán parte de la Selección Oficial.",
+        "title": "Ganadores",
+        "description": "Los ganadores del 1er Sticks n' Festival.",
         "bestInternational": "Mejor Película IA Internacional",
         "pitchCompetition": "Uso más creativo de la IA",
         "bestUruguayan": "Mejor Película IA Uruguaya",
@@ -171,7 +188,11 @@
             "bestInternational": "USD 2.500 Cash",
             "pitchCompetition": "",
             "bestUruguayan": "USD 4.000 en Créditos Musitelli"
-        }
+        },
+        "winner": "Ganador",
+        "director": "Dir.",
+        "country": "País",
+        "tba": "Por anunciar"
     },
     "team": {
         "title": "El Equipo",

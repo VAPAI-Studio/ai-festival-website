@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Globe } from "lucide-react";
 import { siteConfig } from "../config/site";
-import { Button } from "./ui/Button";
 import { useTranslation } from "react-i18next";
 
 export function Header() {
@@ -42,12 +41,11 @@ export function Header() {
     };
 
     const navigation = [
-        { name: t('nav.program'), href: "/#program" },
-        { name: t('nav.films'), href: "/#films" },
-        { name: t('nav.jury'), href: "/#jury" },
-        { name: t('nav.speakers'), href: "/#speakers" },
         { name: t('nav.awards'), href: "/#awards" },
-        { name: t('nav.submit'), href: "/submit" },
+        { name: t('nav.gallery'), href: "/#gallery" },
+        { name: t('nav.films'), href: "/#films" },
+        { name: t('nav.speakers'), href: "/#speakers" },
+        { name: t('nav.jury'), href: "/#jury" },
     ];
 
     return (
@@ -72,32 +70,14 @@ export function Header() {
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex gap-6 items-center">
                     {navigation.map((item) => (
-                        item.href.startsWith("/#") ? (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                className="text-sm font-medium text-foreground transition-colors hover:text-primary cursor-pointer"
-                                onClick={(e) => handleNavClick(e, item.href)}
-                            >
-                                {item.name}
-                            </a>
-                        ) : (
-                            item.href === "/submit" ? (
-                                <Button size="sm" asChild key={item.name}>
-                                    <a href="https://www.lifecinemas.com.uy/pelicula/primer-festival-de-ia-en-el-cine" target="_blank" rel="noopener noreferrer">
-                                        {t('nav.submitProject')}
-                                    </a>
-                                </Button>
-                            ) : (
-                                <Link
-                                    key={item.name}
-                                    to={item.href}
-                                    className="text-sm font-medium text-foreground transition-colors hover:text-primary"
-                                >
-                                    {item.name}
-                                </Link>
-                            )
-                        )
+                        <a
+                            key={item.name}
+                            href={item.href}
+                            className="text-sm font-medium text-foreground transition-colors hover:text-primary cursor-pointer"
+                            onClick={(e) => handleNavClick(e, item.href)}
+                        >
+                            {item.name}
+                        </a>
                     ))}
 
                     <button
@@ -134,33 +114,14 @@ export function Header() {
             {isMenuOpen && (
                 <div className="absolute top-16 left-0 w-full bg-black/95 border-b border-white/10 p-4 md:hidden flex flex-col space-y-4">
                     {navigation.map((item) => (
-                        item.href.startsWith("/#") ? (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                className="text-sm font-medium text-foreground transition-colors hover:text-primary cursor-pointer"
-                                onClick={(e) => handleNavClick(e, item.href)}
-                            >
-                                {item.name}
-                            </a>
-                        ) : (
-                            item.href === "/submit" ? (
-                                <Button size="sm" asChild key={item.name} className="w-full">
-                                    <a href="https://www.lifecinemas.com.uy/pelicula/primer-festival-de-ia-en-el-cine" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
-                                        {t('nav.submitProject')}
-                                    </a>
-                                </Button>
-                            ) : (
-                                <Link
-                                    key={item.name}
-                                    to={item.href}
-                                    className="text-sm font-medium text-foreground transition-colors hover:text-primary"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {item.name}
-                                </Link>
-                            )
-                        )
+                        <a
+                            key={item.name}
+                            href={item.href}
+                            className="text-sm font-medium text-foreground transition-colors hover:text-primary cursor-pointer"
+                            onClick={(e) => handleNavClick(e, item.href)}
+                        >
+                            {item.name}
+                        </a>
                     ))}
                 </div>
             )}
