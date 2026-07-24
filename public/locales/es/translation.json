@@ -74,19 +74,54 @@
         "subtitle": "Dos noches de cine con IA en Life Cinemas.",
         "venue": "Life Cinemas · Alfabeta",
         "days": {
-            "day1": { "label": "Día 1", "weekday": "Jueves", "date": "28 de mayo, 2026" },
-            "day2": { "label": "Día 2", "weekday": "Viernes", "date": "29 de mayo, 2026" }
+            "day1": {
+                "label": "Día 1",
+                "weekday": "Jueves",
+                "date": "28 de mayo, 2026"
+            },
+            "day2": {
+                "label": "Día 2",
+                "weekday": "Viernes",
+                "date": "29 de mayo, 2026"
+            }
         },
         "types": {
-            "doors": { "title": "Apertura de puertas", "description": "Alfombra roja, pop y soda gratis, y merch en el lobby." },
-            "talk": { "title": "Bienvenida", "description": "Yves abre la noche." },
-            "speaker": { "title": "Speaker 1 · Felipe Machado", "description": "Head of AI Studio en Silverside AI." },
-            "speaker2": { "title": "Speaker 2 · Pablo Casacuberta", "description": "Escritor y artista." },
-            "screening": { "title": "Cortometrajes", "description": "9 de los cortos seleccionados." },
-            "awards": { "title": "Premiación", "description": "Mejor corto Internacional y Uruguayo." },
-            "close": { "title": "Cierre", "description": "Yves cierra la noche." },
-            "end": { "title": "Fin de la jornada", "description": "" },
-            "afterparty": { "title": "Afterparty en Capicúa", "description": "Nos vamos a Destilería Capicúa para seguir la noche." }
+            "doors": {
+                "title": "Apertura de puertas",
+                "description": "Alfombra roja, pop y soda gratis, y merch en el lobby."
+            },
+            "talk": {
+                "title": "Bienvenida",
+                "description": "Yves abre la noche."
+            },
+            "speaker": {
+                "title": "Speaker 1 · Felipe Machado",
+                "description": "Head of AI Studio en Silverside AI."
+            },
+            "speaker2": {
+                "title": "Speaker 2 · Pablo Casacuberta",
+                "description": "Escritor y artista."
+            },
+            "screening": {
+                "title": "Cortometrajes",
+                "description": "9 de los cortos seleccionados."
+            },
+            "awards": {
+                "title": "Premiación",
+                "description": "Mejor corto Internacional y Uruguayo."
+            },
+            "close": {
+                "title": "Cierre",
+                "description": "Yves cierra la noche."
+            },
+            "end": {
+                "title": "Fin de la jornada",
+                "description": ""
+            },
+            "afterparty": {
+                "title": "Afterparty en Capicúa",
+                "description": "Nos vamos a Destilería Capicúa para seguir la noche."
+            }
         }
     },
     "rules": {
@@ -174,8 +209,16 @@
             "gabrielOrtiz": "Ingeniero y empresario argentino, fundador de Pixart en 1999. Construyó la primera fábrica inteligente automatizada de Latinoamérica y fue el primer argentino autorizado por Qualcomm para diseñar y producir motherboards en el país."
         },
         "tags": {
-            "felipeMachado": ["IA Creativa", "Dirección", "Storytelling"],
-            "gabrielOrtiz": ["Hardware", "Industria 4.0", "Latam Tech"]
+            "felipeMachado": [
+                "IA Creativa",
+                "Dirección",
+                "Storytelling"
+            ],
+            "gabrielOrtiz": [
+                "Hardware",
+                "Industria 4.0",
+                "Latam Tech"
+            ]
         }
     },
     "awards": {
@@ -230,7 +273,8 @@
     },
     "footer": {
         "rights": "Todos los derechos reservados.",
-        "builtBy": "Creado por"
+        "builtBy": "Creado por",
+        "organizedBy": "Organizado por"
     },
     "submit": {
         "title": "Competiciones y Envío",

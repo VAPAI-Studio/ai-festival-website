@@ -23,6 +23,17 @@ export function Footer() {
                         <p className="text-sm text-muted-foreground">
                             {siteConfig.city}
                         </p>
+                        <p className="text-sm text-muted-foreground">
+                            {t('footer.organizedBy')}{" "}
+                            <a
+                                href="https://souts.studio"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
+                            >
+                                SOUTS — The AI-Native Film Production Company
+                            </a>
+                        </p>
                     </div>
 
                     {/* Quick Links */}
@@ -68,12 +79,12 @@ export function Footer() {
                     <p>
                         {t('footer.builtBy')}{" "}
                         <a
-                            href="https://vapai.studio"
+                            href="https://souts.studio"
                             target="_blank"
                             rel="noreferrer"
                             className="font-medium underline underline-offset-4 hover:text-primary transition-colors"
                         >
-                            sideOUTsticks
+                            SOUTS
                         </a>
                     </p>
                 </div>
