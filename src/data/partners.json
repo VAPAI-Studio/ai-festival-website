@@ -51,10 +51,10 @@
     },
     {
         "id": "sideoutsticks",
-        "name": "sideOUTsticks",
+        "name": "SOUTS",
         "logo": "/images/sponsors/sideoutsticks.png",
         "tier": "Organiza",
-        "url": "#"
+        "url": "https://souts.studio"
     },
     {
         "id": "cacique",

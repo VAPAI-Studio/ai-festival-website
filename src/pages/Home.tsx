@@ -11,6 +11,24 @@ import { Calendar, MapPin, Trophy, Users, Film, Mic, Globe, Camera } from "lucid
 import { HeroBackground } from "../components/3d/HeroBackground";
 import { useTranslation } from "react-i18next";
 
+type PartnerTileProps = {
+    url?: string;
+    className: string;
+    children: React.ReactNode;
+};
+
+// Los partners con url real se renderizan como link; el resto queda como div.
+function PartnerTile({ url, className, children }: PartnerTileProps) {
+    if (url && url !== "#") {
+        return (
+            <a href={url} target="_blank" rel="noreferrer" className={`${className} hover:border-primary/50`}>
+                {children}
+            </a>
+        );
+    }
+    return <div className={className}>{children}</div>;
+}
+
 export function Home() {
     const { t } = useTranslation();
 
@@ -87,7 +105,9 @@ export function Home() {
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 <HeroBackground />
                 <div className="absolute top-20 md:top-32 left-0 right-0 flex flex-row flex-wrap items-center justify-center gap-x-2 gap-y-1 md:gap-3 text-xs sm:text-sm md:text-base text-muted-foreground font-medium animate-in fade-in slide-in-from-bottom-8 duration-1000 fill-mode-forwards z-20 px-2 sm:px-4 text-center pointer-events-none">
-                    <img src="/images/sponsors/sideoutsticks.png" alt="Side Out Sticks" className="h-8 sm:h-10 md:h-16 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity pointer-events-auto" />
+                    <a href="https://souts.studio" target="_blank" rel="noreferrer" className="pointer-events-auto">
+                        <img src="/images/sponsors/sideoutsticks.png" alt="SOUTS" className="h-8 sm:h-10 md:h-16 w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
+                    </a>
                     <span>{t('hero.togetherWith')}</span>
                     <img src="/images/sponsors/life.png" alt="Life Cinemas" className="h-6 sm:h-8 md:h-11 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity pointer-events-auto" />
                     <span>{t('hero.present')}</span>
@@ -139,8 +159,8 @@ export function Home() {
                     </div>
                     <div className="grid gap-8 md:grid-cols-2 items-stretch max-w-4xl mx-auto">
                         {[
-                            { title: t('awards.bestInternational'), icon: Globe, prize: t('awards.prizes.bestInternational'), prizeLogo: "/images/sponsors/sideoutsticks.png", prizeLogoAlt: "Side Out Sticks", invertLogo: true, awardKey: "bestInternational" },
-                            { title: t('awards.bestUruguayan'), icon: Trophy, prize: t('awards.prizes.bestUruguayan'), prizeLogo: "/images/sponsors/musitelli.png", prizeLogoAlt: "Musitelli", invertLogo: false, awardKey: "bestUruguayan" }
+                            { title: t('awards.bestInternational'), icon: Globe, prize: t('awards.prizes.bestInternational'), prizeLogo: "/images/sponsors/sideoutsticks.png", prizeLogoAlt: "SOUTS", prizeLogoUrl: "https://souts.studio", invertLogo: true, awardKey: "bestInternational" },
+                            { title: t('awards.bestUruguayan'), icon: Trophy, prize: t('awards.prizes.bestUruguayan'), prizeLogo: "/images/sponsors/musitelli.png", prizeLogoAlt: "Musitelli", prizeLogoUrl: null, invertLogo: false, awardKey: "bestUruguayan" }
                         ].map((award, i) => {
                             const winner = winnersData.find(w => w.award === award.awardKey);
                             const hasWinner = winner && winner.film !== "TBD";
@@ -176,7 +196,13 @@ export function Home() {
                                                 {award.prize && <p className="text-xl font-bold text-primary">{award.prize}</p>}
                                                 {award.prizeLogo && (
                                                     <div className="h-12 flex items-center justify-center">
-                                                        <img src={award.prizeLogo} alt={award.prizeLogoAlt} className={`max-h-full w-auto object-contain opacity-90 ${award.invertLogo ? 'brightness-0 invert' : ''}`} />
+                                                        {award.prizeLogoUrl ? (
+                                                            <a href={award.prizeLogoUrl} target="_blank" rel="noreferrer" className="h-full flex items-center justify-center">
+                                                                <img src={award.prizeLogo} alt={award.prizeLogoAlt} className={`max-h-full w-auto object-contain opacity-90 hover:opacity-100 transition-opacity ${award.invertLogo ? 'brightness-0 invert' : ''}`} />
+                                                            </a>
+                                                        ) : (
+                                                            <img src={award.prizeLogo} alt={award.prizeLogoAlt} className={`max-h-full w-auto object-contain opacity-90 ${award.invertLogo ? 'brightness-0 invert' : ''}`} />
+                                                        )}
                                                     </div>
                                                 )}
                                             </>
@@ -434,13 +460,13 @@ export function Home() {
                         <h3 className="text-base font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-6">{t('sponsors.gold')}</h3>
                         <div className="flex justify-center">
                             {partnersData.filter((p) => p.tier === "Gold").map((partner) => (
-                                <div key={partner.id} className="h-32 w-64 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all p-6">
+                                <PartnerTile key={partner.id} url={partner.url} className="h-32 w-64 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all p-6">
                                     {partner.logo ? (
                                         <img src={partner.logo} alt={partner.name} className={`max-h-full max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
                                     ) : (
                                         <span className="text-lg font-bold text-muted-foreground">{partner.name}</span>
                                     )}
-                                </div>
+                                </PartnerTile>
                             ))}
                         </div>
                     </div>
@@ -450,13 +476,13 @@ export function Home() {
                         <h3 className="text-base font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-6">{t('sponsors.silver')}</h3>
                         <div className="flex flex-wrap gap-6 items-center justify-center">
                             {partnersData.filter((p) => p.tier === "Silver").map((partner) => (
-                                <div key={partner.id} className="h-24 w-52 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all p-5">
+                                <PartnerTile key={partner.id} url={partner.url} className="h-24 w-52 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all p-5">
                                     {partner.logo ? (
                                         <img src={partner.logo} alt={partner.name} className={`max-h-full max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
                                     ) : (
                                         <span className="text-base font-bold text-muted-foreground">{partner.name}</span>
                                     )}
-                                </div>
+                                </PartnerTile>
                             ))}
                         </div>
                     </div>
@@ -468,13 +494,13 @@ export function Home() {
                                 <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">{tierLabel}</h3>
                                 <div className="flex flex-wrap gap-3 items-center justify-center">
                                     {partnersData.filter((p) => p.tier === tierKey).map((partner) => (
-                                        <div key={partner.id} className="h-20 w-48 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all px-5">
+                                        <PartnerTile key={partner.id} url={partner.url} className="h-20 w-48 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all px-5">
                                             {partner.logo ? (
                                                 <img src={partner.logo} alt={partner.name} style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
                                             ) : (
                                                 <span className="text-sm font-bold text-muted-foreground">{partner.name}</span>
                                             )}
-                                        </div>
+                                        </PartnerTile>
                                     ))}
                                 </div>
                             </div>
@@ -488,13 +514,13 @@ export function Home() {
                                 <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground mb-4">{tierLabel}</h3>
                                 <div className="flex flex-wrap gap-3 items-center justify-center">
                                     {partnersData.filter((p) => p.tier === tierKey).map((partner) => (
-                                        <div key={partner.id} className="h-20 w-48 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all px-5">
+                                        <PartnerTile key={partner.id} url={partner.url} className="h-20 w-48 rounded-lg flex items-center justify-center border border-white/10 bg-white/5 transition-all px-5">
                                             {partner.logo ? (
                                                 <img src={partner.logo} alt={partner.name} style={partner.scale ? { transform: `scale(${partner.scale})` } : undefined} className={`max-h-12 max-w-full object-contain opacity-90 ${partner.keepColor ? '' : 'brightness-0 invert'} ${partner.grayscale ? 'grayscale' : ''}`} />
                                             ) : (
                                                 <span className="text-sm font-bold text-muted-foreground">{partner.name}</span>
                                             )}
-                                        </div>
+                                        </PartnerTile>
                                     ))}
                                 </div>
                             </div>

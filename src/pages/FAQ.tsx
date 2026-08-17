@@ -29,7 +29,7 @@ const faqSections: FAQSection[] = [
       {
         question: "Who organizes Sticks n' Festival?",
         answer:
-          "The festival is organized by **SOUTS** (Salado Out Studio) — a creative AI studio based in Montevideo, Uruguay. We're passionate about exploring AI as a tool for artistic expression and storytelling.",
+          "The festival is organized by [Souts](https://souts.studio) — a creative AI studio based in Montevideo, Uruguay. We're passionate about exploring AI as a tool for artistic expression and storytelling.",
       },
       {
         question: "What makes this festival different?",
@@ -39,7 +39,7 @@ const faqSections: FAQSection[] = [
       {
         question: "Is this a commercial or non-profit event?",
         answer:
-          "Sticks n' Festival is organized by SOUTS as a community-driven event. Ticket sales and sponsorships cover costs (venue, speakers, catering, production). Our goal is to break even and build a sustainable annual event, not generate profit.",
+          "Sticks n' Festival is organized by [Souts](https://souts.studio) as a community-driven event. Ticket sales and sponsorships cover costs (venue, speakers, catering, production). Our goal is to break even and build a sustainable annual event, not generate profit.",
       },
       {
         question: "Can I volunteer or help with the festival?",
@@ -169,6 +169,42 @@ const faqSections: FAQSection[] = [
   },
 ];
 
+// Parsea markdown inline de las respuestas: **negrita** y [texto](url).
+// Los links externos (http) abren en pestana nueva; los internos usan el hash router.
+function renderInline(text: string) {
+  const nodes: React.ReactNode[] = [];
+  const pattern = /\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  let key = 0;
+
+  while ((m = pattern.exec(text)) !== null) {
+    if (m.index > last) nodes.push(text.slice(last, m.index));
+
+    if (m[1] !== undefined) {
+      nodes.push(<strong key={key++} className="text-gray-200">{m[1]}</strong>);
+    } else {
+      const label = m[2];
+      const url = m[3];
+      const isExternal = /^https?:\/\//.test(url);
+      nodes.push(
+        <a
+          key={key++}
+          href={isExternal ? url : `/#${url}`}
+          {...(isExternal ? { target: "_blank", rel: "noreferrer" } : {})}
+          className="text-[#00ff9d] hover:underline"
+        >
+          {label}
+        </a>
+      );
+    }
+    last = pattern.lastIndex;
+  }
+
+  if (last < text.length) nodes.push(text.slice(last));
+  return nodes;
+}
+
 function FAQAccordion({ item }: { item: FAQItem }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -189,7 +225,7 @@ function FAQAccordion({ item }: { item: FAQItem }) {
           <div className="prose prose-invert max-w-none">
             {item.answer.split("\n").map((line, i) => (
               <p key={i} className="mb-2 last:mb-0">
-                {line}
+                {renderInline(line)}
               </p>
             ))}
           </div>
@@ -210,7 +246,7 @@ export function FAQ() {
         "name": item.question,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": item.answer.replace(/\*\*/g, '').replace(/\n/g, ' ')
+          "text": item.answer.replace(/\*\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\n/g, ' ')
         }
       }))
     )
